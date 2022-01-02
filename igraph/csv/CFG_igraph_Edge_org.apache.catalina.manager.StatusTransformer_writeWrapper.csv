@@ -1,0 +1,59 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	r1 := @parameter1: javax.management.ObjectName	0
+r1 := @parameter1: javax.management.ObjectName	r2 := @parameter2: javax.management.MBeanServer	0
+r2 := @parameter2: javax.management.MBeanServer	i0 := @parameter3: int	0
+i0 := @parameter3: int	if i0 != 0 goto return	0
+if i0 != 0 goto return	r3 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	0
+if i0 != 0 goto return	return	0
+r3 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	$r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>(r1, "findMappings", null, null)	1
+$r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>(r1, "findMappings", null, null)	r4 = (java.lang.String[]) $r5	1
+r4 = (java.lang.String[]) $r5	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h2>")	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h2>")	$r6 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r3)	0
+$r6 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r3)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r6)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r6)	if r4 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	0
+if r4 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	$i2 = lengthof r4	0
+if r4 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	0
+$i2 = lengthof r4	if $i2 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	1
+if $i2 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" [ ")	0
+if $i2 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" [ ")	i1 = 0	0
+i1 = 0	goto [?= $i5 = lengthof r4]	1
+goto [?= $i5 = lengthof r4]	$i5 = lengthof r4	0
+$r7 = r4[i1]	$r8 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r7)	1
+$r8 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r7)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r8)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r8)	$i3 = lengthof r4	0
+$i3 = lengthof r4	$i4 = $i3 - 1	1
+$i4 = $i3 - 1	if i1 >= $i4 goto i1 = i1 + 1	1
+if i1 >= $i4 goto i1 = i1 + 1	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" , ")	0
+if i1 >= $i4 goto i1 = i1 + 1	i1 = i1 + 1	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" , ")	i1 = i1 + 1	0
+i1 = i1 + 1	$i5 = lengthof r4	1
+$i5 = lengthof r4	if i1 < $i5 goto $r7 = r4[i1]	1
+if i1 < $i5 goto $r7 = r4[i1]	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" ] ")	0
+if i1 < $i5 goto $r7 = r4[i1]	$r7 = r4[i1]	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" ] ")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Processing time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Processing time: ")	$r9 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "processingTime")	0
+$r9 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "processingTime")	$r10 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r9, 1)	1
+$r10 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r9, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r10)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r10)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Max time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Max time: ")	$r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "maxTime")	0
+$r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "maxTime")	$r12 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r11, 0)	1
+$r12 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r11, 0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Request count: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Request count: ")	$r13 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestCount")	0
+$r13 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestCount")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r13)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r13)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Error count: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Error count: ")	$r14 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "errorCount")	0
+$r14 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "errorCount")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r14)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r14)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Load time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Load time: ")	$r15 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "loadTime")	0
+$r15 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "loadTime")	$r16 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r15, 0)	1
+$r16 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r15, 0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r16)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r16)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Classloading time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Classloading time: ")	$r17 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "classLoadTime")	0
+$r17 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "classLoadTime")	$r18 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r17, 0)	1
+$r18 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r17, 0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r18)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r18)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	return	0

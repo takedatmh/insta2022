@@ -1,0 +1,26 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	$r3 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Wrapper wrapper>	0
+$r3 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Wrapper wrapper>	if $r3 == null goto $r5 = new javax.servlet.UnavailableException	1
+if $r3 == null goto $r5 = new javax.servlet.UnavailableException	$r4 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context>	0
+if $r3 == null goto $r5 = new javax.servlet.UnavailableException	$r5 = new javax.servlet.UnavailableException	0
+$r4 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context>	if $r4 != null goto n0 = null	1
+if $r4 != null goto n0 = null	$r5 = new javax.servlet.UnavailableException	0
+if $r4 != null goto n0 = null	n0 = null	0
+$r5 = new javax.servlet.UnavailableException	$r1 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	1
+$r1 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	$r6 = virtualinvoke $r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("hostManagerServlet.noWrapper")	1
+$r6 = virtualinvoke $r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("hostManagerServlet.noWrapper")	specialinvoke $r5.<javax.servlet.UnavailableException: void <init>(java.lang.String)>($r6)	1
+specialinvoke $r5.<javax.servlet.UnavailableException: void <init>(java.lang.String)>($r6)	throw $r5	0
+n0 = null	$r7 = virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	1
+n0 = null	$r9 := @caughtexception	1
+$r7 = virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	r8 = interfaceinvoke $r7.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	1
+$r7 = virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	$r9 := @caughtexception	1
+r8 = interfaceinvoke $r7.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r8)	1
+r8 = interfaceinvoke $r7.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	$r9 := @caughtexception	1
+$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r8)	r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug> = $i0	1
+$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r8)	$r9 := @caughtexception	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug> = $i0	goto [?= return]	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug> = $i0	$r9 := @caughtexception	1
+goto [?= return]	return	0
+$r9 := @caughtexception	r2 = $r9	0
+r2 = $r9	staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r2)	1
+staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r2)	return	0

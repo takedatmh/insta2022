@@ -1,0 +1,8 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void init()>()	0
+specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void init()>()	n0 = null	0
+n0 = null	$r1 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	1
+$r1 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	r2 = interfaceinvoke $r1.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("showProxySessions")	1
+r2 = interfaceinvoke $r1.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("showProxySessions")	$z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>(r2)	1
+$z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>(r2)	r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions> = $z0	1
+r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions> = $z0	return	1

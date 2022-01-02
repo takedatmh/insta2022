@@ -1,0 +1,25 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: org.w3c.dom.Node	R	null
+goto [?= return r4]	R	null
+r3 := @parameter3: java.lang.String	R	null
+return r4	R	null
+r1 := @parameter1: java.lang.String	R	null
+r2 := @parameter2: java.lang.String	R	null
+if r4 == null goto return r4	R	null
+$z0 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r5)	U	null
+$z1 = virtualinvoke r1.<java.lang.String: boolean equals(java.lang.Object)>($r7)	U	null
+$r6 = staticinvoke <org.apache.tomcat.util.DomUtil: java.lang.String getAttribute(org.w3c.dom.Node,java.lang.String)>(r4, r2)	U	null
+if $z2 == 0 goto r4 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getNext(org.w3c.dom.Node,java.lang.String,int)>(r4, r1, 1)	R	null
+$r7 = interfaceinvoke r4.<org.w3c.dom.Node: java.lang.String getNodeName()>()	U	null
+if $r6 != null goto r4 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getNext(org.w3c.dom.Node,java.lang.String,int)>(r4, r1, 1)	R	null
+r4 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 1)	U	null
+if r1 == null goto $r6 = staticinvoke <org.apache.tomcat.util.DomUtil: java.lang.String getAttribute(org.w3c.dom.Node,java.lang.String)>(r4, r2)	R	null
+if r3 != null goto (branch)	R	null
+if $z1 == 0 goto return r4	R	null
+$z2 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>($r8)	U	null
+if r1 == null goto $r8 = staticinvoke <org.apache.tomcat.util.DomUtil: java.lang.String getAttribute(org.w3c.dom.Node,java.lang.String)>(r4, r2)	R	null
+if $z0 == 0 goto return r4	R	null
+goto [?= (branch)]	R	null
+$r5 = interfaceinvoke r4.<org.w3c.dom.Node: java.lang.String getNodeName()>()	U	null
+r4 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getNext(org.w3c.dom.Node,java.lang.String,int)>(r4, r1, 1)	U	null
+$r8 = staticinvoke <org.apache.tomcat.util.DomUtil: java.lang.String getAttribute(org.w3c.dom.Node,java.lang.String)>(r4, r2)	U	null

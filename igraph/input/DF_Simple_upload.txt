@@ -1,0 +1,76 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: javax.servlet.http.HttpServletRequest
+[r0, r1]	r2 := @parameter1: org.apache.tomcat.util.res.StringManager
+[r0, r1, r2]	r3 = ""
+[r0, r1, r2, r3]	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: javax.servlet.http.Part getPart(java.lang.String)>("deployWar")
+[r0, r1, r2, r3, r4]	if r4 != null goto $r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")
+[r0, r1, r2, r3, r4]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadNoFile")
+[r0, r1, r2, r3, r4]	goto [?= return r3]
+[r0, r1, r2, r3, r4]	$r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")
+[r0, r1, r2, r3, r4, $r10]	r5 = specialinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: java.lang.String extractFilename(java.lang.String)>($r10)
+[r0, r1, r2, r3, r4, $r10, r5]	$r11 = <java.util.Locale: java.util.Locale ENGLISH>
+[r0, r1, r2, r3, r4, $r10, r5, $r11]	$r12 = virtualinvoke r5.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r11)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12]	$z0 = virtualinvoke $r12.<java.lang.String: boolean endsWith(java.lang.String)>(".war")
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0]	if $z0 != 0 goto $i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0]	$r13 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $r13]	$r13[0] = r5
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $r13]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadNotWar", $r13)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $r13]	goto [?= return r3]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0]	$i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0]	if $i0 < 0 goto $i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0]	$i1 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i1]	$i2 = $i1 + 1
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i1, $i2]	r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i2)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0]	$i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3]	if $i3 < 0 goto $r14 = new java.io.File
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3]	$i4 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $i4]	$i5 = $i4 + 1
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $i4, $i5]	r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i5)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3]	$r14 = new java.io.File
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14]	$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: java.io.File deployed>
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15]	specialinvoke $r14.<java.io.File: void <init>(java.io.File,java.lang.String)>($r15, r5)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15]	r6 = $r14
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6]	$z1 = virtualinvoke r6.<java.io.File: boolean exists()>()
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1]	if $z1 == 0 goto $r17 = new org.apache.catalina.util.ContextName
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1]	$r16 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r16]	$r16[0] = r5
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r16]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadWarExists", $r16)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r16]	goto [?= return r3]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1]	$r17 = new org.apache.catalina.util.ContextName
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17]	specialinvoke $r17.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,boolean)>(r5, 1)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17]	r7 = $r17
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7]	r8 = virtualinvoke r7.<org.apache.catalina.util.ContextName: java.lang.String getName()>()
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8]	$r18 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18]	$r19 = interfaceinvoke $r18.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19]	if $r19 == null goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19]	$z2 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z2]	if $z2 != 0 goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z2]	$r20 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z2, $r20]	$r20[0] = r5
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z2, $r20]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadInServerXml", $r20)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z2, $r20]	goto [?= return r3]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19]	$z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3]	if $z3 == 0 goto virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3]	$r21 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r21]	$r21[0] = r8
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r21]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.inService", $r21)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r21]	goto [?= return r3]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3]	$r22 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r22]	interfaceinvoke r4.<javax.servlet.http.Part: void write(java.lang.String)>($r22)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r22]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void check(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r22]	goto [?= virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)]
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3]	$r23 := @caughtexception
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r23]	r9 = $r23
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r23, r9]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r23, r9]	throw r9
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r22]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)
+[r0, r1, r2, r3, r4, $r10, r5, $r11, $r12, $z0, $i0, $i3, $r14, $r15, r6, $z1, $r17, r7, r8, $r18, $r19, $z3, $r22]	goto [?= return r3]
+[r0, r1, r2, r3]	$r24 := @caughtexception
+[r0, r1, r2, r3, $r24]	r25 = $r24
+[r0, r1, r2, r3, $r24, r25]	$r26 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, $r24, r25, $r26]	$r27 = virtualinvoke r25.<java.lang.Exception: java.lang.String getMessage()>()
+[r0, r1, r2, r3, $r24, r25, $r26, $r27]	$r26[0] = $r27
+[r0, r1, r2, r3, $r24, r25, $r26, $r27]	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadFail", $r26)
+[r0, r1, r2, r3, $r24, r25, $r26, $r27]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String,java.lang.Throwable)>(r3, r25)
+[r0, r1, r2, r3]	return r3

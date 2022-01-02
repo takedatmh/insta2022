@@ -1,0 +1,64 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: org.apache.catalina.util.ContextName
+[r0, r1]	r2 := @parameter1: org.apache.tomcat.util.res.StringManager
+[r0, r1, r2]	if r1 == null goto r3 = null
+[r0, r1, r2]	$r9 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()
+[r0, r1, r2, $r9]	$z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("/")
+[r0, r1, r2, $r9, $z0]	if $z0 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>
+[r0, r1, r2, $r9, $z0]	$r10 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()
+[r0, r1, r2, $r9, $z0, $r10]	$z1 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("")
+[r0, r1, r2, $r9, $z0, $r10, $z1]	if $z1 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>
+[r0, r1, r2]	r3 = null
+[r0, r1, r2, r3]	if r1 == null goto $r11 = new java.lang.IllegalArgumentException
+[r0, r1, r2, r3]	r3 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()
+[r0, r1, r2, r3]	$r11 = new java.lang.IllegalArgumentException
+[r0, r1, r2, r3, $r11]	$r12 = newarray (java.lang.Object)[1]
+[r0, r1, r2, r3, $r11, $r12]	$r13 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)
+[r0, r1, r2, r3, $r11, $r12, $r13]	$r12[0] = $r13
+[r0, r1, r2, r3, $r11, $r12, $r13]	$r14 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.invalidPath", $r12)
+[r0, r1, r2, r3, $r11, $r12, $r13, $r14]	specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r14)
+[r0, r1, r2, r3, $r11, $r12, $r13, $r14]	throw $r11
+[r0, r1, r2, $r9, $z0]	$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>
+[r0, r1, r2, $r9, $z0, $r15]	$r16 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getName()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16]	$r17 = interfaceinvoke $r15.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>($r16)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17]	r18 = (org.apache.catalina.Context) $r17
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18]	if r18 != null goto r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18]	$r19 = new java.lang.IllegalArgumentException
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19]	$r20 = newarray (java.lang.Object)[1]
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20]	$r21 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getDisplayName()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20, $r21]	$r22 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r21)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20, $r21, $r22]	$r20[0] = $r22
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20, $r21, $r22]	$r23 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.noContext", $r20)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20, $r21, $r22, $r23]	specialinvoke $r19.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r23)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, $r19, $r20, $r21, $r22, $r23]	throw $r19
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18]	r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4]	$r24 = new java.util.ArrayList
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24]	specialinvoke $r24.<java.util.ArrayList: void <init>()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24]	r5 = $r24
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5]	$r25 = interfaceinvoke r4.<org.apache.catalina.Manager: org.apache.catalina.Session[] findSessions()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25]	$r26 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r25)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26]	interfaceinvoke r5.<java.util.List: boolean addAll(java.util.Collection)>($r26)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26]	$z3 = r4 instanceof org.apache.catalina.DistributedManager
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3]	if $z3 == 0 goto return r5
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3]	$z4 = r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions>
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4]	if $z4 == 0 goto return r5
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4]	$r27 = (org.apache.catalina.DistributedManager) r4
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27]	r6 = interfaceinvoke $r27.<org.apache.catalina.DistributedManager: java.util.Set getSessionIdsFull()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6]	r7 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7]	goto [?= $z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6]	$r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, $r28]	r8 = (org.apache.catalina.Session) $r28
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, $r28, r8]	$r29 = interfaceinvoke r8.<org.apache.catalina.Session: java.lang.String getId()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, $r28, r8, $r29]	interfaceinvoke r6.<java.util.Set: boolean remove(java.lang.Object)>($r29)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7]	$z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6]	if $z6 != 0 goto $r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6]	r30 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30]	goto [?= $z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()]
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8]	$r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8, $r31]	r32 = (java.lang.String) $r31
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8, $r31, r32]	$r33 = new org.apache.catalina.manager.DummyProxySession
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8, $r31, r32, $r33]	specialinvoke $r33.<org.apache.catalina.manager.DummyProxySession: void <init>(java.lang.String)>(r32)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8, $r31, r32, $r33]	interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r33)
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30]	$z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3, $z4, $r27, r6, r7, $z6, r30, $z8]	if $z8 != 0 goto $r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()
+[r0, r1, r2, $r9, $z0, $r15, $r16, $r17, r18, r4, $r24, r5, $r25, $r26, $z3]	return r5

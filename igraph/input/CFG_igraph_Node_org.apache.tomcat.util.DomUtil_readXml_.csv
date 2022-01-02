@@ -1,0 +1,13 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.InputStream	R	null
+return r2	R	null
+virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: void setEntityResolver(org.xml.sax.EntityResolver)>($r4)	R	null
+r3 = virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>()	U	null
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setValidating(boolean)>(0)	R	null
+r1 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>()	U	null
+specialinvoke $r4.<org.apache.tomcat.util.DomUtil$NullResolver: void <init>()>()	R	null
+n0 = null	U	null
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringElementContentWhitespace(boolean)>(1)	R	null
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringComments(boolean)>(0)	R	null
+$r4 = new org.apache.tomcat.util.DomUtil$NullResolver	C	null
+r2 = virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>(r0)	U	null

@@ -1,0 +1,73 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: java.lang.String
+[r0, r1]	r2 = null
+[r0, r1, r2]	$r3 = "CreationTime"
+[r0, r1, r2, $r3]	$z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0]	if $z0 == 0 goto $r5 = "id"
+[r0, r1, r2, $r3, $z0]	$r4 = new org.apache.catalina.manager.HTMLManagerServlet$1
+[r0, r1, r2, $r3, $z0, $r4]	specialinvoke $r4.<org.apache.catalina.manager.HTMLManagerServlet$1: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r4]	r2 = $r4
+[r0, r1, r2, $r3, $z0, $r4]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0]	$r5 = "id"
+[r0, r1, r2, $r3, $z0, $r5]	$z1 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1]	if $z1 == 0 goto $r7 = "LastAccessedTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1]	$r6 = new org.apache.catalina.manager.HTMLManagerServlet$2
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r6]	specialinvoke $r6.<org.apache.catalina.manager.HTMLManagerServlet$2: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r6]	r2 = $r6
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r6]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1]	$r7 = "LastAccessedTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7]	$z2 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2]	if $z2 == 0 goto $r9 = "MaxInactiveInterval"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2]	$r8 = new org.apache.catalina.manager.HTMLManagerServlet$3
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r8]	specialinvoke $r8.<org.apache.catalina.manager.HTMLManagerServlet$3: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r8]	r2 = $r8
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r8]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2]	$r9 = "MaxInactiveInterval"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9]	$z3 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3]	if $z3 == 0 goto $r11 = "new"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3]	$r10 = new org.apache.catalina.manager.HTMLManagerServlet$4
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r10]	specialinvoke $r10.<org.apache.catalina.manager.HTMLManagerServlet$4: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r10]	r2 = $r10
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r10]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3]	$r11 = "new"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11]	$z4 = virtualinvoke $r11.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4]	if $z4 == 0 goto $r13 = "locale"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4]	$r12 = new org.apache.catalina.manager.HTMLManagerServlet$5
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r12]	specialinvoke $r12.<org.apache.catalina.manager.HTMLManagerServlet$5: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r12]	r2 = $r12
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r12]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4]	$r13 = "locale"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13]	$z5 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5]	if $z5 == 0 goto $r15 = "user"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5]	$r14 = new org.apache.catalina.manager.HTMLManagerServlet$6
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r14]	specialinvoke $r14.<org.apache.catalina.manager.HTMLManagerServlet$6: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r14]	r2 = $r14
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r14]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5]	$r15 = "user"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15]	$z6 = virtualinvoke $r15.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6]	if $z6 == 0 goto $r17 = "UsedTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6]	$r16 = new org.apache.catalina.manager.HTMLManagerServlet$7
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r16]	specialinvoke $r16.<org.apache.catalina.manager.HTMLManagerServlet$7: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r16]	r2 = $r16
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r16]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6]	$r17 = "UsedTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17]	$z7 = virtualinvoke $r17.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7]	if $z7 == 0 goto $r19 = "InactiveTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7]	$r18 = new org.apache.catalina.manager.HTMLManagerServlet$8
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r18]	specialinvoke $r18.<org.apache.catalina.manager.HTMLManagerServlet$8: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r18]	r2 = $r18
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r18]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7]	$r19 = "InactiveTime"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19]	$z8 = virtualinvoke $r19.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8]	if $z8 == 0 goto $r21 = "TTL"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8]	$r20 = new org.apache.catalina.manager.HTMLManagerServlet$9
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r20]	specialinvoke $r20.<org.apache.catalina.manager.HTMLManagerServlet$9: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r20]	r2 = $r20
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r20]	goto [?= return r2]
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8]	$r21 = "TTL"
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r21]	$z9 = virtualinvoke $r21.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r21, $z9]	if $z9 == 0 goto return r2
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r21, $z9]	$r22 = new org.apache.catalina.manager.HTMLManagerServlet$10
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r21, $z9, $r22]	specialinvoke $r22.<org.apache.catalina.manager.HTMLManagerServlet$10: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)
+[r0, r1, r2, $r3, $z0, $r5, $z1, $r7, $z2, $r9, $z3, $r11, $z4, $r13, $z5, $r15, $z6, $r17, $z7, $r19, $z8, $r21, $z9, $r22]	r2 = $r22
+[r0, r1, r2, $r3, $z0]	return r2

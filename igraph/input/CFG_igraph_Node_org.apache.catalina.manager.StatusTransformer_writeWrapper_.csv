@@ -1,0 +1,55 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+$r15 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "loadTime")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	R	null
+if r4 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Request count: ")	R	null
+$r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "maxTime")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	R	null
+$r10 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r9, 1)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r8)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Classloading time: ")	R	null
+$r16 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r15, 0)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Processing time: ")	R	null
+i0 := @parameter3: int	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h2>")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Max time: ")	R	null
+$r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>(r1, "findMappings", null, null)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Load time: ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r16)	R	null
+$r13 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestCount")	U	null
+$r9 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "processingTime")	U	null
+i1 = i1 + 1	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r13)	R	null
+$r17 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "classLoadTime")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r10)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Error count: ")	R	null
+if $i2 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h2>")	R	null
+$r8 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r7)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" [ ")	R	null
+r4 = (java.lang.String[]) $r5	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" , ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r14)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	R	null
+i1 = 0	U	null
+$r6 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r3)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r6)	R	null
+$i5 = lengthof r4	U	null
+r1 := @parameter1: javax.management.ObjectName	R	null
+r3 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r18)	R	null
+if i1 >= $i4 goto i1 = i1 + 1	R	null
+$i2 = lengthof r4	U	null
+if i1 < $i5 goto $r7 = r4[i1]	R	null
+$r14 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "errorCount")	U	null
+$r18 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r17, 0)	U	null
+goto [?= $i5 = lengthof r4]	R	null
+$i3 = lengthof r4	U	null
+if i0 != 0 goto return	R	null
+return	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	R	null
+$r12 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r11, 0)	U	null
+$i4 = $i3 - 1	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" ] ")	R	null
+$r7 = r4[i1]	U	null
+r2 := @parameter2: javax.management.MBeanServer	R	null

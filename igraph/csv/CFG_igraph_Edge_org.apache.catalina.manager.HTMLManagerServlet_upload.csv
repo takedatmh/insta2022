@@ -1,0 +1,152 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	r1 := @parameter0: javax.servlet.http.HttpServletRequest	0
+r1 := @parameter0: javax.servlet.http.HttpServletRequest	r2 := @parameter1: org.apache.tomcat.util.res.StringManager	0
+r2 := @parameter1: org.apache.tomcat.util.res.StringManager	r3 = ""	0
+r3 = ""	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: javax.servlet.http.Part getPart(java.lang.String)>("deployWar")	1
+r3 = ""	$r24 := @caughtexception	1
+r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: javax.servlet.http.Part getPart(java.lang.String)>("deployWar")	if r4 != null goto $r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	1
+r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: javax.servlet.http.Part getPart(java.lang.String)>("deployWar")	$r24 := @caughtexception	1
+if r4 != null goto $r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadNoFile")	0
+if r4 != null goto $r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	$r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	0
+if r4 != null goto $r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	$r24 := @caughtexception	0
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadNoFile")	goto [?= return r3]	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadNoFile")	$r24 := @caughtexception	1
+goto [?= return r3]	return r3	0
+goto [?= return r3]	$r24 := @caughtexception	0
+$r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	r5 = specialinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: java.lang.String extractFilename(java.lang.String)>($r10)	1
+$r10 = interfaceinvoke r4.<javax.servlet.http.Part: java.lang.String getHeader(java.lang.String)>("Content-Disposition")	$r24 := @caughtexception	1
+r5 = specialinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: java.lang.String extractFilename(java.lang.String)>($r10)	$r11 = <java.util.Locale: java.util.Locale ENGLISH>	1
+r5 = specialinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: java.lang.String extractFilename(java.lang.String)>($r10)	$r24 := @caughtexception	1
+$r11 = <java.util.Locale: java.util.Locale ENGLISH>	$r12 = virtualinvoke r5.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r11)	1
+$r11 = <java.util.Locale: java.util.Locale ENGLISH>	$r24 := @caughtexception	1
+$r12 = virtualinvoke r5.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r11)	$z0 = virtualinvoke $r12.<java.lang.String: boolean endsWith(java.lang.String)>(".war")	1
+$r12 = virtualinvoke r5.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r11)	$r24 := @caughtexception	1
+$z0 = virtualinvoke $r12.<java.lang.String: boolean endsWith(java.lang.String)>(".war")	if $z0 != 0 goto $i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	1
+$z0 = virtualinvoke $r12.<java.lang.String: boolean endsWith(java.lang.String)>(".war")	$r24 := @caughtexception	1
+if $z0 != 0 goto $i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$r13 = newarray (java.lang.Object)[1]	0
+if $z0 != 0 goto $i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	0
+if $z0 != 0 goto $i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$r24 := @caughtexception	0
+$r13 = newarray (java.lang.Object)[1]	$r13[0] = r5	1
+$r13 = newarray (java.lang.Object)[1]	$r24 := @caughtexception	1
+$r13[0] = r5	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadNotWar", $r13)	1
+$r13[0] = r5	$r24 := @caughtexception	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadNotWar", $r13)	goto [?= return r3]	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadNotWar", $r13)	$r24 := @caughtexception	1
+goto [?= return r3]	return r3	0
+goto [?= return r3]	$r24 := @caughtexception	0
+$i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	if $i0 < 0 goto $i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	1
+$i0 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$r24 := @caughtexception	1
+if $i0 < 0 goto $i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$i1 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	0
+if $i0 < 0 goto $i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	0
+if $i0 < 0 goto $i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$r24 := @caughtexception	0
+$i1 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$i2 = $i1 + 1	1
+$i1 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(92)	$r24 := @caughtexception	1
+$i2 = $i1 + 1	r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i2)	1
+$i2 = $i1 + 1	$r24 := @caughtexception	1
+r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i2)	$i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	1
+r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i2)	$r24 := @caughtexception	1
+$i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	if $i3 < 0 goto $r14 = new java.io.File	1
+$i3 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$r24 := @caughtexception	1
+if $i3 < 0 goto $r14 = new java.io.File	$i4 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	0
+if $i3 < 0 goto $r14 = new java.io.File	$r14 = new java.io.File	0
+if $i3 < 0 goto $r14 = new java.io.File	$r24 := @caughtexception	0
+$i4 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$i5 = $i4 + 1	1
+$i4 = virtualinvoke r5.<java.lang.String: int lastIndexOf(int)>(47)	$r24 := @caughtexception	1
+$i5 = $i4 + 1	r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i5)	1
+$i5 = $i4 + 1	$r24 := @caughtexception	1
+r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i5)	$r14 = new java.io.File	0
+r5 = virtualinvoke r5.<java.lang.String: java.lang.String substring(int)>($i5)	$r24 := @caughtexception	1
+$r14 = new java.io.File	$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: java.io.File deployed>	1
+$r14 = new java.io.File	$r24 := @caughtexception	1
+$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: java.io.File deployed>	specialinvoke $r14.<java.io.File: void <init>(java.io.File,java.lang.String)>($r15, r5)	1
+$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: java.io.File deployed>	$r24 := @caughtexception	1
+specialinvoke $r14.<java.io.File: void <init>(java.io.File,java.lang.String)>($r15, r5)	r6 = $r14	0
+specialinvoke $r14.<java.io.File: void <init>(java.io.File,java.lang.String)>($r15, r5)	$r24 := @caughtexception	0
+r6 = $r14	$z1 = virtualinvoke r6.<java.io.File: boolean exists()>()	1
+r6 = $r14	$r24 := @caughtexception	1
+$z1 = virtualinvoke r6.<java.io.File: boolean exists()>()	if $z1 == 0 goto $r17 = new org.apache.catalina.util.ContextName	1
+$z1 = virtualinvoke r6.<java.io.File: boolean exists()>()	$r24 := @caughtexception	1
+if $z1 == 0 goto $r17 = new org.apache.catalina.util.ContextName	$r16 = newarray (java.lang.Object)[1]	0
+if $z1 == 0 goto $r17 = new org.apache.catalina.util.ContextName	$r17 = new org.apache.catalina.util.ContextName	0
+if $z1 == 0 goto $r17 = new org.apache.catalina.util.ContextName	$r24 := @caughtexception	0
+$r16 = newarray (java.lang.Object)[1]	$r16[0] = r5	1
+$r16 = newarray (java.lang.Object)[1]	$r24 := @caughtexception	1
+$r16[0] = r5	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadWarExists", $r16)	1
+$r16[0] = r5	$r24 := @caughtexception	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadWarExists", $r16)	goto [?= return r3]	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadWarExists", $r16)	$r24 := @caughtexception	1
+goto [?= return r3]	return r3	0
+goto [?= return r3]	$r24 := @caughtexception	0
+$r17 = new org.apache.catalina.util.ContextName	specialinvoke $r17.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,boolean)>(r5, 1)	1
+$r17 = new org.apache.catalina.util.ContextName	$r24 := @caughtexception	1
+specialinvoke $r17.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,boolean)>(r5, 1)	r7 = $r17	0
+specialinvoke $r17.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,boolean)>(r5, 1)	$r24 := @caughtexception	0
+r7 = $r17	r8 = virtualinvoke r7.<org.apache.catalina.util.ContextName: java.lang.String getName()>()	1
+r7 = $r17	$r24 := @caughtexception	1
+r8 = virtualinvoke r7.<org.apache.catalina.util.ContextName: java.lang.String getName()>()	$r18 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	1
+r8 = virtualinvoke r7.<org.apache.catalina.util.ContextName: java.lang.String getName()>()	$r24 := @caughtexception	1
+$r18 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r19 = interfaceinvoke $r18.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r8)	1
+$r18 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r24 := @caughtexception	1
+$r19 = interfaceinvoke $r18.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r8)	if $r19 == null goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	1
+$r19 = interfaceinvoke $r18.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r8)	$r24 := @caughtexception	1
+if $r19 == null goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$z2 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r8)	0
+if $r19 == null goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	0
+if $r19 == null goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+$z2 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r8)	if $z2 != 0 goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	1
+$z2 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r8)	$r24 := @caughtexception	1
+if $z2 != 0 goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$r20 = newarray (java.lang.Object)[1]	0
+if $z2 != 0 goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	0
+if $z2 != 0 goto $z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+$r20 = newarray (java.lang.Object)[1]	$r20[0] = r5	1
+$r20 = newarray (java.lang.Object)[1]	$r24 := @caughtexception	1
+$r20[0] = r5	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadInServerXml", $r20)	1
+$r20[0] = r5	$r24 := @caughtexception	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadInServerXml", $r20)	goto [?= return r3]	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadInServerXml", $r20)	$r24 := @caughtexception	1
+goto [?= return r3]	return r3	0
+goto [?= return r3]	$r24 := @caughtexception	0
+$z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	if $z3 == 0 goto virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	1
+$z3 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isServiced(java.lang.String)>(r8)	$r24 := @caughtexception	1
+if $z3 == 0 goto virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	$r21 = newarray (java.lang.Object)[1]	0
+if $z3 == 0 goto virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	0
+if $z3 == 0 goto virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+$r21 = newarray (java.lang.Object)[1]	$r21[0] = r8	1
+$r21 = newarray (java.lang.Object)[1]	$r24 := @caughtexception	1
+$r21[0] = r8	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.inService", $r21)	1
+$r21[0] = r8	$r24 := @caughtexception	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.inService", $r21)	goto [?= return r3]	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.inService", $r21)	$r24 := @caughtexception	1
+goto [?= return r3]	return r3	0
+goto [?= return r3]	$r24 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	$r23 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void addServiced(java.lang.String)>(r8)	$r22 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()	0
+$r22 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()	$r23 := @caughtexception	1
+$r22 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()	$r24 := @caughtexception	1
+$r22 = virtualinvoke r6.<java.io.File: java.lang.String getAbsolutePath()>()	interfaceinvoke r4.<javax.servlet.http.Part: void write(java.lang.String)>($r22)	1
+interfaceinvoke r4.<javax.servlet.http.Part: void write(java.lang.String)>($r22)	$r23 := @caughtexception	0
+interfaceinvoke r4.<javax.servlet.http.Part: void write(java.lang.String)>($r22)	$r24 := @caughtexception	0
+interfaceinvoke r4.<javax.servlet.http.Part: void write(java.lang.String)>($r22)	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void check(java.lang.String)>(r8)	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void check(java.lang.String)>(r8)	$r23 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void check(java.lang.String)>(r8)	$r24 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void check(java.lang.String)>(r8)	goto [?= virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)]	0
+goto [?= virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)]	$r24 := @caughtexception	0
+goto [?= virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)]	$r23 := @caughtexception	0
+goto [?= virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	0
+$r23 := @caughtexception	r9 = $r23	0
+$r23 := @caughtexception	$r24 := @caughtexception	0
+r9 = $r23	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	1
+r9 = $r23	$r24 := @caughtexception	1
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	throw r9	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+throw r9	$r24 := @caughtexception	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	goto [?= return r3]	0
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void removeServiced(java.lang.String)>(r8)	$r24 := @caughtexception	0
+goto [?= return r3]	return r3	0
+$r24 := @caughtexception	r25 = $r24	0
+r25 = $r24	$r26 = newarray (java.lang.Object)[1]	0
+$r26 = newarray (java.lang.Object)[1]	$r27 = virtualinvoke r25.<java.lang.Exception: java.lang.String getMessage()>()	1
+$r27 = virtualinvoke r25.<java.lang.Exception: java.lang.String getMessage()>()	$r26[0] = $r27	1
+$r26[0] = $r27	r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadFail", $r26)	1
+r3 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("htmlManagerServlet.deployUploadFail", $r26)	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String,java.lang.Throwable)>(r3, r25)	1
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String,java.lang.Throwable)>(r3, r25)	return r3	0

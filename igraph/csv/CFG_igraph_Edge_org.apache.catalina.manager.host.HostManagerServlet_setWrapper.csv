@@ -1,0 +1,24 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	r1 := @parameter0: org.apache.catalina.Wrapper	0
+r1 := @parameter0: org.apache.catalina.Wrapper	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Wrapper wrapper> = r1	0
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Wrapper wrapper> = r1	if r1 != null goto $r2 = interfaceinvoke r1.<org.apache.catalina.Wrapper: org.apache.catalina.Container getParent()>()	1
+if r1 != null goto $r2 = interfaceinvoke r1.<org.apache.catalina.Wrapper: org.apache.catalina.Container getParent()>()	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context> = null	0
+if r1 != null goto $r2 = interfaceinvoke r1.<org.apache.catalina.Wrapper: org.apache.catalina.Container getParent()>()	$r2 = interfaceinvoke r1.<org.apache.catalina.Wrapper: org.apache.catalina.Container getParent()>()	0
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context> = null	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost> = null	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost> = null	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine> = null	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine> = null	goto [?= $r10 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)]	1
+goto [?= $r10 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)]	$r10 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)	0
+$r2 = interfaceinvoke r1.<org.apache.catalina.Wrapper: org.apache.catalina.Container getParent()>()	$r3 = (org.apache.catalina.Context) $r2	1
+$r3 = (org.apache.catalina.Context) $r2	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context> = $r3	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context> = $r3	$r4 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context>	1
+$r4 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Context context>	$r5 = interfaceinvoke $r4.<org.apache.catalina.Context: org.apache.catalina.Container getParent()>()	1
+$r5 = interfaceinvoke $r4.<org.apache.catalina.Context: org.apache.catalina.Container getParent()>()	$r6 = (org.apache.catalina.Host) $r5	1
+$r6 = (org.apache.catalina.Host) $r5	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost> = $r6	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost> = $r6	$r7 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	1
+$r7 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	$r8 = interfaceinvoke $r7.<org.apache.catalina.Host: org.apache.catalina.Container getParent()>()	1
+$r8 = interfaceinvoke $r7.<org.apache.catalina.Host: org.apache.catalina.Container getParent()>()	$r9 = (org.apache.catalina.Engine) $r8	1
+$r9 = (org.apache.catalina.Engine) $r8	r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine> = $r9	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine> = $r9	$r10 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)	1
+$r10 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)	$r11 = virtualinvoke $r10.<org.apache.tomcat.util.modeler.Registry: javax.management.MBeanServer getMBeanServer()>()	1
+$r11 = virtualinvoke $r10.<org.apache.tomcat.util.modeler.Registry: javax.management.MBeanServer getMBeanServer()>()	r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.management.MBeanServer mBeanServer> = $r11	1
+r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.management.MBeanServer mBeanServer> = $r11	return	1

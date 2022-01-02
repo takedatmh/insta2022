@@ -1,0 +1,9 @@
+start	end	CRUD_Test
+r0 := @parameter0: org.w3c.dom.Node	if r0 != null goto r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	0
+if r0 != null goto r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	return null	0
+if r0 != null goto r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	0
+r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	if r1 != null goto r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	1
+if r1 != null goto r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	return null	0
+if r1 != null goto r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	0
+r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	$r3 = virtualinvoke r2.<java.lang.String: java.lang.String trim()>()	1
+$r3 = virtualinvoke r2.<java.lang.String: java.lang.String trim()>()	return $r3	1

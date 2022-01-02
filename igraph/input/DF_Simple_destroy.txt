@@ -1,0 +1,12 @@
+[]	r0 := @this: org.apache.catalina.manager.StatusManagerServlet
+[r0]	r1 = "JMImplementation:type=MBeanServerDelegate"
+[r0, r1]	$r4 = new javax.management.ObjectName
+[r0, r1, $r4]	specialinvoke $r4.<javax.management.ObjectName: void <init>(java.lang.String)>(r1)
+[r0, r1, $r4]	r2 = $r4
+[r0, r1, $r4, r2]	$r5 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>
+[r0, r1, $r4, r2, $r5]	interfaceinvoke $r5.<javax.management.MBeanServer: void removeNotificationListener(javax.management.ObjectName,javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)>(r2, r0, null, null)
+[r0, r1, $r4, r2, $r5]	goto [?= return]
+[r0, r1]	$r6 := @caughtexception
+[r0, r1, $r6]	r3 = $r6
+[r0, r1, $r6, r3]	virtualinvoke r3.<java.lang.Exception: void printStackTrace()>()
+[r0, r1]	return

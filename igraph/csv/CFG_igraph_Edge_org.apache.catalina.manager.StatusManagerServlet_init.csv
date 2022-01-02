@@ -1,0 +1,146 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.StatusManagerServlet	$r6 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)	0
+$r6 = staticinvoke <org.apache.tomcat.util.modeler.Registry: org.apache.tomcat.util.modeler.Registry getRegistry(java.lang.Object,java.lang.Object)>(null, null)	$r7 = virtualinvoke $r6.<org.apache.tomcat.util.modeler.Registry: javax.management.MBeanServer getMBeanServer()>()	1
+$r7 = virtualinvoke $r6.<org.apache.tomcat.util.modeler.Registry: javax.management.MBeanServer getMBeanServer()>()	r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer> = $r7	1
+r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer> = $r7	r1 = "*:type=ProtocolHandler,*"	1
+r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer> = $r7	$r47 := @caughtexception	1
+r1 = "*:type=ProtocolHandler,*"	$r8 = new javax.management.ObjectName	0
+r1 = "*:type=ProtocolHandler,*"	$r47 := @caughtexception	1
+$r8 = new javax.management.ObjectName	specialinvoke $r8.<javax.management.ObjectName: void <init>(java.lang.String)>(r1)	1
+$r8 = new javax.management.ObjectName	$r47 := @caughtexception	1
+specialinvoke $r8.<javax.management.ObjectName: void <init>(java.lang.String)>(r1)	r2 = $r8	0
+specialinvoke $r8.<javax.management.ObjectName: void <init>(java.lang.String)>(r1)	$r47 := @caughtexception	0
+r2 = $r8	$r9 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	1
+r2 = $r8	$r47 := @caughtexception	1
+$r9 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	r3 = interfaceinvoke $r9.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r2, null)	1
+$r9 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	$r47 := @caughtexception	1
+r3 = interfaceinvoke $r9.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r2, null)	r4 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	1
+r3 = interfaceinvoke $r9.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r2, null)	$r47 := @caughtexception	1
+r4 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	1
+r4 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	$r47 := @caughtexception	1
+goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	$r47 := @caughtexception	0
+$r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	r5 = (javax.management.ObjectInstance) $r10	1
+$r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	1
+r5 = (javax.management.ObjectInstance) $r10	$r11 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	1
+r5 = (javax.management.ObjectInstance) $r10	$r47 := @caughtexception	1
+$r11 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	$r12 = virtualinvoke r5.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	1
+$r11 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	$r47 := @caughtexception	1
+$r12 = virtualinvoke r5.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	virtualinvoke $r11.<java.util.Vector: void addElement(java.lang.Object)>($r12)	1
+$r12 = virtualinvoke r5.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	$r47 := @caughtexception	1
+virtualinvoke $r11.<java.util.Vector: void addElement(java.lang.Object)>($r12)	$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+virtualinvoke $r11.<java.util.Vector: void addElement(java.lang.Object)>($r12)	$r47 := @caughtexception	0
+$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	if $z0 != 0 goto $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	1
+$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	$r47 := @caughtexception	1
+if $z0 != 0 goto $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	r13 = "*:type=ThreadPool,*"	0
+if $z0 != 0 goto $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	$r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	0
+if $z0 != 0 goto $r10 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	0
+r13 = "*:type=ThreadPool,*"	$r14 = new javax.management.ObjectName	0
+r13 = "*:type=ThreadPool,*"	$r47 := @caughtexception	1
+$r14 = new javax.management.ObjectName	specialinvoke $r14.<javax.management.ObjectName: void <init>(java.lang.String)>(r13)	1
+$r14 = new javax.management.ObjectName	$r47 := @caughtexception	1
+specialinvoke $r14.<javax.management.ObjectName: void <init>(java.lang.String)>(r13)	r15 = $r14	0
+specialinvoke $r14.<javax.management.ObjectName: void <init>(java.lang.String)>(r13)	$r47 := @caughtexception	0
+r15 = $r14	$r16 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	1
+r15 = $r14	$r47 := @caughtexception	1
+$r16 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	r17 = interfaceinvoke $r16.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r15, null)	1
+$r16 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	$r47 := @caughtexception	1
+r17 = interfaceinvoke $r16.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r15, null)	r18 = interfaceinvoke r17.<java.util.Set: java.util.Iterator iterator()>()	1
+r17 = interfaceinvoke $r16.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r15, null)	$r47 := @caughtexception	1
+r18 = interfaceinvoke r17.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]	1
+r18 = interfaceinvoke r17.<java.util.Set: java.util.Iterator iterator()>()	$r47 := @caughtexception	1
+goto [?= $z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]	$z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()	0
+goto [?= $z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()]	$r47 := @caughtexception	0
+$r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	r20 = (javax.management.ObjectInstance) $r19	1
+$r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	1
+r20 = (javax.management.ObjectInstance) $r19	$r21 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	1
+r20 = (javax.management.ObjectInstance) $r19	$r47 := @caughtexception	1
+$r21 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	$r22 = virtualinvoke r20.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	1
+$r21 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	$r47 := @caughtexception	1
+$r22 = virtualinvoke r20.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	virtualinvoke $r21.<java.util.Vector: void addElement(java.lang.Object)>($r22)	1
+$r22 = virtualinvoke r20.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	$r47 := @caughtexception	1
+virtualinvoke $r21.<java.util.Vector: void addElement(java.lang.Object)>($r22)	$z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()	0
+virtualinvoke $r21.<java.util.Vector: void addElement(java.lang.Object)>($r22)	$r47 := @caughtexception	0
+$z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()	if $z1 != 0 goto $r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	1
+$z1 = interfaceinvoke r18.<java.util.Iterator: boolean hasNext()>()	$r47 := @caughtexception	1
+if $z1 != 0 goto $r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	r23 = "*:type=GlobalRequestProcessor,*"	0
+if $z1 != 0 goto $r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	$r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	0
+if $z1 != 0 goto $r19 = interfaceinvoke r18.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	0
+r23 = "*:type=GlobalRequestProcessor,*"	$r24 = new javax.management.ObjectName	0
+r23 = "*:type=GlobalRequestProcessor,*"	$r47 := @caughtexception	1
+$r24 = new javax.management.ObjectName	specialinvoke $r24.<javax.management.ObjectName: void <init>(java.lang.String)>(r23)	1
+$r24 = new javax.management.ObjectName	$r47 := @caughtexception	1
+specialinvoke $r24.<javax.management.ObjectName: void <init>(java.lang.String)>(r23)	r25 = $r24	0
+specialinvoke $r24.<javax.management.ObjectName: void <init>(java.lang.String)>(r23)	$r47 := @caughtexception	0
+r25 = $r24	$r26 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	1
+r25 = $r24	$r47 := @caughtexception	1
+$r26 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	r27 = interfaceinvoke $r26.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r25, null)	1
+$r26 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	$r47 := @caughtexception	1
+r27 = interfaceinvoke $r26.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r25, null)	r28 = interfaceinvoke r27.<java.util.Set: java.util.Iterator iterator()>()	1
+r27 = interfaceinvoke $r26.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r25, null)	$r47 := @caughtexception	1
+r28 = interfaceinvoke r27.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()]	1
+r28 = interfaceinvoke r27.<java.util.Set: java.util.Iterator iterator()>()	$r47 := @caughtexception	1
+goto [?= $z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()]	$z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()	0
+goto [?= $z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()]	$r47 := @caughtexception	0
+$r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	r30 = (javax.management.ObjectInstance) $r29	1
+$r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	1
+r30 = (javax.management.ObjectInstance) $r29	$r31 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	1
+r30 = (javax.management.ObjectInstance) $r29	$r47 := @caughtexception	1
+$r31 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	$r32 = virtualinvoke r30.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	1
+$r31 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	$r47 := @caughtexception	1
+$r32 = virtualinvoke r30.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	virtualinvoke $r31.<java.util.Vector: void addElement(java.lang.Object)>($r32)	1
+$r32 = virtualinvoke r30.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	$r47 := @caughtexception	1
+virtualinvoke $r31.<java.util.Vector: void addElement(java.lang.Object)>($r32)	$z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()	0
+virtualinvoke $r31.<java.util.Vector: void addElement(java.lang.Object)>($r32)	$r47 := @caughtexception	0
+$z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()	if $z2 != 0 goto $r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	1
+$z2 = interfaceinvoke r28.<java.util.Iterator: boolean hasNext()>()	$r47 := @caughtexception	1
+if $z2 != 0 goto $r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	r33 = "*:type=RequestProcessor,*"	0
+if $z2 != 0 goto $r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	$r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	0
+if $z2 != 0 goto $r29 = interfaceinvoke r28.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	0
+r33 = "*:type=RequestProcessor,*"	$r34 = new javax.management.ObjectName	0
+r33 = "*:type=RequestProcessor,*"	$r47 := @caughtexception	1
+$r34 = new javax.management.ObjectName	specialinvoke $r34.<javax.management.ObjectName: void <init>(java.lang.String)>(r33)	1
+$r34 = new javax.management.ObjectName	$r47 := @caughtexception	1
+specialinvoke $r34.<javax.management.ObjectName: void <init>(java.lang.String)>(r33)	r35 = $r34	0
+specialinvoke $r34.<javax.management.ObjectName: void <init>(java.lang.String)>(r33)	$r47 := @caughtexception	0
+r35 = $r34	$r36 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	1
+r35 = $r34	$r47 := @caughtexception	1
+$r36 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	r37 = interfaceinvoke $r36.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r35, null)	1
+$r36 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	$r47 := @caughtexception	1
+r37 = interfaceinvoke $r36.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r35, null)	r38 = interfaceinvoke r37.<java.util.Set: java.util.Iterator iterator()>()	1
+r37 = interfaceinvoke $r36.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r35, null)	$r47 := @caughtexception	1
+r38 = interfaceinvoke r37.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()]	1
+r38 = interfaceinvoke r37.<java.util.Set: java.util.Iterator iterator()>()	$r47 := @caughtexception	1
+goto [?= $z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()]	$z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()	0
+goto [?= $z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()]	$r47 := @caughtexception	0
+$r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	r40 = (javax.management.ObjectInstance) $r39	1
+$r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	1
+r40 = (javax.management.ObjectInstance) $r39	$r41 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	1
+r40 = (javax.management.ObjectInstance) $r39	$r47 := @caughtexception	1
+$r41 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	$r42 = virtualinvoke r40.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	1
+$r41 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	$r47 := @caughtexception	1
+$r42 = virtualinvoke r40.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	virtualinvoke $r41.<java.util.Vector: void addElement(java.lang.Object)>($r42)	1
+$r42 = virtualinvoke r40.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	$r47 := @caughtexception	1
+virtualinvoke $r41.<java.util.Vector: void addElement(java.lang.Object)>($r42)	$z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()	0
+virtualinvoke $r41.<java.util.Vector: void addElement(java.lang.Object)>($r42)	$r47 := @caughtexception	0
+$z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()	if $z3 != 0 goto $r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	1
+$z3 = interfaceinvoke r38.<java.util.Iterator: boolean hasNext()>()	$r47 := @caughtexception	1
+if $z3 != 0 goto $r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	r43 = "JMImplementation:type=MBeanServerDelegate"	0
+if $z3 != 0 goto $r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	$r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	0
+if $z3 != 0 goto $r39 = interfaceinvoke r38.<java.util.Iterator: java.lang.Object next()>()	$r47 := @caughtexception	0
+r43 = "JMImplementation:type=MBeanServerDelegate"	$r44 = new javax.management.ObjectName	0
+r43 = "JMImplementation:type=MBeanServerDelegate"	$r47 := @caughtexception	1
+$r44 = new javax.management.ObjectName	specialinvoke $r44.<javax.management.ObjectName: void <init>(java.lang.String)>(r43)	1
+$r44 = new javax.management.ObjectName	$r47 := @caughtexception	1
+specialinvoke $r44.<javax.management.ObjectName: void <init>(java.lang.String)>(r43)	r45 = $r44	0
+specialinvoke $r44.<javax.management.ObjectName: void <init>(java.lang.String)>(r43)	$r47 := @caughtexception	0
+r45 = $r44	$r46 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	1
+r45 = $r44	$r47 := @caughtexception	1
+$r46 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	interfaceinvoke $r46.<javax.management.MBeanServer: void addNotificationListener(javax.management.ObjectName,javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)>(r45, r0, null, null)	1
+$r46 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	$r47 := @caughtexception	1
+interfaceinvoke $r46.<javax.management.MBeanServer: void addNotificationListener(javax.management.ObjectName,javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)>(r45, r0, null, null)	goto [?= return]	0
+interfaceinvoke $r46.<javax.management.MBeanServer: void addNotificationListener(javax.management.ObjectName,javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)>(r45, r0, null, null)	$r47 := @caughtexception	0
+goto [?= return]	return	0
+$r47 := @caughtexception	r48 = $r47	0
+r48 = $r47	virtualinvoke r48.<java.lang.Exception: void printStackTrace()>()	1
+virtualinvoke r48.<java.lang.Exception: void printStackTrace()>()	return	0

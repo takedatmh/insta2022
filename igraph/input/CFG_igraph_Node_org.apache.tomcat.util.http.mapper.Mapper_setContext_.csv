@@ -1,0 +1,12 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.tomcat.util.http.mapper.Mapper	R	null
+$r5 = r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion context>	U	null
+r1 := @parameter0: java.lang.String	R	null
+$r6.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: javax.naming.Context resources> = r3	U	null
+$r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r2	U	null
+return	R	null
+$r6 = r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion context>	U	null
+r2 := @parameter1: java.lang.String[]	R	null
+$r4 = r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion context>	U	null
+$r4.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String path> = r1	U	null
+r3 := @parameter2: javax.naming.Context	R	null

@@ -1,0 +1,40 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	z0 := @parameter0: boolean	0
+z0 := @parameter0: boolean	r1 := @parameter1: java.io.PrintWriter	0
+r1 := @parameter1: java.io.PrintWriter	r2 := @parameter2: org.apache.tomcat.util.res.StringManager	0
+r2 := @parameter2: org.apache.tomcat.util.res.StringManager	$r6 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	0
+$r6 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$z1 = $r6 instanceof org.apache.catalina.core.StandardHost	1
+$z1 = $r6 instanceof org.apache.catalina.core.StandardHost	if $z1 != 0 goto $r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	1
+if $z1 != 0 goto $r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$r7 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksFail")	0
+if $z1 != 0 goto $r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	0
+$r7 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksFail")	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r7)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r7)	return	0
+$r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$r9 = (org.apache.catalina.core.StandardHost) $r8	1
+$r9 = (org.apache.catalina.core.StandardHost) $r8	r3 = virtualinvoke $r9.<org.apache.catalina.core.StandardHost: java.lang.String[] findReloadedContextMemoryLeaks()>()	1
+r3 = virtualinvoke $r9.<org.apache.catalina.core.StandardHost: java.lang.String[] findReloadedContextMemoryLeaks()>()	$i2 = lengthof r3	1
+$i2 = lengthof r3	if $i2 <= 0 goto (branch)	1
+if $i2 <= 0 goto (branch)	if z0 == 0 goto r4 = r3	0
+if $i2 <= 0 goto (branch)	if z0 == 0 goto return	0
+if z0 == 0 goto r4 = r3	$r10 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksList")	0
+if z0 == 0 goto r4 = r3	r4 = r3	0
+$r10 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksList")	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	r4 = r3	0
+r4 = r3	i0 = lengthof r3	1
+i0 = lengthof r3	i1 = 0	1
+i1 = 0	goto [?= (branch)]	1
+goto [?= (branch)]	if i1 < i0 goto r5 = r4[i1]	0
+r5 = r4[i1]	$r12 = ""	1
+$r12 = ""	$z2 = virtualinvoke $r12.<java.lang.String: boolean equals(java.lang.Object)>(r5)	1
+$z2 = virtualinvoke $r12.<java.lang.String: boolean equals(java.lang.Object)>(r5)	if $z2 == 0 goto virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	1
+if $z2 == 0 goto virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	r5 = "/"	0
+if $z2 == 0 goto virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	0
+r5 = "/"	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>(r5)	i1 = i1 + 1	0
+i1 = i1 + 1	if i1 < i0 goto r5 = r4[i1]	1
+if i1 < i0 goto r5 = r4[i1]	goto [?= return]	0
+if i1 < i0 goto r5 = r4[i1]	r5 = r4[i1]	0
+goto [?= return]	return	0
+if z0 == 0 goto return	$r13 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksNone")	0
+if z0 == 0 goto return	return	0
+$r13 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.findleaksNone")	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	return	0

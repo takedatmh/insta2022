@@ -1,0 +1,11 @@
+start	end	CRUD_Test
+r0 := @parameter0: org.w3c.dom.Node	r1 := @parameter1: java.io.OutputStream	0
+r1 := @parameter1: java.io.OutputStream	r2 = staticinvoke <javax.xml.transform.TransformerFactory: javax.xml.transform.TransformerFactory newInstance()>()	0
+r2 = staticinvoke <javax.xml.transform.TransformerFactory: javax.xml.transform.TransformerFactory newInstance()>()	r3 = virtualinvoke r2.<javax.xml.transform.TransformerFactory: javax.xml.transform.Transformer newTransformer()>()	1
+r3 = virtualinvoke r2.<javax.xml.transform.TransformerFactory: javax.xml.transform.Transformer newTransformer()>()	virtualinvoke r3.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("indent", "yes")	1
+virtualinvoke r3.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("indent", "yes")	$r4 = new javax.xml.transform.dom.DOMSource	0
+$r4 = new javax.xml.transform.dom.DOMSource	specialinvoke $r4.<javax.xml.transform.dom.DOMSource: void <init>(org.w3c.dom.Node)>(r0)	1
+specialinvoke $r4.<javax.xml.transform.dom.DOMSource: void <init>(org.w3c.dom.Node)>(r0)	$r5 = new javax.xml.transform.stream.StreamResult	0
+$r5 = new javax.xml.transform.stream.StreamResult	specialinvoke $r5.<javax.xml.transform.stream.StreamResult: void <init>(java.io.OutputStream)>(r1)	1
+specialinvoke $r5.<javax.xml.transform.stream.StreamResult: void <init>(java.io.OutputStream)>(r1)	virtualinvoke r3.<javax.xml.transform.Transformer: void transform(javax.xml.transform.Source,javax.xml.transform.Result)>($r4, $r5)	0
+virtualinvoke r3.<javax.xml.transform.Transformer: void transform(javax.xml.transform.Source,javax.xml.transform.Result)>($r4, $r5)	return	0

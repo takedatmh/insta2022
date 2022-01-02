@@ -1,0 +1,74 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	r1 := @parameter0: java.io.PrintWriter	0
+r1 := @parameter0: java.io.PrintWriter	r2 := @parameter1: java.lang.String	0
+r2 := @parameter1: java.lang.String	r3 := @parameter2: org.apache.tomcat.util.res.StringManager	0
+r3 := @parameter2: org.apache.tomcat.util.res.StringManager	$i0 = r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug>	0
+$i0 = r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug>	if $i0 < 1 goto (branch)	1
+if $i0 < 1 goto (branch)	$r6 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	0
+if $i0 < 1 goto (branch)	if r2 == null goto $r9 = newarray (java.lang.Object)[1]	0
+$r6 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	$r7 = newarray (java.lang.Object)[1]	0
+$r7 = newarray (java.lang.Object)[1]	$r7[0] = r2	1
+$r7[0] = r2	$r8 = virtualinvoke $r6.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stop", $r7)	1
+$r8 = virtualinvoke $r6.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stop", $r7)	virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: void log(java.lang.String)>($r8)	1
+virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: void log(java.lang.String)>($r8)	if r2 == null goto $r9 = newarray (java.lang.Object)[1]	0
+if r2 == null goto $r9 = newarray (java.lang.Object)[1]	$i1 = virtualinvoke r2.<java.lang.String: int length()>()	0
+if r2 == null goto $r9 = newarray (java.lang.Object)[1]	$r9 = newarray (java.lang.Object)[1]	0
+$i1 = virtualinvoke r2.<java.lang.String: int length()>()	if $i1 != 0 goto $r11 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	1
+if $i1 != 0 goto $r11 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	$r9 = newarray (java.lang.Object)[1]	0
+if $i1 != 0 goto $r11 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	$r11 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	0
+$r9 = newarray (java.lang.Object)[1]	$r9[0] = r2	1
+$r9[0] = r2	$r10 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.invalidHostName", $r9)	1
+$r10 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.invalidHostName", $r9)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	return	0
+$r11 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	r4 = interfaceinvoke $r11.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	1
+r4 = interfaceinvoke $r11.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	if r4 != null goto $r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	1
+if r4 != null goto $r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	$r12 = newarray (java.lang.Object)[1]	0
+if r4 != null goto $r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	$r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	0
+$r12 = newarray (java.lang.Object)[1]	$r12[0] = r2	1
+$r12[0] = r2	$r13 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.noHost", $r12)	1
+$r13 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.noHost", $r12)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	return	0
+$r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	if r4 != $r14 goto $r17 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.LifecycleState getState()>()	1
+if r4 != $r14 goto $r17 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.LifecycleState getState()>()	$r15 = newarray (java.lang.Object)[1]	0
+if r4 != $r14 goto $r17 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.LifecycleState getState()>()	$r17 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.LifecycleState getState()>()	0
+$r15 = newarray (java.lang.Object)[1]	$r15[0] = r2	1
+$r15[0] = r2	$r16 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.cannotStopOwnHost", $r15)	1
+$r16 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.cannotStopOwnHost", $r15)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r16)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r16)	return	0
+$r17 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.LifecycleState getState()>()	$z0 = virtualinvoke $r17.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z0 = virtualinvoke $r17.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z0 != 0 goto interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	1
+if $z0 != 0 goto interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	$r18 = newarray (java.lang.Object)[1]	0
+if $z0 != 0 goto interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	0
+if $z0 != 0 goto interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	$r22 := @caughtexception	0
+$r18 = newarray (java.lang.Object)[1]	$r18[0] = r2	1
+$r18[0] = r2	$r19 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.alreadyStopped", $r18)	1
+$r19 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.alreadyStopped", $r18)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r19)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r19)	return	0
+interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	$r20 = newarray (java.lang.Object)[1]	0
+interfaceinvoke r4.<org.apache.catalina.Container: void stop()>()	$r22 := @caughtexception	0
+$r20 = newarray (java.lang.Object)[1]	$r20[0] = r2	1
+$r20 = newarray (java.lang.Object)[1]	$r22 := @caughtexception	1
+$r20[0] = r2	$r21 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopped", $r20)	1
+$r20[0] = r2	$r22 := @caughtexception	1
+$r21 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopped", $r20)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r21)	1
+$r21 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopped", $r20)	$r22 := @caughtexception	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r21)	goto [?= return]	0
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r21)	$r22 := @caughtexception	0
+goto [?= return]	return	0
+$r22 := @caughtexception	r5 = $r22	0
+r5 = $r22	$r23 = virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.servlet.ServletContext getServletContext()>()	1
+$r23 = virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: javax.servlet.ServletContext getServletContext()>()	$r24 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	1
+$r24 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	$r25 = newarray (java.lang.Object)[1]	0
+$r25 = newarray (java.lang.Object)[1]	$r25[0] = r2	1
+$r25[0] = r2	$r26 = virtualinvoke $r24.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopFailed", $r25)	1
+$r26 = virtualinvoke $r24.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopFailed", $r25)	interfaceinvoke $r23.<javax.servlet.ServletContext: void log(java.lang.String,java.lang.Throwable)>($r26, r5)	1
+interfaceinvoke $r23.<javax.servlet.ServletContext: void log(java.lang.String,java.lang.Throwable)>($r26, r5)	$r27 = newarray (java.lang.Object)[1]	0
+$r27 = newarray (java.lang.Object)[1]	$r27[0] = r2	1
+$r27[0] = r2	$r28 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopFailed", $r27)	1
+$r28 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.stopFailed", $r27)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r28)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r28)	$r29 = newarray (java.lang.Object)[1]	0
+$r29 = newarray (java.lang.Object)[1]	$r30 = virtualinvoke r5.<java.lang.Exception: java.lang.String toString()>()	1
+$r30 = virtualinvoke r5.<java.lang.Exception: java.lang.String toString()>()	$r29[0] = $r30	1
+$r29[0] = $r30	$r31 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.exception", $r29)	1
+$r31 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.exception", $r29)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r31)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r31)	return	0

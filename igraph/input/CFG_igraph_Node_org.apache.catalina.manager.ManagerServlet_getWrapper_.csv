@@ -1,0 +1,4 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.ManagerServlet	R	[]
+$r1 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Wrapper wrapper>	U	[r0]
+return $r1	R	[r0, $r1]

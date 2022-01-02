@@ -1,0 +1,27 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	r1 := @parameter0: java.io.File	0
+r1 := @parameter0: java.io.File	r2 = virtualinvoke r1.<java.io.File: java.lang.String[] list()>()	0
+r2 = virtualinvoke r1.<java.io.File: java.lang.String[] list()>()	if r2 != null goto i0 = 0	1
+if r2 != null goto i0 = 0	r2 = newarray (java.lang.String)[0]	0
+if r2 != null goto i0 = 0	i0 = 0	0
+r2 = newarray (java.lang.String)[0]	i0 = 0	1
+i0 = 0	goto [?= $i1 = lengthof r2]	1
+goto [?= $i1 = lengthof r2]	$i1 = lengthof r2	0
+$r4 = new java.io.File	$r5 = r2[i0]	1
+$r5 = r2[i0]	specialinvoke $r4.<java.io.File: void <init>(java.io.File,java.lang.String)>(r1, $r5)	1
+specialinvoke $r4.<java.io.File: void <init>(java.io.File,java.lang.String)>(r1, $r5)	r3 = $r4	0
+r3 = $r4	$z0 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()	1
+$z0 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()	if $z0 == 0 goto $z2 = virtualinvoke r3.<java.io.File: boolean delete()>()	1
+if $z0 == 0 goto $z2 = virtualinvoke r3.<java.io.File: boolean delete()>()	$z1 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: boolean undeployDir(java.io.File)>(r3)	0
+if $z0 == 0 goto $z2 = virtualinvoke r3.<java.io.File: boolean delete()>()	$z2 = virtualinvoke r3.<java.io.File: boolean delete()>()	0
+$z1 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: boolean undeployDir(java.io.File)>(r3)	if $z1 != 0 goto i0 = i0 + 1	1
+if $z1 != 0 goto i0 = i0 + 1	return 0	0
+if $z1 != 0 goto i0 = i0 + 1	i0 = i0 + 1	0
+$z2 = virtualinvoke r3.<java.io.File: boolean delete()>()	if $z2 != 0 goto i0 = i0 + 1	1
+if $z2 != 0 goto i0 = i0 + 1	return 0	0
+if $z2 != 0 goto i0 = i0 + 1	i0 = i0 + 1	0
+i0 = i0 + 1	$i1 = lengthof r2	1
+$i1 = lengthof r2	if i0 < $i1 goto $r4 = new java.io.File	1
+if i0 < $i1 goto $r4 = new java.io.File	$z3 = virtualinvoke r1.<java.io.File: boolean delete()>()	0
+if i0 < $i1 goto $r4 = new java.io.File	$r4 = new java.io.File	0
+$z3 = virtualinvoke r1.<java.io.File: boolean delete()>()	return $z3	1

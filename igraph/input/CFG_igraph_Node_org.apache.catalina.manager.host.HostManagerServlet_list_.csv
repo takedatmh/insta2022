@@ -1,0 +1,52 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	R	null
+$r23 = r6[i1]	U	null
+$r13[0] = $r15	U	null
+$r16 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.listed", $r13)	U	null
+$i2 = r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug>	U	null
+$r8 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	U	null
+r1 := @parameter0: java.io.PrintWriter	R	null
+$r9 = newarray (java.lang.Object)[1]	C	null
+r6 = interfaceinvoke r4.<org.apache.catalina.Host: java.lang.String[] findAliases()>()	U	null
+virtualinvoke r7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r20)	R	null
+r2 := @parameter1: org.apache.tomcat.util.res.StringManager	R	null
+if $i3 <= 0 goto $r25 = newarray (java.lang.Object)[2]	R	null
+$r10 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+$r25 = newarray (java.lang.Object)[2]	C	null
+i1 = i1 + 1	U	null
+r3 = interfaceinvoke $r17.<org.apache.catalina.Engine: org.apache.catalina.Container[] findChildren()>()	U	null
+r7 = $r19	U	null
+$r25[0] = r5	U	null
+specialinvoke $r19.<java.lang.StringBuilder: void <init>()>()	R	null
+$r11 = interfaceinvoke $r10.<org.apache.catalina.Engine: java.lang.String getName()>()	U	null
+$r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r16)	R	null
+$r13 = newarray (java.lang.Object)[1]	C	null
+r4 = (org.apache.catalina.Host) $r18	U	null
+r5 = interfaceinvoke r4.<org.apache.catalina.Host: java.lang.String getName()>()	U	null
+$r22 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44)	U	null
+virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r23)	R	null
+$r19 = new java.lang.StringBuilder	C	null
+$r20 = r6[0]	U	null
+$i4 = lengthof r6	U	null
+$i5 = lengthof r3	U	null
+i1 = 1	U	null
+$r26 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r25[1] = $r26	U	null
+if $i2 < 1 goto $r13 = newarray (java.lang.Object)[1]	R	null
+if i0 < $i5 goto $r18 = r3[i0]	R	null
+$r18 = r3[i0]	U	null
+goto [?= $i5 = lengthof r3]	R	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r27)	R	null
+$i3 = lengthof r6	U	null
+$r15 = interfaceinvoke $r14.<org.apache.catalina.Engine: java.lang.String getName()>()	U	null
+if i1 < $i4 goto $r22 = virtualinvoke r7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(44)	R	null
+$r9[0] = $r11	U	null
+return	R	null
+virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: void log(java.lang.String)>($r12)	R	null
+goto [?= $i4 = lengthof r6]	R	null
+$r12 = virtualinvoke $r8.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.list", $r9)	U	null
+i0 = 0	U	null
+i0 = i0 + 1	U	null
+$r27 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.listitem", $r25)	U	null
+$r17 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null

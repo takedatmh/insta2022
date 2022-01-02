@@ -1,0 +1,44 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: org.apache.catalina.util.ContextName
+[r0, r1]	r2 := @parameter1: java.lang.String[]
+[r0, r1, r2]	r3 := @parameter2: org.apache.tomcat.util.res.StringManager
+[r0, r1, r2, r3]	if r2 != null goto i0 = 0
+[r0, r1, r2, r3]	return 0
+[r0, r1, r2, r3]	i0 = 0
+[r0, r1, r2, r3, i0]	i1 = 0
+[r0, r1, r2, r3, i0, i1]	goto [?= $i5 = lengthof r2]
+[r0, r1, r2, r3, i0, i1, $i5]	r4 = r2[i1]
+[r0, r1, r2, r3, i0, i1, $i5, r4]	$r7 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Session getSessionForNameAndId(org.apache.catalina.util.ContextName,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r1, r4, r3)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7]	r5 = interfaceinvoke $r7.<org.apache.catalina.Session: javax.servlet.http.HttpSession getSession()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	if r5 != null goto interfaceinvoke r5.<javax.servlet.http.HttpSession: void invalidate()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	$i2 = r0.<org.apache.catalina.manager.HTMLManagerServlet: int debug>
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2]	if $i2 < 1 goto i1 = i1 + 1
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2]	$r8 = new java.lang.StringBuilder
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2, $r8]	specialinvoke $r8.<java.lang.StringBuilder: void <init>(java.lang.String)>("WARNING: can\'t invalidate null session ")
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2, $r8]	$r9 = virtualinvoke $r8.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r4)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2, $r8, $r9]	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.String toString()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2, $r8, $r9, $r10]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String)>($r10)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i2, $r8, $r9, $r10]	goto [?= i1 = i1 + 1]
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	interfaceinvoke r5.<javax.servlet.http.HttpSession: void invalidate()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	i0 = i0 + 1
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	$i3 = r0.<org.apache.catalina.manager.HTMLManagerServlet: int debug>
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3]	if $i3 < 1 goto i1 = i1 + 1
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3]	$r11 = new java.lang.StringBuilder
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3, $r11]	specialinvoke $r11.<java.lang.StringBuilder: void <init>(java.lang.String)>("Invalidating session id ")
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3, $r11]	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r4)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3, $r11, $r12]	$r13 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.String toString()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3, $r11, $r12, $r13]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String)>($r13)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $i3, $r11, $r12, $r13]	goto [?= i1 = i1 + 1]
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	$r14 := @caughtexception
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14]	r6 = $r14
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6]	$i4 = r0.<org.apache.catalina.manager.HTMLManagerServlet: int debug>
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4]	if $i4 < 1 goto i1 = i1 + 1
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4]	$r15 = new java.lang.StringBuilder
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4, $r15]	specialinvoke $r15.<java.lang.StringBuilder: void <init>(java.lang.String)>("Can\'t invalidate already invalidated session id ")
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4, $r15]	$r16 = virtualinvoke $r15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r4)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4, $r15, $r16]	$r17 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.String toString()>()
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5, $r14, r6, $i4, $r15, $r16, $r17]	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String)>($r17)
+[r0, r1, r2, r3, i0, i1, $i5, r4, $r7, r5]	i1 = i1 + 1
+[r0, r1, r2, r3, i0, i1]	$i5 = lengthof r2
+[r0, r1, r2, r3, i0, i1, $i5]	if i1 < $i5 goto r4 = r2[i1]
+[r0, r1, r2, r3, i0, i1, $i5]	return i0

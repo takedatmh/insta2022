@@ -1,0 +1,14 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+if i0 != 0 goto (branch)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<status>")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r3)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<?xml version=\"1.0\" encoding=\"utf-8\"?>")	R	null
+r1 := @parameter1: java.lang.Object[]	R	null
+i0 := @parameter2: int	R	null
+$r3 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<?xml-stylesheet type=\"text/xsl\" href=\"{0}/xform.xsl\" ?>\n", r1)	U	null
+return	R	null
+if i0 != 1 goto return	R	null
+goto [?= return]	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r2)	R	null
+$r2 = <org.apache.catalina.manager.Constants: java.lang.String HTML_HEADER_SECTION>	U	null

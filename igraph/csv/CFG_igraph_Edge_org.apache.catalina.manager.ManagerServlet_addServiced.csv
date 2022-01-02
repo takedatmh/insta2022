@@ -1,0 +1,12 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	r1 := @parameter0: java.lang.String	0
+r1 := @parameter0: java.lang.String	$r4 = newarray (java.lang.String)[1]	0
+$r4 = newarray (java.lang.String)[1]	$r4[0] = r1	1
+$r4[0] = r1	r2 = $r4	1
+r2 = $r4	$r5 = newarray (java.lang.String)[1]	0
+$r5 = newarray (java.lang.String)[1]	$r5[0] = "java.lang.String"	1
+$r5[0] = "java.lang.String"	r3 = $r5	1
+r3 = $r5	$r6 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.MBeanServer mBeanServer>	1
+$r6 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.MBeanServer mBeanServer>	$r7 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>	1
+$r7 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>	interfaceinvoke $r6.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>($r7, "addServiced", r2, r3)	1
+interfaceinvoke $r6.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>($r7, "addServiced", r2, r3)	return	0

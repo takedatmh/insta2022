@@ -1,0 +1,9 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.tomcat.util.http.parser.HttpParser	R	null
+return $z0	R	null
+$r2 = r0.<org.apache.tomcat.util.http.parser.HttpParser: boolean[] IS_ABSOLUTEPATH_RELAXED>	U	null
+$z0 = $r2[i0]	U	null
+$r3 := @caughtexception	R	null
+return 0	R	null
+r1 = $r3	U	null
+i0 := @parameter0: int	R	null

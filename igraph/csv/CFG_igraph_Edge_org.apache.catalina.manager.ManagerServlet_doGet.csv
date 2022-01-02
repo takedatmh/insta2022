@@ -1,0 +1,135 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	r1 := @parameter0: javax.servlet.http.HttpServletRequest	0
+r1 := @parameter0: javax.servlet.http.HttpServletRequest	r2 := @parameter1: javax.servlet.http.HttpServletResponse	0
+r2 := @parameter1: javax.servlet.http.HttpServletResponse	$r12 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	0
+$r12 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	r3 = staticinvoke <org.apache.tomcat.util.res.StringManager: org.apache.tomcat.util.res.StringManager getManager(java.lang.String,java.util.Enumeration)>("org.apache.catalina.manager", $r12)	1
+r3 = staticinvoke <org.apache.tomcat.util.res.StringManager: org.apache.tomcat.util.res.StringManager getManager(java.lang.String,java.util.Enumeration)>("org.apache.catalina.manager", $r12)	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>()	1
+r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>()	if r4 != null goto r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	1
+if r4 != null goto r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>()	0
+if r4 != null goto r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	0
+r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>()	r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	1
+r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("config")	r6 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("path")	1
+r6 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("path")	r7 = null	1
+r7 = null	if r6 == null goto r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	1
+if r6 == null goto r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	$r13 = new org.apache.catalina.util.ContextName	0
+if r6 == null goto r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	0
+$r13 = new org.apache.catalina.util.ContextName	$r14 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("version")	1
+$r14 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("version")	specialinvoke $r13.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,java.lang.String)>(r6, $r14)	1
+specialinvoke $r13.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,java.lang.String)>(r6, $r14)	r7 = $r13	0
+r7 = $r13	r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	1
+r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("type")	r9 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("war")	1
+r9 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("war")	r10 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("tag")	1
+r10 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("tag")	z0 = 0	1
+z0 = 0	$r15 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")	1
+$r15 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")	if $r15 == null goto z1 = 0	1
+if $r15 == null goto z1 = 0	$r16 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")	0
+if $r15 == null goto z1 = 0	z1 = 0	0
+$r16 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")	$z2 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>("true")	1
+$z2 = virtualinvoke $r16.<java.lang.String: boolean equals(java.lang.Object)>("true")	if $z2 == 0 goto z1 = 0	1
+if $z2 == 0 goto z1 = 0	z0 = 1	0
+if $z2 == 0 goto z1 = 0	z1 = 0	0
+z0 = 1	z1 = 0	1
+z1 = 0	$r17 = "true"	1
+$r17 = "true"	$r18 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("statusLine")	1
+$r18 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("statusLine")	$z3 = virtualinvoke $r17.<java.lang.String: boolean equals(java.lang.Object)>($r18)	1
+$z3 = virtualinvoke $r17.<java.lang.String: boolean equals(java.lang.Object)>($r18)	if $z3 == 0 goto interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	1
+if $z3 == 0 goto interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	z1 = 1	0
+if $z3 == 0 goto interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	0
+z1 = 1	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	1
+interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain; charset=utf-8")	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("X-Content-Type-Options", "nosniff")	0
+interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("X-Content-Type-Options", "nosniff")	r11 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	0
+r11 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	if r4 != null goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")	1
+if r4 != null goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")	$r19 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.noCommand")	0
+if r4 != null goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")	$z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")	0
+$r19 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.noCommand")	virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r19)	1
+virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r19)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")	if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/list")	1
+if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/list")	if r9 != null goto virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	0
+if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/list")	$z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/list")	0
+if r9 != null goto virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	if r5 == null goto (branch)	0
+if r9 != null goto virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	0
+if r5 == null goto (branch)	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	0
+if r5 == null goto (branch)	if r10 != null goto virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void deploy(java.io.PrintWriter,java.lang.String,org.apache.catalina.util.ContextName,java.lang.String,boolean,org.apache.tomcat.util.res.StringManager)>(r11, r5, r7, r9, z0, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+if r10 != null goto virtualinvoke r11.<java.io.PrintWriter: void flush()>()	$r20 = newarray (java.lang.Object)[1]	0
+if r10 != null goto virtualinvoke r11.<java.io.PrintWriter: void flush()>()	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$r20 = newarray (java.lang.Object)[1]	$r20[0] = r4	1
+$r20[0] = r4	$r21 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.invalidCommand", $r20)	1
+$r21 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.invalidCommand", $r20)	virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r21)	1
+virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r21)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/list")	if $z5 == 0 goto $z6 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/reload")	1
+if $z5 == 0 goto $z6 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/reload")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void list(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(r11, r3)	0
+if $z5 == 0 goto $z6 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/reload")	$z6 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/reload")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void list(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(r11, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z6 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/reload")	if $z6 == 0 goto $z7 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/resources")	1
+if $z6 == 0 goto $z7 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/resources")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void reload(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	0
+if $z6 == 0 goto $z7 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/resources")	$z7 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/resources")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void reload(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z7 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/resources")	if $z7 == 0 goto $z8 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/save")	1
+if $z7 == 0 goto $z8 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/save")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void resources(java.io.PrintWriter,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r11, r8, r3)	0
+if $z7 == 0 goto $z8 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/save")	$z8 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/save")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void resources(java.io.PrintWriter,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r11, r8, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z8 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/save")	if $z8 == 0 goto $z9 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/serverinfo")	1
+if $z8 == 0 goto $z9 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/serverinfo")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void save(java.io.PrintWriter,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r11, r6, r3)	0
+if $z8 == 0 goto $z9 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/serverinfo")	$z9 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/serverinfo")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void save(java.io.PrintWriter,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r11, r6, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z9 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/serverinfo")	if $z9 == 0 goto $z10 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/sessions")	1
+if $z9 == 0 goto $z10 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/sessions")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void serverinfo(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(r11, r3)	0
+if $z9 == 0 goto $z10 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/sessions")	$z10 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/sessions")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void serverinfo(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(r11, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z10 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/sessions")	if $z10 == 0 goto $z11 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/expire")	1
+if $z10 == 0 goto $z11 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/expire")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void expireSessions(java.io.PrintWriter,org.apache.catalina.util.ContextName,javax.servlet.http.HttpServletRequest,org.apache.tomcat.util.res.StringManager)>(r11, r7, r1, r3)	0
+if $z10 == 0 goto $z11 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/expire")	$z11 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/expire")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void expireSessions(java.io.PrintWriter,org.apache.catalina.util.ContextName,javax.servlet.http.HttpServletRequest,org.apache.tomcat.util.res.StringManager)>(r11, r7, r1, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z11 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/expire")	if $z11 == 0 goto $z12 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/start")	1
+if $z11 == 0 goto $z12 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/start")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void expireSessions(java.io.PrintWriter,org.apache.catalina.util.ContextName,javax.servlet.http.HttpServletRequest,org.apache.tomcat.util.res.StringManager)>(r11, r7, r1, r3)	0
+if $z11 == 0 goto $z12 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/start")	$z12 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/start")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void expireSessions(java.io.PrintWriter,org.apache.catalina.util.ContextName,javax.servlet.http.HttpServletRequest,org.apache.tomcat.util.res.StringManager)>(r11, r7, r1, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z12 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/start")	if $z12 == 0 goto $z13 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/stop")	1
+if $z12 == 0 goto $z13 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/stop")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void start(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	0
+if $z12 == 0 goto $z13 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/stop")	$z13 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/stop")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void start(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z13 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/stop")	if $z13 == 0 goto $z14 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/undeploy")	1
+if $z13 == 0 goto $z14 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/undeploy")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void stop(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	0
+if $z13 == 0 goto $z14 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/undeploy")	$z14 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/undeploy")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void stop(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z14 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/undeploy")	if $z14 == 0 goto $z15 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/findleaks")	1
+if $z14 == 0 goto $z15 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/findleaks")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void undeploy(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	0
+if $z14 == 0 goto $z15 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/findleaks")	$z15 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/findleaks")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void undeploy(java.io.PrintWriter,org.apache.catalina.util.ContextName,org.apache.tomcat.util.res.StringManager)>(r11, r7, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z15 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/findleaks")	if $z15 == 0 goto $z16 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/vminfo")	1
+if $z15 == 0 goto $z16 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/vminfo")	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void findleaks(boolean,java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(z1, r11, r3)	0
+if $z15 == 0 goto $z16 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/vminfo")	$z16 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/vminfo")	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void findleaks(boolean,java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(z1, r11, r3)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z16 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/vminfo")	if $z16 == 0 goto $z17 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/threaddump")	1
+if $z16 == 0 goto $z17 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/threaddump")	$r22 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	0
+if $z16 == 0 goto $z17 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/threaddump")	$z17 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/threaddump")	0
+$r22 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void vmInfo(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager,java.util.Enumeration)>(r11, r3, $r22)	1
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void vmInfo(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager,java.util.Enumeration)>(r11, r3, $r22)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$z17 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/threaddump")	if $z17 == 0 goto $r24 = newarray (java.lang.Object)[1]	1
+if $z17 == 0 goto $r24 = newarray (java.lang.Object)[1]	$r23 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	0
+if $z17 == 0 goto $r24 = newarray (java.lang.Object)[1]	$r24 = newarray (java.lang.Object)[1]	0
+$r23 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void threadDump(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager,java.util.Enumeration)>(r11, r3, $r23)	1
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void threadDump(java.io.PrintWriter,org.apache.tomcat.util.res.StringManager,java.util.Enumeration)>(r11, r3, $r23)	goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	0
+goto [?= virtualinvoke r11.<java.io.PrintWriter: void flush()>()]	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+$r24 = newarray (java.lang.Object)[1]	$r24[0] = r4	1
+$r24[0] = r4	$r25 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.unknownCommand", $r24)	1
+$r25 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.unknownCommand", $r24)	virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r25)	1
+virtualinvoke r11.<java.io.PrintWriter: void println(java.lang.String)>($r25)	virtualinvoke r11.<java.io.PrintWriter: void flush()>()	0
+virtualinvoke r11.<java.io.PrintWriter: void flush()>()	virtualinvoke r11.<java.io.PrintWriter: void close()>()	0
+virtualinvoke r11.<java.io.PrintWriter: void close()>()	return	0

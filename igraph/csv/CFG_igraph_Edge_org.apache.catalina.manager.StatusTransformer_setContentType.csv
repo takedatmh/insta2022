@@ -1,0 +1,10 @@
+start	end	CRUD_Test
+r0 := @parameter0: javax.servlet.http.HttpServletResponse	i0 := @parameter1: int	0
+i0 := @parameter1: int	if i0 != 0 goto (branch)	0
+if i0 != 0 goto (branch)	interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/html;charset=utf-8")	0
+if i0 != 0 goto (branch)	if i0 != 1 goto return	0
+interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/html;charset=utf-8")	goto [?= return]	0
+goto [?= return]	return	0
+if i0 != 1 goto return	interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/xml;charset=utf-8")	0
+if i0 != 1 goto return	return	0
+interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/xml;charset=utf-8")	return	0

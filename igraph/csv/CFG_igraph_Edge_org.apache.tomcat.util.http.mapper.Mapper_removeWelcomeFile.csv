@@ -1,0 +1,42 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.tomcat.util.http.mapper.Mapper	r1 := @parameter0: java.lang.String	0
+r1 := @parameter0: java.lang.String	r2 := @parameter1: java.lang.String	0
+r2 := @parameter1: java.lang.String	r3 := @parameter2: java.lang.String	0
+r3 := @parameter2: java.lang.String	r4 := @parameter3: java.lang.String	0
+r4 := @parameter3: java.lang.String	r5 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion findContextVersion(java.lang.String,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, 0)	0
+r5 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion findContextVersion(java.lang.String,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, 0)	if r5 == null goto return	1
+if r5 == null goto return	$z0 = virtualinvoke r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: boolean isPaused()>()	0
+if r5 == null goto return	return	0
+$z0 = virtualinvoke r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: boolean isPaused()>()	if $z0 == 0 goto i0 = -1	1
+if $z0 == 0 goto i0 = -1	return	0
+if $z0 == 0 goto i0 = -1	i0 = -1	0
+i0 = -1	i1 = 0	1
+i1 = 0	goto [?= $r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>]	1
+goto [?= $r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>]	$r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	0
+$r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	$r8 = $r7[i1]	1
+$r8 = $r7[i1]	$z1 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>($r8)	1
+$z1 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>($r8)	if $z1 == 0 goto i1 = i1 + 1	1
+if $z1 == 0 goto i1 = i1 + 1	i0 = i1	0
+if $z1 == 0 goto i1 = i1 + 1	i1 = i1 + 1	0
+i0 = i1	goto [?= (branch)]	1
+goto [?= (branch)]	if i0 <= -1 goto return	0
+i1 = i1 + 1	$r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	1
+$r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	$i2 = lengthof $r9	1
+$i2 = lengthof $r9	if i1 < $i2 goto $r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	1
+if i1 < $i2 goto $r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	if i0 <= -1 goto return	0
+if i1 < $i2 goto $r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	$r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	0
+if i0 <= -1 goto return	$r10 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	0
+if i0 <= -1 goto return	return	0
+$r10 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	$i3 = lengthof $r10	1
+$i3 = lengthof $r10	i4 = $i3 - 1	1
+i4 = $i3 - 1	r6 = newarray (java.lang.String)[i4]	0
+r6 = newarray (java.lang.String)[i4]	$r11 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	1
+$r11 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r11, 0, r6, 0, i0)	1
+staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r11, 0, r6, 0, i0)	if i0 >= i4 goto r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	0
+if i0 >= i4 goto r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	$r12 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	0
+if i0 >= i4 goto r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	0
+$r12 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	$i5 = i0 + 1	1
+$i5 = i0 + 1	$i6 = i4 - i0	1
+$i6 = i4 - i0	staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r12, $i5, r6, i0, $i6)	1
+staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r12, $i5, r6, i0, $i6)	r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	0
+r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	return	1

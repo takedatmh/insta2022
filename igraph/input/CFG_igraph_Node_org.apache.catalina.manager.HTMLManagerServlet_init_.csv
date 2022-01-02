@@ -1,0 +1,9 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	R	[]
+r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions> = $z0	U	[r0, n0, $r1, r2, $z0]
+specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void init()>()	R	[r0]
+return	R	[r0, n0, $r1, r2, $z0]
+r2 = interfaceinvoke $r1.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("showProxySessions")	U	[r0, n0, $r1]
+n0 = null	U	[r0]
+$z0 = staticinvoke <java.lang.Boolean: boolean parseBoolean(java.lang.String)>(r2)	U	[r0, n0, $r1, r2]
+$r1 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	U	[r0, n0]

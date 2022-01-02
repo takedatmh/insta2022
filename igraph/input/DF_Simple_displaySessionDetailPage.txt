@@ -1,0 +1,16 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: javax.servlet.http.HttpServletRequest
+[r0, r1]	r2 := @parameter1: javax.servlet.http.HttpServletResponse
+[r0, r1, r2]	r3 := @parameter2: org.apache.catalina.util.ContextName
+[r0, r1, r2, r3]	r4 := @parameter3: java.lang.String
+[r0, r1, r2, r3, r4]	r5 := @parameter4: org.apache.tomcat.util.res.StringManager
+[r0, r1, r2, r3, r4, r5]	r6 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Session getSessionForNameAndId(org.apache.catalina.util.ContextName,java.lang.String,org.apache.tomcat.util.res.StringManager)>(r3, r4, r5)
+[r0, r1, r2, r3, r4, r5, r6]	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("Pragma", "No-cache")
+[r0, r1, r2, r3, r4, r5, r6]	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("Cache-Control", "no-cache,no-store,max-age=0")
+[r0, r1, r2, r3, r4, r5, r6]	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setDateHeader(java.lang.String,long)>("Expires", 0L)
+[r0, r1, r2, r3, r4, r5, r6]	interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: void setAttribute(java.lang.String,java.lang.Object)>("currentSession", r6)
+[r0, r1, r2, r3, r4, r5, r6]	$r7 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: javax.servlet.ServletContext getServletContext()>()
+[r0, r1, r2, r3, r4, r5, r6, $r7]	$r8 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>("/WEB-INF/jsp/sessionDetail.jsp")
+[r0, r1, r2, r3, r4, r5, r6, $r7, $r8]	$r9 = interfaceinvoke $r7.<javax.servlet.ServletContext: javax.servlet.RequestDispatcher getRequestDispatcher(java.lang.String)>($r8)
+[r0, r1, r2, r3, r4, r5, r6, $r7, $r8, $r9]	interfaceinvoke $r9.<javax.servlet.RequestDispatcher: void include(javax.servlet.ServletRequest,javax.servlet.ServletResponse)>(r1, r2)
+[r0, r1, r2, r3, r4, r5, r6, $r7, $r8, $r9]	return

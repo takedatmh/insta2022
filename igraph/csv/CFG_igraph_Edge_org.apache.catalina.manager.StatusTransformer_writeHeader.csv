@@ -1,0 +1,15 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	r1 := @parameter1: java.lang.Object[]	0
+r1 := @parameter1: java.lang.Object[]	i0 := @parameter2: int	0
+i0 := @parameter2: int	if i0 != 0 goto (branch)	0
+if i0 != 0 goto (branch)	$r2 = <org.apache.catalina.manager.Constants: java.lang.String HTML_HEADER_SECTION>	0
+if i0 != 0 goto (branch)	if i0 != 1 goto return	0
+$r2 = <org.apache.catalina.manager.Constants: java.lang.String HTML_HEADER_SECTION>	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r2)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r2)	goto [?= return]	0
+goto [?= return]	return	0
+if i0 != 1 goto return	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<?xml version=\"1.0\" encoding=\"utf-8\"?>")	0
+if i0 != 1 goto return	return	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<?xml version=\"1.0\" encoding=\"utf-8\"?>")	$r3 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<?xml-stylesheet type=\"text/xsl\" href=\"{0}/xform.xsl\" ?>\n", r1)	0
+$r3 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<?xml-stylesheet type=\"text/xsl\" href=\"{0}/xform.xsl\" ?>\n", r1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r3)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r3)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<status>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<status>")	return	0

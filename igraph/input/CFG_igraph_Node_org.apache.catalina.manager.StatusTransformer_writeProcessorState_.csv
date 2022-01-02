@@ -1,0 +1,170 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r35)	R	null
+$z3 = virtualinvoke r69.<java.lang.String: boolean equals(java.lang.Object)>("")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r67)	R	null
+$r29 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+$r31 = new java.lang.StringBuilder	C	null
+goto [?= virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("\"")]	R	null
+$r56 = new java.lang.StringBuilder	C	null
+$r68 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "currentQueryString")	U	null
+$r53 = virtualinvoke $r50.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r52)	U	null
+$r18 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r17)	U	null
+specialinvoke $r31.<java.lang.StringBuilder: void <init>(java.lang.String)>(" requestProcessingTime=\"")	R	null
+specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>(" method=\"")	R	null
+goto [?= virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" />")]	R	null
+$r46 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r45)	U	null
+specialinvoke $r62.<java.lang.StringBuilder: void <init>(java.lang.String)>(" currentUri=\"")	R	null
+$r40 = new java.lang.StringBuilder	C	null
+$r20 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r19)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r16)	R	null
+specialinvoke $r75.<java.lang.StringBuilder: void <init>(java.lang.String)>(" protocol=\"")	R	null
+$r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+if z0 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestProcessingTime=\"0\"")	R	null
+if $z3 != 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" currentQueryString=\"&#63;\"")	R	null
+r6 = "P"	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<worker ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r26)	R	null
+specialinvoke $r40.<java.lang.StringBuilder: void <init>()>()	R	null
+$r14 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r13)	U	null
+$r33 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r32)	U	null
+$r26 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r25)	U	null
+r69 = (java.lang.String) $r68	U	null
+$r44 = new java.lang.StringBuilder	C	null
+z0 = 1	U	null
+z0 = 0	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(r6)	R	null
+$r21 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "currentUri")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" protocol=\"&#63;\"")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r55)	R	null
+specialinvoke $r44.<java.lang.StringBuilder: void <init>(java.lang.String)>(" remoteAddr=\"")	R	null
+if $z2 != 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" ")	R	null
+$r32 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestProcessingTime")	U	null
+$r36 = new java.lang.StringBuilder	C	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td nowrap class=\"row-left\">")	R	null
+$r79 = virtualinvoke $r78.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r80)	R	null
+$r72 = virtualinvoke $r70.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r71)	U	null
+$r42 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r41)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td>")	R	null
+$r37 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestBytesSent")	U	null
+$r74 = virtualinvoke $r73.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r7 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestProcessingTime")	U	null
+r1 := @parameter1: javax.management.ObjectName	R	null
+r6 = "?"	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r22)	R	null
+z1 = 1	U	null
+z1 = 0	U	null
+$r57 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "method")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r18)	R	null
+goto [?= return]	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestBytesSent=\"")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("\"")	R	null
+i1 = virtualinvoke r3.<java.lang.Integer: int intValue()>()	U	null
+$r27 = new java.lang.StringBuilder	C	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" currentUri=\"&#63;\"")	R	null
+$r76 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "protocol")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" virtualHost=\"&#63;\"")	R	null
+$r22 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r21)	U	null
+$r24 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r4)	U	null
+return	R	null
+$r52 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r51)	U	null
+$r54 = virtualinvoke $r53.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</strong></td>")	R	null
+r4 = (java.lang.String) $r23	U	null
+$z2 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("")	U	null
+$r77 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r76)	U	null
+$r25 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "protocol")	U	null
+if z1 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" method=\"&#63;\"")	R	null
+r6 = "F"	U	null
+tableswitch(i1) {     case 0: goto r6 = "R";     case 1: goto r6 = "P";     case 2: goto r6 = "P";     case 3: goto r6 = "S";     case 4: goto r6 = "F";     case 5: goto r6 = "F";     case 6: goto r6 = "K";     case 7: goto r6 = "R";     default: goto r6 = "?"; }	R	null
+if z1 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("0")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" currentQueryString=\"&#63;\"")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r61)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r43)	R	null
+goto [?= $r75 = new java.lang.StringBuilder]	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r30)	R	null
+$r70 = new java.lang.StringBuilder	C	null
+$r38 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r37)	U	null
+n0 = null	U	null
+$r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestBytesReceived")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" remoteAddr=\"&#63;\"")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r20)	R	null
+if z1 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("?")	R	null
+r6 = "K"	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r39)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td><strong>")	R	null
+$r50 = new java.lang.StringBuilder	C	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r8)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td>")	R	null
+if z0 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td>")	R	null
+$r73 = virtualinvoke $r72.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+specialinvoke $r27.<java.lang.StringBuilder: void <init>(java.lang.String)>(" stage=\"")	R	null
+specialinvoke $r50.<java.lang.StringBuilder: void <init>(java.lang.String)>(" virtualHost=\"")	R	null
+i0 := @parameter3: int	R	null
+$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	U	null
+if i0 != 1 goto return	R	null
+if r69 == null goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" currentQueryString=\"&#63;\"")	R	null
+$r12 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r11, 0)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("0")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r49)	R	null
+$r39 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r64 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r63)	U	null
+r3 = (java.lang.Integer) $r5	U	null
+goto [?= virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td>")]	R	null
+$r63 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "currentUri")	U	null
+$r61 = virtualinvoke $r60.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r10)	R	null
+if i0 != 0 goto (branch)	R	null
+$r41 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestBytesReceived")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestBytesSent=\"0\"")	R	null
+r6 = "S"	U	null
+$r75 = new java.lang.StringBuilder	C	null
+$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r17 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "virtualHost")	U	null
+$r13 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "remoteAddrForwarded")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r24)	R	null
+$r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "stage")	U	null
+$r10 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r9, 0)	U	null
+$r47 = virtualinvoke $r44.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r46)	U	null
+$r67 = virtualinvoke $r66.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" ")	R	null
+$r55 = virtualinvoke $r54.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" method=\"&#63;\"")	R	null
+$r65 = virtualinvoke $r62.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r64)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r14)	R	null
+$r8 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r7, 0)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestBytesReceived=\"0\"")	R	null
+$r34 = virtualinvoke $r33.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" />")	R	null
+if r4 == null goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" ")	R	null
+$r23 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "currentQueryString")	U	null
+$r59 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r58)	U	null
+r6 = "R"	U	null
+$r62 = new java.lang.StringBuilder	C	null
+$r51 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "virtualHost")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td>")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestProcessingTime=\"0\"")	R	null
+$r78 = virtualinvoke $r75.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r77)	U	null
+$r60 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+goto [?= (branch)]	R	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("?")	R	null
+$r80 = virtualinvoke $r79.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r45 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "remoteAddr")	U	null
+$r71 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r69)	U	null
+$r16 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r15)	U	null
+$r58 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>($r57)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>(" requestBytesReceived=\"")	R	null
+$r48 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null
+$r19 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "method")	U	null
+$r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r74)	R	null
+$r15 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "remoteAddr")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<td nowrap>")	R	null
+$r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+specialinvoke $r36.<java.lang.StringBuilder: void <init>()>()	R	null
+specialinvoke $r70.<java.lang.StringBuilder: void <init>(java.lang.String)>(" currentQueryString=\"")	R	null
+$r9 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "requestBytesSent")	U	null
+r2 := @parameter2: javax.management.MBeanServer	R	null
+$r66 = virtualinvoke $r65.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\"")	U	null

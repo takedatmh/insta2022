@@ -1,0 +1,28 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i2)	R	null
+$i4 = virtualinvoke $r9.<java.lang.Integer: int intValue()>()	U	null
+$r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	U	null
+r8 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspReloadCount")	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	R	null
+goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]	R	null
+i1 = 0	U	null
+$r7 = (java.lang.Integer) r5	U	null
+i0 := @parameter3: int	R	null
+r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()	U	null
+if $z0 != 0 goto $r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs loaded: ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i1)	R	null
+$z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()	U	null
+$i3 = virtualinvoke $r7.<java.lang.Integer: int intValue()>()	U	null
+if i0 != 0 goto return	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs reloaded: ")	R	null
+return	R	null
+i2 = i2 + $i4	U	null
+$r9 = (java.lang.Integer) r8	U	null
+r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspCount")	U	null
+r4 = (javax.management.ObjectName) $r6	U	null
+i2 = 0	U	null
+r1 := @parameter1: java.util.Set	R	null
+r2 := @parameter2: javax.management.MBeanServer	R	null
+i1 = i1 + $i3	U	null

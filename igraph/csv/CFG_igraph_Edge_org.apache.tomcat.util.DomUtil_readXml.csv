@@ -1,0 +1,12 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.InputStream	r1 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>()	0
+r1 = staticinvoke <javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilderFactory newInstance()>()	virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setValidating(boolean)>(0)	1
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setValidating(boolean)>(0)	virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringComments(boolean)>(0)	0
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringComments(boolean)>(0)	virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringElementContentWhitespace(boolean)>(1)	0
+virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: void setIgnoringElementContentWhitespace(boolean)>(1)	n0 = null	0
+n0 = null	r3 = virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>()	1
+r3 = virtualinvoke r1.<javax.xml.parsers.DocumentBuilderFactory: javax.xml.parsers.DocumentBuilder newDocumentBuilder()>()	$r4 = new org.apache.tomcat.util.DomUtil$NullResolver	0
+$r4 = new org.apache.tomcat.util.DomUtil$NullResolver	specialinvoke $r4.<org.apache.tomcat.util.DomUtil$NullResolver: void <init>()>()	1
+specialinvoke $r4.<org.apache.tomcat.util.DomUtil$NullResolver: void <init>()>()	virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: void setEntityResolver(org.xml.sax.EntityResolver)>($r4)	0
+virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: void setEntityResolver(org.xml.sax.EntityResolver)>($r4)	r2 = virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>(r0)	0
+r2 = virtualinvoke r3.<javax.xml.parsers.DocumentBuilder: org.w3c.dom.Document parse(java.io.InputStream)>(r0)	return r2	1

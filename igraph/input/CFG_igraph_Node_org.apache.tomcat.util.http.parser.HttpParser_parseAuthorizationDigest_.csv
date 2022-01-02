@@ -1,0 +1,41 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.StringReader	R	null
+$r11 = virtualinvoke r3.<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>($r4)	U	null
+interfaceinvoke r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r3, r13)	R	null
+return r2	R	null
+$r14 = new java.lang.IllegalArgumentException	C	null
+r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readQuotedToken(java.io.Reader)>(r0)	U	null
+if r13 != null goto interfaceinvoke r2.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(r3, r13)	R	null
+$r4 = <java.util.Locale: java.util.Locale ENGLISH>	U	null
+if $r16 != $r17 goto r3 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readToken(java.io.Reader)>(r0)	R	null
+$r9 = <org.apache.tomcat.util.http.parser.HttpParser$SkipResult: org.apache.tomcat.util.http.parser.HttpParser$SkipResult FOUND>	U	null
+throw $r14	R	null
+specialinvoke $r14.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("TODO i18n: Unsupported type")	R	null
+r5 = <org.apache.tomcat.util.http.parser.HttpParser: java.lang.Integer FIELD_TYPE_TOKEN_OR_QUOTED_STRING>	U	null
+n0 = null	U	null
+r2 = $r1	U	null
+$z0 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("")	U	null
+$r16 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser$SkipResult skipConstant(java.io.Reader,java.lang.String)>(r0, ",")	U	null
+return null	R	null
+r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readLhex(java.io.Reader)>(r0)	U	null
+if r3 != null goto $z0 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("")	R	null
+if $z0 == 0 goto $r8 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser$SkipResult skipConstant(java.io.Reader,java.lang.String)>(r0, "=")	R	null
+r3 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readToken(java.io.Reader)>(r0)	U	null
+$i0 = virtualinvoke r5.<java.lang.Integer: int intValue()>()	U	null
+r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readQuotedString(java.io.Reader,boolean)>(r0, 0)	U	null
+goto [?= (branch)]	R	null
+if $r6 == $r7 goto r3 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readToken(java.io.Reader)>(r0)	R	null
+$r6 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser$SkipResult skipConstant(java.io.Reader,java.lang.String)>(r0, "Digest")	U	null
+if r5 != null goto $i0 = virtualinvoke r5.<java.lang.Integer: int intValue()>()	R	null
+r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readToken(java.io.Reader)>(r0)	U	null
+if $r8 == $r9 goto n0 = null	R	null
+$r17 = <org.apache.tomcat.util.http.parser.HttpParser$SkipResult: org.apache.tomcat.util.http.parser.HttpParser$SkipResult NOT_FOUND>	U	null
+r5 = (java.lang.Integer) $r12	U	null
+$r7 = <org.apache.tomcat.util.http.parser.HttpParser$SkipResult: org.apache.tomcat.util.http.parser.HttpParser$SkipResult FOUND>	U	null
+$r12 = interfaceinvoke $r10.<java.util.Map: java.lang.Object get(java.lang.Object)>($r11)	U	null
+specialinvoke $r1.<java.util.HashMap: void <init>()>()	R	null
+r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readTokenOrQuotedString(java.io.Reader,boolean)>(r0, 0)	U	null
+tableswitch($i0) {     case 0: goto r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readToken(java.io.Reader)>(r0);     case 1: goto r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readQuotedString(java.io.Reader,boolean)>(r0, 0);     case 2: goto r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readTokenOrQuotedString(java.io.Reader,boolean)>(r0, 0);     case 3: goto r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readLhex(java.io.Reader)>(r0);     case 4: goto r13 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: java.lang.String readQuotedToken(java.io.Reader)>(r0);     default: goto $r14 = new java.lang.IllegalArgumentException; }	R	null
+$r10 = <org.apache.tomcat.util.http.parser.HttpParser: java.util.Map fieldTypes>	U	null
+$r8 = staticinvoke <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser$SkipResult skipConstant(java.io.Reader,java.lang.String)>(r0, "=")	U	null
+$r1 = new java.util.HashMap	C	null

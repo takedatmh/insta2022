@@ -1,0 +1,71 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.StatusManagerServlet	r1 := @parameter0: javax.management.Notification	0
+r1 := @parameter0: javax.management.Notification	r2 := @parameter1: java.lang.Object	0
+r2 := @parameter1: java.lang.Object	$z0 = r1 instanceof javax.management.MBeanServerNotification	0
+$z0 = r1 instanceof javax.management.MBeanServerNotification	if $z0 == 0 goto return	1
+if $z0 == 0 goto return	$r6 = (javax.management.MBeanServerNotification) r1	0
+if $z0 == 0 goto return	return	0
+$r6 = (javax.management.MBeanServerNotification) r1	r3 = virtualinvoke $r6.<javax.management.MBeanServerNotification: javax.management.ObjectName getMBeanName()>()	1
+r3 = virtualinvoke $r6.<javax.management.MBeanServerNotification: javax.management.ObjectName getMBeanName()>()	$r7 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	1
+$r7 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	$z1 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("JMX.mbean.registered")	1
+$z1 = virtualinvoke $r7.<java.lang.String: boolean equals(java.lang.Object)>("JMX.mbean.registered")	if $z1 == 0 goto $r12 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	1
+if $z1 == 0 goto $r12 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	r4 = virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("type")	0
+if $z1 == 0 goto $r12 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	$r12 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	0
+r4 = virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("type")	if r4 == null goto return	1
+if r4 == null goto return	$z2 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ProtocolHandler")	0
+if r4 == null goto return	return	0
+$z2 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ProtocolHandler")	if $z2 == 0 goto $z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	1
+if $z2 == 0 goto $z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	$r8 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	0
+if $z2 == 0 goto $z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	$z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	0
+$r8 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	virtualinvoke $r8.<java.util.Vector: void addElement(java.lang.Object)>(r3)	1
+virtualinvoke $r8.<java.util.Vector: void addElement(java.lang.Object)>(r3)	goto [?= return]	0
+goto [?= return]	return	0
+$z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	if $z3 == 0 goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	1
+if $z3 == 0 goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	$r9 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	0
+if $z3 == 0 goto $z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	$z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	0
+$r9 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	virtualinvoke $r9.<java.util.Vector: void addElement(java.lang.Object)>(r3)	1
+virtualinvoke $r9.<java.util.Vector: void addElement(java.lang.Object)>(r3)	goto [?= return]	0
+goto [?= return]	return	0
+$z4 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	1
+if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	$r10 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	0
+if $z4 == 0 goto $z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	$z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	0
+$r10 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	virtualinvoke $r10.<java.util.Vector: void addElement(java.lang.Object)>(r3)	1
+virtualinvoke $r10.<java.util.Vector: void addElement(java.lang.Object)>(r3)	goto [?= return]	0
+goto [?= return]	return	0
+$z5 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	if $z5 == 0 goto return	1
+if $z5 == 0 goto return	$r11 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	0
+if $z5 == 0 goto return	return	0
+$r11 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	virtualinvoke $r11.<java.util.Vector: void addElement(java.lang.Object)>(r3)	1
+virtualinvoke $r11.<java.util.Vector: void addElement(java.lang.Object)>(r3)	goto [?= return]	0
+goto [?= return]	return	0
+$r12 = virtualinvoke r1.<javax.management.Notification: java.lang.String getType()>()	$z6 = virtualinvoke $r12.<java.lang.String: boolean equals(java.lang.Object)>("JMX.mbean.unregistered")	1
+$z6 = virtualinvoke $r12.<java.lang.String: boolean equals(java.lang.Object)>("JMX.mbean.unregistered")	if $z6 == 0 goto return	1
+if $z6 == 0 goto return	r13 = virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("type")	0
+if $z6 == 0 goto return	return	0
+r13 = virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("type")	if r13 == null goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	1
+if r13 == null goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	$z7 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ProtocolHandler")	0
+if r13 == null goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+$z7 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ProtocolHandler")	if $z7 == 0 goto $z9 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	1
+if $z7 == 0 goto $z9 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	$r14 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	0
+if $z7 == 0 goto $z9 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	$z9 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	0
+$r14 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector protocolHandlers>	virtualinvoke $r14.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	1
+virtualinvoke $r14.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	0
+goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+$z9 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("ThreadPool")	if $z9 == 0 goto $z11 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	1
+if $z9 == 0 goto $z11 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	$r15 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	0
+if $z9 == 0 goto $z11 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	$z11 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	0
+$r15 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector threadPools>	virtualinvoke $r15.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	1
+virtualinvoke $r15.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	0
+goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+$z11 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("GlobalRequestProcessor")	if $z11 == 0 goto $z13 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	1
+if $z11 == 0 goto $z13 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	$r16 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	0
+if $z11 == 0 goto $z13 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	$z13 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	0
+$r16 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector globalRequestProcessors>	virtualinvoke $r16.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	1
+virtualinvoke $r16.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	0
+goto [?= virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")]	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+$z13 = virtualinvoke r13.<java.lang.String: boolean equals(java.lang.Object)>("RequestProcessor")	if $z13 == 0 goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	1
+if $z13 == 0 goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	$r17 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	0
+if $z13 == 0 goto virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+$r17 = r0.<org.apache.catalina.manager.StatusManagerServlet: java.util.Vector requestProcessors>	virtualinvoke $r17.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	1
+virtualinvoke $r17.<java.util.Vector: boolean removeElement(java.lang.Object)>(r3)	virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	0
+virtualinvoke r3.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("j2eeType")	return	0

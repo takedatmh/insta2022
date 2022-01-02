@@ -1,0 +1,83 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	r1 := @parameter0: java.lang.String	0
+r1 := @parameter0: java.lang.String	r2 = null	0
+r2 = null	$r3 = "CreationTime"	1
+$r3 = "CreationTime"	$z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z0 = virtualinvoke $r3.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z0 == 0 goto $r5 = "id"	1
+if $z0 == 0 goto $r5 = "id"	$r4 = new org.apache.catalina.manager.HTMLManagerServlet$1	0
+if $z0 == 0 goto $r5 = "id"	$r5 = "id"	0
+$r4 = new org.apache.catalina.manager.HTMLManagerServlet$1	specialinvoke $r4.<org.apache.catalina.manager.HTMLManagerServlet$1: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r4.<org.apache.catalina.manager.HTMLManagerServlet$1: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r4	0
+r2 = $r4	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r5 = "id"	$z1 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z1 = virtualinvoke $r5.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z1 == 0 goto $r7 = "LastAccessedTime"	1
+if $z1 == 0 goto $r7 = "LastAccessedTime"	$r6 = new org.apache.catalina.manager.HTMLManagerServlet$2	0
+if $z1 == 0 goto $r7 = "LastAccessedTime"	$r7 = "LastAccessedTime"	0
+$r6 = new org.apache.catalina.manager.HTMLManagerServlet$2	specialinvoke $r6.<org.apache.catalina.manager.HTMLManagerServlet$2: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r6.<org.apache.catalina.manager.HTMLManagerServlet$2: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r6	0
+r2 = $r6	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r7 = "LastAccessedTime"	$z2 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z2 = virtualinvoke $r7.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z2 == 0 goto $r9 = "MaxInactiveInterval"	1
+if $z2 == 0 goto $r9 = "MaxInactiveInterval"	$r8 = new org.apache.catalina.manager.HTMLManagerServlet$3	0
+if $z2 == 0 goto $r9 = "MaxInactiveInterval"	$r9 = "MaxInactiveInterval"	0
+$r8 = new org.apache.catalina.manager.HTMLManagerServlet$3	specialinvoke $r8.<org.apache.catalina.manager.HTMLManagerServlet$3: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r8.<org.apache.catalina.manager.HTMLManagerServlet$3: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r8	0
+r2 = $r8	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r9 = "MaxInactiveInterval"	$z3 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z3 = virtualinvoke $r9.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z3 == 0 goto $r11 = "new"	1
+if $z3 == 0 goto $r11 = "new"	$r10 = new org.apache.catalina.manager.HTMLManagerServlet$4	0
+if $z3 == 0 goto $r11 = "new"	$r11 = "new"	0
+$r10 = new org.apache.catalina.manager.HTMLManagerServlet$4	specialinvoke $r10.<org.apache.catalina.manager.HTMLManagerServlet$4: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r10.<org.apache.catalina.manager.HTMLManagerServlet$4: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r10	0
+r2 = $r10	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r11 = "new"	$z4 = virtualinvoke $r11.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z4 = virtualinvoke $r11.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z4 == 0 goto $r13 = "locale"	1
+if $z4 == 0 goto $r13 = "locale"	$r12 = new org.apache.catalina.manager.HTMLManagerServlet$5	0
+if $z4 == 0 goto $r13 = "locale"	$r13 = "locale"	0
+$r12 = new org.apache.catalina.manager.HTMLManagerServlet$5	specialinvoke $r12.<org.apache.catalina.manager.HTMLManagerServlet$5: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r12.<org.apache.catalina.manager.HTMLManagerServlet$5: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r12	0
+r2 = $r12	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r13 = "locale"	$z5 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z5 = virtualinvoke $r13.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z5 == 0 goto $r15 = "user"	1
+if $z5 == 0 goto $r15 = "user"	$r14 = new org.apache.catalina.manager.HTMLManagerServlet$6	0
+if $z5 == 0 goto $r15 = "user"	$r15 = "user"	0
+$r14 = new org.apache.catalina.manager.HTMLManagerServlet$6	specialinvoke $r14.<org.apache.catalina.manager.HTMLManagerServlet$6: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r14.<org.apache.catalina.manager.HTMLManagerServlet$6: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r14	0
+r2 = $r14	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r15 = "user"	$z6 = virtualinvoke $r15.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z6 = virtualinvoke $r15.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z6 == 0 goto $r17 = "UsedTime"	1
+if $z6 == 0 goto $r17 = "UsedTime"	$r16 = new org.apache.catalina.manager.HTMLManagerServlet$7	0
+if $z6 == 0 goto $r17 = "UsedTime"	$r17 = "UsedTime"	0
+$r16 = new org.apache.catalina.manager.HTMLManagerServlet$7	specialinvoke $r16.<org.apache.catalina.manager.HTMLManagerServlet$7: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r16.<org.apache.catalina.manager.HTMLManagerServlet$7: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r16	0
+r2 = $r16	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r17 = "UsedTime"	$z7 = virtualinvoke $r17.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z7 = virtualinvoke $r17.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z7 == 0 goto $r19 = "InactiveTime"	1
+if $z7 == 0 goto $r19 = "InactiveTime"	$r18 = new org.apache.catalina.manager.HTMLManagerServlet$8	0
+if $z7 == 0 goto $r19 = "InactiveTime"	$r19 = "InactiveTime"	0
+$r18 = new org.apache.catalina.manager.HTMLManagerServlet$8	specialinvoke $r18.<org.apache.catalina.manager.HTMLManagerServlet$8: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r18.<org.apache.catalina.manager.HTMLManagerServlet$8: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r18	0
+r2 = $r18	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r19 = "InactiveTime"	$z8 = virtualinvoke $r19.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z8 = virtualinvoke $r19.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z8 == 0 goto $r21 = "TTL"	1
+if $z8 == 0 goto $r21 = "TTL"	$r20 = new org.apache.catalina.manager.HTMLManagerServlet$9	0
+if $z8 == 0 goto $r21 = "TTL"	$r21 = "TTL"	0
+$r20 = new org.apache.catalina.manager.HTMLManagerServlet$9	specialinvoke $r20.<org.apache.catalina.manager.HTMLManagerServlet$9: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r20.<org.apache.catalina.manager.HTMLManagerServlet$9: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r20	0
+r2 = $r20	goto [?= return r2]	1
+goto [?= return r2]	return r2	0
+$r21 = "TTL"	$z9 = virtualinvoke $r21.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	1
+$z9 = virtualinvoke $r21.<java.lang.String: boolean equalsIgnoreCase(java.lang.String)>(r1)	if $z9 == 0 goto return r2	1
+if $z9 == 0 goto return r2	$r22 = new org.apache.catalina.manager.HTMLManagerServlet$10	0
+if $z9 == 0 goto return r2	return r2	0
+$r22 = new org.apache.catalina.manager.HTMLManagerServlet$10	specialinvoke $r22.<org.apache.catalina.manager.HTMLManagerServlet$10: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	1
+specialinvoke $r22.<org.apache.catalina.manager.HTMLManagerServlet$10: void <init>(org.apache.catalina.manager.HTMLManagerServlet)>(r0)	r2 = $r22	0
+r2 = $r22	return r2	1

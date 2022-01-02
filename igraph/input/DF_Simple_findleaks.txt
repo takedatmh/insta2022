@@ -1,0 +1,25 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: org.apache.tomcat.util.res.StringManager
+[r0, r1]	$r2 = new java.lang.StringBuilder
+[r0, r1, $r2]	specialinvoke $r2.<java.lang.StringBuilder: void <init>()>()
+[r0, r1, $r2]	r3 = $r2
+[r0, r1, $r2, r3]	$r7 = new java.io.StringWriter
+[r0, r1, $r2, r3, $r7]	specialinvoke $r7.<java.io.StringWriter: void <init>()>()
+[r0, r1, $r2, r3, $r7]	r4 = $r7
+[r0, r1, $r2, r3, $r7, r4]	$r8 = new java.io.PrintWriter
+[r0, r1, $r2, r3, $r7, r4, $r8]	specialinvoke $r8.<java.io.PrintWriter: void <init>(java.io.Writer)>(r4)
+[r0, r1, $r2, r3, $r7, r4, $r8]	r5 = $r8
+[r0, r1, $r2, r3, $r7, r4, $r8, r5]	specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void findleaks(boolean,java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(0, r5, r1)
+[r0, r1, $r2, r3, $r7, r4, $r8, r5]	r6 = virtualinvoke r4.<java.io.StringWriter: java.lang.String toString()>()
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6]	$i0 = virtualinvoke r6.<java.lang.String: int length()>()
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0]	if $i0 <= 0 goto $r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0]	$z0 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("FAIL -")
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $z0]	if $z0 != 0 goto virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $z0]	$r9 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksList")
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $z0, $r9]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9)
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $z0]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $z0]	goto [?= $r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()]
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0]	$r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $r12]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12)
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0]	$r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()
+[r0, r1, $r2, r3, $r7, r4, $r8, r5, r6, $i0, $r14]	return $r14

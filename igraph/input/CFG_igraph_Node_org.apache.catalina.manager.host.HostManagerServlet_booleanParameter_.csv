@@ -1,0 +1,22 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	R	null
+if z0 == 0 goto $z5 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("true")	R	null
+z1 := @parameter3: boolean	R	null
+if $z4 == 0 goto return z2	R	null
+if r3 == null goto (branch)	R	null
+if z1 == 0 goto return z2	R	null
+z2 = 1	U	null
+goto [?= return z2]	R	null
+z2 = 0	U	null
+$z5 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("true")	U	null
+if $z5 == 0 goto return z2	R	null
+r3 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>(r2)	U	null
+return z2	R	null
+if $z3 == 0 goto return z2	R	null
+$z3 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("on")	U	null
+$z4 = virtualinvoke r3.<java.lang.String: boolean equals(java.lang.Object)>("false")	U	null
+r1 := @parameter0: javax.servlet.http.HttpServletRequest	R	null
+z0 := @parameter2: boolean	R	null
+r2 := @parameter1: java.lang.String	R	null
+z2 = z0	U	null
+if z1 == 0 goto (branch)	R	null

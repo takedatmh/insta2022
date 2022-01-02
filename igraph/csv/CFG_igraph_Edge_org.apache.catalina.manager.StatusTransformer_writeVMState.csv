@@ -1,0 +1,214 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	i0 := @parameter1: int	0
+i0 := @parameter1: int	r1 := @parameter2: java.lang.Object[]	0
+r1 := @parameter2: java.lang.Object[]	$r2 = new java.util.TreeMap	0
+$r2 = new java.util.TreeMap	specialinvoke $r2.<java.util.TreeMap: void <init>()>()	1
+specialinvoke $r2.<java.util.TreeMap: void <init>()>()	r3 = $r2	0
+r3 = $r2	$r7 = staticinvoke <java.lang.management.ManagementFactory: java.util.List getMemoryPoolMXBeans()>()	1
+$r7 = staticinvoke <java.lang.management.ManagementFactory: java.util.List getMemoryPoolMXBeans()>()	r4 = interfaceinvoke $r7.<java.util.List: java.util.Iterator iterator()>()	1
+r4 = interfaceinvoke $r7.<java.util.List: java.util.Iterator iterator()>()	goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	r5 = (java.lang.management.MemoryPoolMXBean) $r8	1
+r5 = (java.lang.management.MemoryPoolMXBean) $r8	$r9 = new java.lang.StringBuilder	0
+$r9 = new java.lang.StringBuilder	specialinvoke $r9.<java.lang.StringBuilder: void <init>()>()	1
+specialinvoke $r9.<java.lang.StringBuilder: void <init>()>()	$r10 = interfaceinvoke r5.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	0
+$r10 = interfaceinvoke r5.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10)	1
+$r11 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r10)	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")	1
+$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":")	$r13 = interfaceinvoke r5.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	1
+$r13 = interfaceinvoke r5.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	$r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13)	1
+$r14 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13)	r6 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>()	1
+r6 = virtualinvoke $r14.<java.lang.StringBuilder: java.lang.String toString()>()	interfaceinvoke r3.<java.util.SortedMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r6, r5)	1
+interfaceinvoke r3.<java.util.SortedMap: java.lang.Object put(java.lang.Object,java.lang.Object)>(r6, r5)	$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$z0 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	if $z0 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	1
+if $z0 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	if i0 != 0 goto (branch)	0
+if $z0 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	$r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	0
+if i0 != 0 goto (branch)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>JVM</h1>")	0
+if i0 != 0 goto (branch)	if i0 != 1 goto return	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>JVM</h1>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	$r16 = r1[0]	0
+$r16 = r1[0]	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r16)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r16)	$r17 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r17 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l1 = virtualinvoke $r17.<java.lang.Runtime: long freeMemory()>()	1
+$l1 = virtualinvoke $r17.<java.lang.Runtime: long freeMemory()>()	$r18 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1)	1
+$r18 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1)	$r19 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r18, 1)	1
+$r19 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r18, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r19)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r19)	$r20 = new java.lang.StringBuilder	0
+$r20 = new java.lang.StringBuilder	specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	1
+specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	$r21 = r1[1]	0
+$r21 = r1[1]	$r22 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r21)	1
+$r22 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r21)	$r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r23 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r23)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r23)	$r24 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r24 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l2 = virtualinvoke $r24.<java.lang.Runtime: long totalMemory()>()	1
+$l2 = virtualinvoke $r24.<java.lang.Runtime: long totalMemory()>()	$r25 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2)	1
+$r25 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2)	$r26 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r25, 1)	1
+$r26 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r25, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r26)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r26)	$r27 = new java.lang.StringBuilder	0
+$r27 = new java.lang.StringBuilder	specialinvoke $r27.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	1
+specialinvoke $r27.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	$r28 = r1[2]	0
+$r28 = r1[2]	$r29 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r28)	1
+$r29 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r28)	$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r30 = virtualinvoke $r29.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r30)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r30)	$r31 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r31 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l3 = virtualinvoke $r31.<java.lang.Runtime: long maxMemory()>()	1
+$l3 = virtualinvoke $r31.<java.lang.Runtime: long maxMemory()>()	$r32 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3)	1
+$r32 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3)	$r33 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r32, 1)	1
+$r33 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r32, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r33)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r33)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	$r34 = new java.lang.StringBuilder	0
+$r34 = new java.lang.StringBuilder	specialinvoke $r34.<java.lang.StringBuilder: void <init>(java.lang.String)>("<table border=\"0\"><thead><tr><th>")	1
+specialinvoke $r34.<java.lang.StringBuilder: void <init>(java.lang.String)>("<table border=\"0\"><thead><tr><th>")	$r35 = r1[3]	0
+$r35 = r1[3]	$r36 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r35)	1
+$r36 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r35)	$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	1
+$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	$r38 = r1[4]	1
+$r38 = r1[4]	$r39 = virtualinvoke $r37.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r38)	1
+$r39 = virtualinvoke $r37.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r38)	$r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	1
+$r40 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	$r41 = r1[5]	1
+$r41 = r1[5]	$r42 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r41)	1
+$r42 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r41)	$r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	1
+$r43 = virtualinvoke $r42.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	$r44 = r1[6]	1
+$r44 = r1[6]	$r45 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r44)	1
+$r45 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r44)	$r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	1
+$r46 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	$r47 = r1[7]	1
+$r47 = r1[7]	$r48 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r47)	1
+$r48 = virtualinvoke $r46.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r47)	$r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	1
+$r49 = virtualinvoke $r48.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th><th>")	$r50 = r1[8]	1
+$r50 = r1[8]	$r51 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r50)	1
+$r51 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r50)	$r52 = virtualinvoke $r51.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th></tr></thead><tbody>")	1
+$r52 = virtualinvoke $r51.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</th></tr></thead><tbody>")	$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r53)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r53)	$r54 = interfaceinvoke r3.<java.util.SortedMap: java.util.Collection values()>()	0
+$r54 = interfaceinvoke r3.<java.util.SortedMap: java.util.Collection values()>()	r55 = interfaceinvoke $r54.<java.util.Collection: java.util.Iterator iterator()>()	1
+r55 = interfaceinvoke $r54.<java.util.Collection: java.util.Iterator iterator()>()	goto [?= $z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()]	$z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()	0
+$r56 = interfaceinvoke r55.<java.util.Iterator: java.lang.Object next()>()	r57 = (java.lang.management.MemoryPoolMXBean) $r56	1
+r57 = (java.lang.management.MemoryPoolMXBean) $r56	r58 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryUsage getUsage()>()	1
+r58 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryUsage getUsage()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<tr><td>")	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<tr><td>")	$r59 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	0
+$r59 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r59)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r59)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	$r60 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	0
+$r60 = interfaceinvoke r57.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r60)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r60)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	$l4 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getInit()>()	0
+$l4 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getInit()>()	$r61 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4)	1
+$r61 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4)	$r62 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r61, 1)	1
+$r62 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r61, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r62)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r62)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	$l5 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getCommitted()>()	0
+$l5 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getCommitted()>()	$r63 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5)	1
+$r63 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5)	$r64 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r63, 1)	1
+$r64 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r63, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r64)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r64)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	$l6 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	0
+$l6 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	$r65 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l6)	1
+$r65 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l6)	$r66 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r65, 1)	1
+$r66 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r65, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r66)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r66)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td><td>")	$l7 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getUsed()>()	0
+$l7 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getUsed()>()	$r67 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l7)	1
+$r67 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l7)	$r68 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r67, 1)	1
+$r68 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r67, 1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r68)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r68)	$l8 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	0
+$l8 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	$b9 = $l8 cmp 0L	1
+$b9 = $l8 cmp 0L	if $b9 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	1
+if $b9 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	$r69 = new java.lang.StringBuilder	0
+if $b9 <= 0 goto virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	0
+$r69 = new java.lang.StringBuilder	specialinvoke $r69.<java.lang.StringBuilder: void <init>(java.lang.String)>(" (")	1
+specialinvoke $r69.<java.lang.StringBuilder: void <init>(java.lang.String)>(" (")	$l10 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getUsed()>()	0
+$l10 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getUsed()>()	$l11 = $l10 * 100L	1
+$l11 = $l10 * 100L	$l12 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	1
+$l12 = virtualinvoke r58.<java.lang.management.MemoryUsage: long getMax()>()	$l13 = $l11 / $l12	1
+$l13 = $l11 / $l12	$r70 = virtualinvoke $r69.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l13)	1
+$r70 = virtualinvoke $r69.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l13)	$r71 = virtualinvoke $r70.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("%)")	1
+$r71 = virtualinvoke $r70.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("%)")	$r72 = virtualinvoke $r71.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r72 = virtualinvoke $r71.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r72)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r72)	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</td></tr>")	$z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()	0
+$z1 = interfaceinvoke r55.<java.util.Iterator: boolean hasNext()>()	if $z1 != 0 goto $r56 = interfaceinvoke r55.<java.util.Iterator: java.lang.Object next()>()	1
+if $z1 != 0 goto $r56 = interfaceinvoke r55.<java.util.Iterator: java.lang.Object next()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</tbody></table>")	0
+if $z1 != 0 goto $r56 = interfaceinvoke r55.<java.util.Iterator: java.lang.Object next()>()	$r56 = interfaceinvoke r55.<java.util.Iterator: java.lang.Object next()>()	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</tbody></table>")	goto [?= return]	0
+goto [?= return]	return	0
+if i0 != 1 goto return	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<jvm>")	0
+if i0 != 1 goto return	return	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<jvm>")	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<memory")	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<memory")	$r73 = new java.lang.StringBuilder	0
+$r73 = new java.lang.StringBuilder	specialinvoke $r73.<java.lang.StringBuilder: void <init>(java.lang.String)>(" free=\'")	1
+specialinvoke $r73.<java.lang.StringBuilder: void <init>(java.lang.String)>(" free=\'")	$r74 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r74 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l14 = virtualinvoke $r74.<java.lang.Runtime: long freeMemory()>()	1
+$l14 = virtualinvoke $r74.<java.lang.Runtime: long freeMemory()>()	$r75 = virtualinvoke $r73.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l14)	1
+$r75 = virtualinvoke $r73.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l14)	$r76 = virtualinvoke $r75.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r76 = virtualinvoke $r75.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r77 = virtualinvoke $r76.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r77 = virtualinvoke $r76.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r77)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r77)	$r78 = new java.lang.StringBuilder	0
+$r78 = new java.lang.StringBuilder	specialinvoke $r78.<java.lang.StringBuilder: void <init>(java.lang.String)>(" total=\'")	1
+specialinvoke $r78.<java.lang.StringBuilder: void <init>(java.lang.String)>(" total=\'")	$r79 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r79 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l15 = virtualinvoke $r79.<java.lang.Runtime: long totalMemory()>()	1
+$l15 = virtualinvoke $r79.<java.lang.Runtime: long totalMemory()>()	$r80 = virtualinvoke $r78.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l15)	1
+$r80 = virtualinvoke $r78.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l15)	$r81 = virtualinvoke $r80.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r81 = virtualinvoke $r80.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r82 = virtualinvoke $r81.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r82 = virtualinvoke $r81.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r82)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r82)	$r83 = new java.lang.StringBuilder	0
+$r83 = new java.lang.StringBuilder	specialinvoke $r83.<java.lang.StringBuilder: void <init>(java.lang.String)>(" max=\'")	1
+specialinvoke $r83.<java.lang.StringBuilder: void <init>(java.lang.String)>(" max=\'")	$r84 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	0
+$r84 = staticinvoke <java.lang.Runtime: java.lang.Runtime getRuntime()>()	$l16 = virtualinvoke $r84.<java.lang.Runtime: long maxMemory()>()	1
+$l16 = virtualinvoke $r84.<java.lang.Runtime: long maxMemory()>()	$r85 = virtualinvoke $r83.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l16)	1
+$r85 = virtualinvoke $r83.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l16)	$r86 = virtualinvoke $r85.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'/>")	1
+$r86 = virtualinvoke $r85.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'/>")	$r87 = virtualinvoke $r86.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r87 = virtualinvoke $r86.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r87)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r87)	$r88 = interfaceinvoke r3.<java.util.SortedMap: java.util.Collection values()>()	0
+$r88 = interfaceinvoke r3.<java.util.SortedMap: java.util.Collection values()>()	r89 = interfaceinvoke $r88.<java.util.Collection: java.util.Iterator iterator()>()	1
+r89 = interfaceinvoke $r88.<java.util.Collection: java.util.Iterator iterator()>()	goto [?= $z2 = interfaceinvoke r89.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z2 = interfaceinvoke r89.<java.util.Iterator: boolean hasNext()>()]	$z2 = interfaceinvoke r89.<java.util.Iterator: boolean hasNext()>()	0
+$r90 = interfaceinvoke r89.<java.util.Iterator: java.lang.Object next()>()	r91 = (java.lang.management.MemoryPoolMXBean) $r90	1
+r91 = (java.lang.management.MemoryPoolMXBean) $r90	r92 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryUsage getUsage()>()	1
+r92 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryUsage getUsage()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<memorypool")	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("<memorypool")	$r93 = new java.lang.StringBuilder	0
+$r93 = new java.lang.StringBuilder	specialinvoke $r93.<java.lang.StringBuilder: void <init>(java.lang.String)>(" name=\'")	1
+specialinvoke $r93.<java.lang.StringBuilder: void <init>(java.lang.String)>(" name=\'")	$r94 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	0
+$r94 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.String getName()>()	$r95 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filterXml(java.lang.String)>($r94)	1
+$r95 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filterXml(java.lang.String)>($r94)	$r96 = virtualinvoke $r93.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r95)	1
+$r96 = virtualinvoke $r93.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r95)	$r97 = virtualinvoke $r96.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r97 = virtualinvoke $r96.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r98 = virtualinvoke $r97.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r98 = virtualinvoke $r97.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r98)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r98)	$r99 = new java.lang.StringBuilder	0
+$r99 = new java.lang.StringBuilder	specialinvoke $r99.<java.lang.StringBuilder: void <init>(java.lang.String)>(" type=\'")	1
+specialinvoke $r99.<java.lang.StringBuilder: void <init>(java.lang.String)>(" type=\'")	$r100 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	0
+$r100 = interfaceinvoke r91.<java.lang.management.MemoryPoolMXBean: java.lang.management.MemoryType getType()>()	$r101 = virtualinvoke $r99.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r100)	1
+$r101 = virtualinvoke $r99.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r100)	$r102 = virtualinvoke $r101.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r102 = virtualinvoke $r101.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r103 = virtualinvoke $r102.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r103 = virtualinvoke $r102.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r103)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r103)	$r104 = new java.lang.StringBuilder	0
+$r104 = new java.lang.StringBuilder	specialinvoke $r104.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageInit=\'")	1
+specialinvoke $r104.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageInit=\'")	$l17 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getInit()>()	0
+$l17 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getInit()>()	$r105 = virtualinvoke $r104.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l17)	1
+$r105 = virtualinvoke $r104.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l17)	$r106 = virtualinvoke $r105.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r106 = virtualinvoke $r105.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r107 = virtualinvoke $r106.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r107 = virtualinvoke $r106.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r107)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r107)	$r108 = new java.lang.StringBuilder	0
+$r108 = new java.lang.StringBuilder	specialinvoke $r108.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageCommitted=\'")	1
+specialinvoke $r108.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageCommitted=\'")	$l18 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getCommitted()>()	0
+$l18 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getCommitted()>()	$r109 = virtualinvoke $r108.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l18)	1
+$r109 = virtualinvoke $r108.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l18)	$r110 = virtualinvoke $r109.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r110 = virtualinvoke $r109.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r111 = virtualinvoke $r110.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r111 = virtualinvoke $r110.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r111)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r111)	$r112 = new java.lang.StringBuilder	0
+$r112 = new java.lang.StringBuilder	specialinvoke $r112.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageMax=\'")	1
+specialinvoke $r112.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageMax=\'")	$l19 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getMax()>()	0
+$l19 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getMax()>()	$r113 = virtualinvoke $r112.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l19)	1
+$r113 = virtualinvoke $r112.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l19)	$r114 = virtualinvoke $r113.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r114 = virtualinvoke $r113.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r115 = virtualinvoke $r114.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r115 = virtualinvoke $r114.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r115)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r115)	$r116 = new java.lang.StringBuilder	0
+$r116 = new java.lang.StringBuilder	specialinvoke $r116.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageUsed=\'")	1
+specialinvoke $r116.<java.lang.StringBuilder: void <init>(java.lang.String)>(" usageUsed=\'")	$l20 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getUsed()>()	0
+$l20 = virtualinvoke r92.<java.lang.management.MemoryUsage: long getUsed()>()	$r117 = virtualinvoke $r116.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l20)	1
+$r117 = virtualinvoke $r116.<java.lang.StringBuilder: java.lang.StringBuilder append(long)>($l20)	$r118 = virtualinvoke $r117.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'/>")	1
+$r118 = virtualinvoke $r117.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'/>")	$r119 = virtualinvoke $r118.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r119 = virtualinvoke $r118.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r119)	1
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>($r119)	$z2 = interfaceinvoke r89.<java.util.Iterator: boolean hasNext()>()	0
+$z2 = interfaceinvoke r89.<java.util.Iterator: boolean hasNext()>()	if $z2 != 0 goto $r90 = interfaceinvoke r89.<java.util.Iterator: java.lang.Object next()>()	1
+if $z2 != 0 goto $r90 = interfaceinvoke r89.<java.util.Iterator: java.lang.Object next()>()	virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</jvm>")	0
+if $z2 != 0 goto $r90 = interfaceinvoke r89.<java.util.Iterator: java.lang.Object next()>()	$r90 = interfaceinvoke r89.<java.util.Iterator: java.lang.Object next()>()	0
+virtualinvoke r0.<java.io.PrintWriter: void write(java.lang.String)>("</jvm>")	return	0

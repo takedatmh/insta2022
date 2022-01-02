@@ -1,0 +1,95 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r49 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l9)	U	null
+r2 = newarray (long)[16]	C	null
+$r13 = r1[0]	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	R	null
+$r14 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l1)	U	null
+$r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r48 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r18 = virtualinvoke $r16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r17)	U	null
+$r46 = r1[6]	U	null
+$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r10 := @caughtexception	R	null
+r12 = staticinvoke <org.apache.tomcat.util.ExceptionUtils: java.lang.Throwable unwrapInvocationTargetException(java.lang.Throwable)>(r11)	U	null
+$l5 = r2[6]	U	null
+$r32 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l4)	U	null
+$r28 = new java.lang.StringBuilder	C	null
+$r15 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r14, 1)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r33)	R	null
+$r17 = r1[1]	U	null
+r5 = newarray (java.lang.Object)[1]	C	null
+specialinvoke $r34.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r19)	R	null
+r5[0] = r2	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r13)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r25)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r50)	R	null
+$l7 = $l6 / 1000L	U	null
+$r24 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r23)	U	null
+$r30 = virtualinvoke $r28.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r29)	U	null
+$l1 = r2[0]	U	null
+if z0 == 0 goto return	R	null
+$r7 = virtualinvoke r2.<java.lang.Object: java.lang.Class getClass()>()	U	null
+z0 = 1	U	null
+z0 = 0	U	null
+specialinvoke $r16.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+$r34 = new java.lang.StringBuilder	C	null
+$r20 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l2)	U	null
+r11 = $r10	U	null
+$r29 = r1[3]	U	null
+$l3 = r2[2]	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r44)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r15)	R	null
+$l9 = $l8 / 1000L	U	null
+$l4 = r2[3]	U	null
+$l8 = r2[12]	U	null
+r4 = newarray (java.lang.Class)[1]	C	null
+$r45 = new java.lang.StringBuilder	C	null
+$r38 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l5)	U	null
+staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r12)	R	null
+specialinvoke $r22.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+$r44 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r43, 1)	U	null
+$r21 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r20, 1)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	R	null
+$l2 = r2[1]	U	null
+r6 = virtualinvoke $r8.<java.lang.Class: java.lang.reflect.Method getMethod(java.lang.String,java.lang.Class[])>(r3, r4)	U	null
+specialinvoke $r28.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>OS</h1>")	R	null
+$r35 = r1[4]	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r21)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r48)	R	null
+$r43 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l7)	U	null
+$r41 = virtualinvoke $r39.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r40)	U	null
+$r26 = staticinvoke <java.lang.Long: java.lang.Long valueOf(long)>($l3)	U	null
+$r50 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r49, 1)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r31)	R	null
+r1 := @parameter2: java.lang.Object[]	R	null
+goto [?= (branch)]	R	null
+$r22 = new java.lang.StringBuilder	C	null
+specialinvoke $r39.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r16 = new java.lang.StringBuilder	C	null
+if i0 != 0 goto return	R	null
+i0 := @parameter1: int	R	null
+$r39 = new java.lang.StringBuilder	C	null
+specialinvoke $r45.<java.lang.StringBuilder: void <init>(java.lang.String)>(" ")	R	null
+return	R	null
+$r8 = staticinvoke <java.lang.Class: java.lang.Class forName(java.lang.String)>("org.apache.tomcat.jni.OS")	U	null
+$r36 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r35)	U	null
+$r40 = r1[5]	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	R	null
+r4[0] = $r7	U	null
+$r23 = r1[2]	U	null
+virtualinvoke r6.<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>(null, r5)	R	null
+$r33 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r32, 1)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r27)	R	null
+$r27 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatSize(java.lang.Object,boolean)>($r26, 1)	U	null
+$l6 = r2[11]	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r42)	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r37)	R	null
+$r47 = virtualinvoke $r45.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r46)	U	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.Object)>($r38)	R	null
+$r31 = virtualinvoke $r30.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+r3 = "info"	U	null

@@ -1,0 +1,65 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	r1 := @parameter1: javax.management.MBeanServer	0
+r1 := @parameter1: javax.management.MBeanServer	i0 := @parameter2: int	0
+i0 := @parameter2: int	if i0 != 0 goto return	0
+if i0 != 0 goto return	$r7 = new javax.management.ObjectName	0
+if i0 != 0 goto return	return	0
+$r7 = new javax.management.ObjectName	specialinvoke $r7.<javax.management.ObjectName: void <init>(java.lang.String)>("*:j2eeType=WebModule,*")	1
+specialinvoke $r7.<javax.management.ObjectName: void <init>(java.lang.String)>("*:j2eeType=WebModule,*")	r2 = $r7	0
+r2 = $r7	r3 = interfaceinvoke r1.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r2, null)	1
+r3 = interfaceinvoke r1.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r2, null)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("Application list")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("Application list")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h1>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h1>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	i1 = 0	0
+i1 = 0	r4 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	1
+r4 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	$z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	r5 = (javax.management.ObjectName) $r8	1
+r5 = (javax.management.ObjectName) $r8	r6 = virtualinvoke r5.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	1
+r6 = virtualinvoke r5.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	$z0 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("//")	1
+$z0 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("//")	if $z0 == 0 goto i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	1
+if $z0 == 0 goto i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	r6 = virtualinvoke r6.<java.lang.String: java.lang.String substring(int)>(2)	0
+if $z0 == 0 goto i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	0
+r6 = virtualinvoke r6.<java.lang.String: java.lang.String substring(int)>(2)	i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	1
+i2 = virtualinvoke r6.<java.lang.String: int indexOf(int)>(47)	if i2 != -1 goto $r9 = new java.lang.StringBuilder	1
+if i2 != -1 goto $r9 = new java.lang.StringBuilder	i1 = i1 + 1	0
+if i2 != -1 goto $r9 = new java.lang.StringBuilder	$r9 = new java.lang.StringBuilder	0
+i1 = i1 + 1	goto [?= $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()]	$z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$r9 = new java.lang.StringBuilder	specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a href=\"#")	1
+specialinvoke $r9.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a href=\"#")	$i3 = i1	0
+$i3 = i1	i1 = i1 + 1	1
+i1 = i1 + 1	$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3)	1
+$r10 = virtualinvoke $r9.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i3)	$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".0\">")	1
+$r11 = virtualinvoke $r10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".0\">")	$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r12 = virtualinvoke $r11.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r12)	$r13 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r6)	0
+$r13 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r6)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r13)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r13)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</a>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</a>")	$z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$z1 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	if $z1 == 0 goto $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	1
+if $z1 == 0 goto $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	0
+if $z1 == 0 goto $z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	$z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	$z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	0
+$z2 = interfaceinvoke r4.<java.util.Iterator: boolean hasNext()>()	if $z2 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	1
+if $z2 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+if $z2 != 0 goto $r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	$r8 = interfaceinvoke r4.<java.util.Iterator: java.lang.Object next()>()	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	i4 = 0	0
+i4 = 0	r14 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	1
+r14 = interfaceinvoke r3.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z3 = interfaceinvoke r14.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z3 = interfaceinvoke r14.<java.util.Iterator: boolean hasNext()>()]	$z3 = interfaceinvoke r14.<java.util.Iterator: boolean hasNext()>()	0
+$r15 = interfaceinvoke r14.<java.util.Iterator: java.lang.Object next()>()	r16 = (javax.management.ObjectName) $r15	1
+r16 = (javax.management.ObjectName) $r15	$r17 = new java.lang.StringBuilder	0
+$r17 = new java.lang.StringBuilder	specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a class=\"A.name\" name=\"")	1
+specialinvoke $r17.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a class=\"A.name\" name=\"")	$i5 = i4	0
+$i5 = i4	i4 = i4 + 1	1
+i4 = i4 + 1	$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5)	1
+$r18 = virtualinvoke $r17.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i5)	$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".0\">")	1
+$r19 = virtualinvoke $r18.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(".0\">")	$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r20 = virtualinvoke $r19.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r20)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r20)	staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeContext(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, r16, r1, i0)	0
+staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeContext(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, r16, r1, i0)	$z3 = interfaceinvoke r14.<java.util.Iterator: boolean hasNext()>()	0
+$z3 = interfaceinvoke r14.<java.util.Iterator: boolean hasNext()>()	if $z3 != 0 goto $r15 = interfaceinvoke r14.<java.util.Iterator: java.lang.Object next()>()	1
+if $z3 != 0 goto $r15 = interfaceinvoke r14.<java.util.Iterator: java.lang.Object next()>()	return	0
+if $z3 != 0 goto $r15 = interfaceinvoke r14.<java.util.Iterator: java.lang.Object next()>()	$r15 = interfaceinvoke r14.<java.util.Iterator: java.lang.Object next()>()	0

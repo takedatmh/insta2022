@@ -1,0 +1,27 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	R	null
+if $r9 == null goto $z1 = virtualinvoke r3.<java.io.File: boolean mkdirs()>()	R	null
+return r3	R	null
+if $z1 != 0 goto return r3	R	null
+r3 = $r10	U	null
+if $z0 != 0 goto $r5 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	R	null
+if $z2 != 0 goto return r3	R	null
+$r7 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+r1 := @parameter0: java.lang.String	R	null
+$r6 = new java.io.File	C	null
+$z1 = virtualinvoke r3.<java.io.File: boolean mkdirs()>()	U	null
+return null	R	null
+$r9 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	U	null
+specialinvoke $r6.<java.io.File: void <init>(java.io.File,java.lang.String)>(r3, $r8)	R	null
+if $r5 == null goto $r9 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	R	null
+r3 = $r2	U	null
+$r5 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+r3 = $r6	U	null
+$z0 = virtualinvoke r3.<java.io.File: boolean exists()>()	U	null
+$r10 = new java.io.File	C	null
+specialinvoke $r10.<java.io.File: void <init>(java.io.File,java.lang.String)>(r3, r1)	R	null
+$r4 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("catalina.base")	U	null
+$z2 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()	U	null
+specialinvoke $r2.<java.io.File: void <init>(java.lang.String,java.lang.String)>($r4, "conf")	R	null
+$r2 = new java.io.File	C	null
+$r8 = interfaceinvoke $r7.<org.apache.catalina.Engine: java.lang.String getName()>()	U	null

@@ -1,0 +1,13 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.StatusManagerServlet	R	[]
+r2 = $r4	U	[r0, r1, $r4]
+$r6 := @caughtexception	R	[r0, r1]
+r3 = $r6	U	[r0, r1, $r6]
+return	R	[r0, r1]
+interfaceinvoke $r5.<javax.management.MBeanServer: void removeNotificationListener(javax.management.ObjectName,javax.management.NotificationListener,javax.management.NotificationFilter,java.lang.Object)>(r2, r0, null, null)	R	[r0, r1, $r4, r2, $r5]
+goto [?= return]	R	[r0, r1, $r4, r2, $r5]
+specialinvoke $r4.<javax.management.ObjectName: void <init>(java.lang.String)>(r1)	R	[r0, r1, $r4]
+$r5 = r0.<org.apache.catalina.manager.StatusManagerServlet: javax.management.MBeanServer mBeanServer>	U	[r0, r1, $r4, r2]
+$r4 = new javax.management.ObjectName	C	[r0, r1]
+virtualinvoke r3.<java.lang.Exception: void printStackTrace()>()	R	[r0, r1, $r6, r3]
+r1 = "JMImplementation:type=MBeanServerDelegate"	U	[r0]

@@ -1,0 +1,37 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.tomcat.util.http.mapper.Mapper	R	null
+r5 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion findContextVersion(java.lang.String,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, 0)	U	null
+$r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r11, 0, r6, 0, i0)	R	null
+if $z0 == 0 goto i0 = -1	R	null
+if $z1 == 0 goto i1 = i1 + 1	R	null
+r6 = newarray (java.lang.String)[i4]	C	null
+if i1 < $i2 goto $r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	R	null
+$z0 = virtualinvoke r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: boolean isPaused()>()	U	null
+i1 = 0	U	null
+r1 := @parameter0: java.lang.String	R	null
+r3 := @parameter2: java.lang.String	R	null
+$r8 = $r7[i1]	U	null
+r4 := @parameter3: java.lang.String	R	null
+i0 = -1	U	null
+if r5 == null goto return	R	null
+goto [?= (branch)]	R	null
+$z1 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>($r8)	U	null
+$i6 = i4 - i0	U	null
+$i2 = lengthof $r9	U	null
+if i0 >= i4 goto r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	R	null
+i1 = i1 + 1	U	null
+$i5 = i0 + 1	U	null
+$r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+return	R	null
+staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r12, $i5, r6, i0, $i6)	R	null
+goto [?= $r9 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>]	R	null
+i4 = $i3 - 1	U	null
+$i3 = lengthof $r10	U	null
+i0 = i1	U	null
+r2 := @parameter1: java.lang.String	R	null
+$r10 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+if i0 <= -1 goto return	R	null
+$r12 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+$r11 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	U	null

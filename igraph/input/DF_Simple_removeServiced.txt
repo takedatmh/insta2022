@@ -1,0 +1,12 @@
+[]	r0 := @this: org.apache.catalina.manager.ManagerServlet
+[r0]	r1 := @parameter0: java.lang.String
+[r0, r1]	$r4 = newarray (java.lang.String)[1]
+[r0, r1, $r4]	$r4[0] = r1
+[r0, r1, $r4]	r2 = $r4
+[r0, r1, $r4, r2]	$r5 = newarray (java.lang.String)[1]
+[r0, r1, $r4, r2, $r5]	$r5[0] = "java.lang.String"
+[r0, r1, $r4, r2, $r5]	r3 = $r5
+[r0, r1, $r4, r2, $r5, r3]	$r6 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.MBeanServer mBeanServer>
+[r0, r1, $r4, r2, $r5, r3, $r6]	$r7 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>
+[r0, r1, $r4, r2, $r5, r3, $r6, $r7]	interfaceinvoke $r6.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>($r7, "removeServiced", r2, r3)
+[r0, r1, $r4, r2, $r5, r3, $r6, $r7]	return

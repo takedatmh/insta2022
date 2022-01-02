@@ -1,0 +1,71 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	r1 := @parameter0: org.apache.catalina.util.ContextName	0
+r1 := @parameter0: org.apache.catalina.util.ContextName	r2 := @parameter1: org.apache.tomcat.util.res.StringManager	0
+r2 := @parameter1: org.apache.tomcat.util.res.StringManager	if r1 == null goto r3 = null	0
+if r1 == null goto r3 = null	$r9 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	0
+if r1 == null goto r3 = null	r3 = null	0
+$r9 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	$z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("/")	1
+$z0 = virtualinvoke $r9.<java.lang.String: boolean startsWith(java.lang.String)>("/")	if $z0 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	1
+if $z0 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r10 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	0
+if $z0 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	0
+$r10 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	$z1 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("")	1
+$z1 = virtualinvoke $r10.<java.lang.String: boolean equals(java.lang.Object)>("")	if $z1 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	1
+if $z1 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	r3 = null	0
+if $z1 != 0 goto $r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	0
+r3 = null	if r1 == null goto $r11 = new java.lang.IllegalArgumentException	1
+if r1 == null goto $r11 = new java.lang.IllegalArgumentException	r3 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	0
+if r1 == null goto $r11 = new java.lang.IllegalArgumentException	$r11 = new java.lang.IllegalArgumentException	0
+r3 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getPath()>()	$r11 = new java.lang.IllegalArgumentException	0
+$r11 = new java.lang.IllegalArgumentException	$r12 = newarray (java.lang.Object)[1]	0
+$r12 = newarray (java.lang.Object)[1]	$r13 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	1
+$r13 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	$r12[0] = $r13	1
+$r12[0] = $r13	$r14 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.invalidPath", $r12)	1
+$r14 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.invalidPath", $r12)	specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r14)	1
+specialinvoke $r11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r14)	throw $r11	0
+$r15 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r16 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getName()>()	1
+$r16 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getName()>()	$r17 = interfaceinvoke $r15.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>($r16)	1
+$r17 = interfaceinvoke $r15.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>($r16)	r18 = (org.apache.catalina.Context) $r17	1
+r18 = (org.apache.catalina.Context) $r17	if r18 != null goto r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	1
+if r18 != null goto r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	$r19 = new java.lang.IllegalArgumentException	0
+if r18 != null goto r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	0
+$r19 = new java.lang.IllegalArgumentException	$r20 = newarray (java.lang.Object)[1]	0
+$r20 = newarray (java.lang.Object)[1]	$r21 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getDisplayName()>()	1
+$r21 = virtualinvoke r1.<org.apache.catalina.util.ContextName: java.lang.String getDisplayName()>()	$r22 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r21)	1
+$r22 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r21)	$r20[0] = $r22	1
+$r20[0] = $r22	$r23 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.noContext", $r20)	1
+$r23 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.noContext", $r20)	specialinvoke $r19.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r23)	1
+specialinvoke $r19.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>($r23)	throw $r19	0
+r4 = interfaceinvoke r18.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	$r24 = new java.util.ArrayList	0
+$r24 = new java.util.ArrayList	specialinvoke $r24.<java.util.ArrayList: void <init>()>()	1
+specialinvoke $r24.<java.util.ArrayList: void <init>()>()	r5 = $r24	0
+r5 = $r24	$r25 = interfaceinvoke r4.<org.apache.catalina.Manager: org.apache.catalina.Session[] findSessions()>()	1
+$r25 = interfaceinvoke r4.<org.apache.catalina.Manager: org.apache.catalina.Session[] findSessions()>()	$r26 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r25)	1
+$r26 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>($r25)	interfaceinvoke r5.<java.util.List: boolean addAll(java.util.Collection)>($r26)	1
+interfaceinvoke r5.<java.util.List: boolean addAll(java.util.Collection)>($r26)	$z3 = r4 instanceof org.apache.catalina.DistributedManager	0
+$z3 = r4 instanceof org.apache.catalina.DistributedManager	if $z3 == 0 goto return r5	1
+if $z3 == 0 goto return r5	$z4 = r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions>	0
+if $z3 == 0 goto return r5	return r5	0
+$z4 = r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions>	if $z4 == 0 goto return r5	1
+if $z4 == 0 goto return r5	$r27 = (org.apache.catalina.DistributedManager) r4	0
+if $z4 == 0 goto return r5	return r5	0
+$r27 = (org.apache.catalina.DistributedManager) r4	r6 = interfaceinvoke $r27.<org.apache.catalina.DistributedManager: java.util.Set getSessionIdsFull()>()	1
+r6 = interfaceinvoke $r27.<org.apache.catalina.DistributedManager: java.util.Set getSessionIdsFull()>()	r7 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()	1
+r7 = interfaceinvoke r5.<java.util.List: java.util.Iterator iterator()>()	goto [?= $z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()]	$z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()	0
+$r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()	r8 = (org.apache.catalina.Session) $r28	1
+r8 = (org.apache.catalina.Session) $r28	$r29 = interfaceinvoke r8.<org.apache.catalina.Session: java.lang.String getId()>()	1
+$r29 = interfaceinvoke r8.<org.apache.catalina.Session: java.lang.String getId()>()	interfaceinvoke r6.<java.util.Set: boolean remove(java.lang.Object)>($r29)	1
+interfaceinvoke r6.<java.util.Set: boolean remove(java.lang.Object)>($r29)	$z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()	0
+$z6 = interfaceinvoke r7.<java.util.Iterator: boolean hasNext()>()	if $z6 != 0 goto $r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()	1
+if $z6 != 0 goto $r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()	r30 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()	0
+if $z6 != 0 goto $r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()	$r28 = interfaceinvoke r7.<java.util.Iterator: java.lang.Object next()>()	0
+r30 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()]	$z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()	0
+$r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()	r32 = (java.lang.String) $r31	1
+r32 = (java.lang.String) $r31	$r33 = new org.apache.catalina.manager.DummyProxySession	0
+$r33 = new org.apache.catalina.manager.DummyProxySession	specialinvoke $r33.<org.apache.catalina.manager.DummyProxySession: void <init>(java.lang.String)>(r32)	1
+specialinvoke $r33.<org.apache.catalina.manager.DummyProxySession: void <init>(java.lang.String)>(r32)	interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r33)	0
+interfaceinvoke r5.<java.util.List: boolean add(java.lang.Object)>($r33)	$z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()	0
+$z8 = interfaceinvoke r30.<java.util.Iterator: boolean hasNext()>()	if $z8 != 0 goto $r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()	1
+if $z8 != 0 goto $r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()	return r5	0
+if $z8 != 0 goto $r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()	$r31 = interfaceinvoke r30.<java.util.Iterator: java.lang.Object next()>()	0

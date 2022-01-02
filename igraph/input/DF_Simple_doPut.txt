@@ -1,0 +1,39 @@
+[]	r0 := @this: org.apache.catalina.manager.ManagerServlet
+[r0]	r1 := @parameter0: javax.servlet.http.HttpServletRequest
+[r0, r1]	r2 := @parameter1: javax.servlet.http.HttpServletResponse
+[r0, r1, r2]	$r8 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()
+[r0, r1, r2, $r8]	r3 = staticinvoke <org.apache.tomcat.util.res.StringManager: org.apache.tomcat.util.res.StringManager getManager(java.lang.String,java.util.Enumeration)>("org.apache.catalina.manager", $r8)
+[r0, r1, r2, $r8, r3]	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>()
+[r0, r1, r2, $r8, r3, r4]	if r4 != null goto r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("path")
+[r0, r1, r2, $r8, r3, r4]	r4 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>()
+[r0, r1, r2, $r8, r3, r4]	r5 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("path")
+[r0, r1, r2, $r8, r3, r4, r5]	n0 = null
+[r0, r1, r2, $r8, r3, r4, r5, n0]	if r5 == null goto interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("tag")
+[r0, r1, r2, $r8, r3, r4, r5, n0]	$r9 = new org.apache.catalina.util.ContextName
+[r0, r1, r2, $r8, r3, r4, r5, n0, $r9]	$r10 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("version")
+[r0, r1, r2, $r8, r3, r4, r5, n0, $r9, $r10]	specialinvoke $r9.<org.apache.catalina.util.ContextName: void <init>(java.lang.String,java.lang.String)>(r5, $r10)
+[r0, r1, r2, $r8, r3, r4, r5, n0, $r9, $r10]	r11 = $r9
+[r0, r1, r2, $r8, r3, r4, r5, n0]	interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("tag")
+[r0, r1, r2, $r8, r3, r4, r5, n0]	z0 = 0
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0]	$r12 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12]	if $r12 == null goto interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain;charset=utf-8")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12]	$r13 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>("update")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, $r13]	$z1 = virtualinvoke $r13.<java.lang.String: boolean equals(java.lang.Object)>("true")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, $r13, $z1]	if $z1 == 0 goto interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain;charset=utf-8")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, $r13, $z1]	z2 = 1
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12]	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/plain;charset=utf-8")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12]	interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: void setHeader(java.lang.String,java.lang.String)>("X-Content-Type-Options", "nosniff")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12]	r7 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	if r4 != null goto $z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	$r14 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.noCommand")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $r14]	virtualinvoke r7.<java.io.PrintWriter: void println(java.lang.String)>($r14)
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $r14]	goto [?= virtualinvoke r7.<java.io.PrintWriter: void flush()>()]
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	$z3 = virtualinvoke r4.<java.lang.String: boolean equals(java.lang.Object)>("/deploy")
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $z3]	if $z3 != 0 goto virtualinvoke r7.<java.io.PrintWriter: void flush()>()
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $z3]	$r15 = newarray (java.lang.Object)[1]
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $z3, $r15]	$r15[0] = r4
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $z3, $r15]	$r16 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.unknownCommand", $r15)
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7, $z3, $r15, $r16]	virtualinvoke r7.<java.io.PrintWriter: void println(java.lang.String)>($r16)
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	virtualinvoke r7.<java.io.PrintWriter: void flush()>()
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	virtualinvoke r7.<java.io.PrintWriter: void close()>()
+[r0, r1, r2, $r8, r3, r4, r5, n0, z0, $r12, r7]	return

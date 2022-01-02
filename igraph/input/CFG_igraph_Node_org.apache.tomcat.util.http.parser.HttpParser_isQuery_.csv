@@ -1,0 +1,5 @@
+Node	CRUD	DataFlowValue
+i0 := @parameter0: int	R	null
+return $z0	R	null
+$r0 = <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser DEFAULT>	U	null
+$z0 = virtualinvoke $r0.<org.apache.tomcat.util.http.parser.HttpParser: boolean isQueryRelaxed(int)>(i0)	U	null

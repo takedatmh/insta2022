@@ -1,0 +1,101 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	$r7 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Wrapper wrapper>	0
+$r7 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Wrapper wrapper>	if $r7 == null goto $r9 = new javax.servlet.UnavailableException	1
+if $r7 == null goto $r9 = new javax.servlet.UnavailableException	$r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	0
+if $r7 == null goto $r9 = new javax.servlet.UnavailableException	$r9 = new javax.servlet.UnavailableException	0
+$r8 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	if $r8 != null goto n0 = null	1
+if $r8 != null goto n0 = null	$r9 = new javax.servlet.UnavailableException	0
+if $r8 != null goto n0 = null	n0 = null	0
+$r9 = new javax.servlet.UnavailableException	$r1 = <org.apache.catalina.manager.ManagerServlet: org.apache.tomcat.util.res.StringManager sm>	1
+$r1 = <org.apache.catalina.manager.ManagerServlet: org.apache.tomcat.util.res.StringManager sm>	$r10 = virtualinvoke $r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.noWrapper")	1
+$r10 = virtualinvoke $r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("managerServlet.noWrapper")	specialinvoke $r9.<javax.servlet.UnavailableException: void <init>(java.lang.String)>($r10)	1
+specialinvoke $r9.<javax.servlet.UnavailableException: void <init>(java.lang.String)>($r10)	throw $r9	0
+n0 = null	$r11 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	1
+n0 = null	$r13 := @caughtexception	1
+$r11 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	r12 = interfaceinvoke $r11.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	1
+$r11 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletConfig getServletConfig()>()	$r13 := @caughtexception	1
+r12 = interfaceinvoke $r11.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r12)	1
+r12 = interfaceinvoke $r11.<javax.servlet.ServletConfig: java.lang.String getInitParameter(java.lang.String)>("debug")	$r13 := @caughtexception	1
+$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r12)	r0.<org.apache.catalina.manager.ManagerServlet: int debug> = $i0	1
+$i0 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(r12)	$r13 := @caughtexception	1
+r0.<org.apache.catalina.manager.ManagerServlet: int debug> = $i0	goto [?= $r14 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>]	1
+r0.<org.apache.catalina.manager.ManagerServlet: int debug> = $i0	$r13 := @caughtexception	1
+goto [?= $r14 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>]	$r14 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	0
+$r13 := @caughtexception	r2 = $r13	0
+r2 = $r13	staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r2)	1
+staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r2)	$r14 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	0
+$r14 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$r15 = interfaceinvoke $r14.<org.apache.catalina.Host: org.apache.catalina.Container getParent()>()	1
+$r15 = interfaceinvoke $r14.<org.apache.catalina.Host: org.apache.catalina.Container getParent()>()	$r16 = (org.apache.catalina.Engine) $r15	1
+$r16 = (org.apache.catalina.Engine) $r15	$r17 = interfaceinvoke $r16.<org.apache.catalina.Engine: org.apache.catalina.Service getService()>()	1
+$r17 = interfaceinvoke $r16.<org.apache.catalina.Engine: org.apache.catalina.Service getService()>()	r18 = interfaceinvoke $r17.<org.apache.catalina.Service: org.apache.catalina.Server getServer()>()	1
+r18 = interfaceinvoke $r17.<org.apache.catalina.Service: org.apache.catalina.Server getServer()>()	if r18 == null goto $r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	1
+if r18 == null goto $r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	$r19 = interfaceinvoke r18.<org.apache.catalina.Server: javax.naming.Context getGlobalNamingContext()>()	0
+if r18 == null goto $r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	$r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	0
+$r19 = interfaceinvoke r18.<org.apache.catalina.Server: javax.naming.Context getGlobalNamingContext()>()	r0.<org.apache.catalina.manager.ManagerServlet: javax.naming.Context global> = $r19	1
+r0.<org.apache.catalina.manager.ManagerServlet: javax.naming.Context global> = $r19	$r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	1
+$r20 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()	$r21 = interfaceinvoke $r20.<javax.servlet.ServletContext: java.lang.Object getAttribute(java.lang.String)>("javax.servlet.context.tempdir")	1
+$r21 = interfaceinvoke $r20.<javax.servlet.ServletContext: java.lang.Object getAttribute(java.lang.String)>("javax.servlet.context.tempdir")	$r22 = (java.io.File) $r21	1
+$r22 = (java.io.File) $r21	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File versioned> = $r22	1
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File versioned> = $r22	$r23 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	1
+$r23 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	$r24 = interfaceinvoke $r23.<org.apache.catalina.Context: org.apache.catalina.Container getParent()>()	1
+$r24 = interfaceinvoke $r23.<org.apache.catalina.Context: org.apache.catalina.Container getParent()>()	$r25 = (org.apache.catalina.Host) $r24	1
+$r25 = (org.apache.catalina.Host) $r24	r3 = interfaceinvoke $r25.<org.apache.catalina.Host: java.lang.String getAppBase()>()	1
+r3 = interfaceinvoke $r25.<org.apache.catalina.Host: java.lang.String getAppBase()>()	$r26 = new java.io.File	0
+$r26 = new java.io.File	specialinvoke $r26.<java.io.File: void <init>(java.lang.String)>(r3)	1
+specialinvoke $r26.<java.io.File: void <init>(java.lang.String)>(r3)	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed> = $r26	0
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed> = $r26	$r27 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed>	1
+$r27 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed>	$z0 = virtualinvoke $r27.<java.io.File: boolean isAbsolute()>()	1
+$z0 = virtualinvoke $r27.<java.io.File: boolean isAbsolute()>()	if $z0 != 0 goto $r30 = new java.io.File	1
+if $z0 != 0 goto $r30 = new java.io.File	$r28 = new java.io.File	0
+if $z0 != 0 goto $r30 = new java.io.File	$r30 = new java.io.File	0
+$r28 = new java.io.File	$r29 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("catalina.base")	1
+$r29 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("catalina.base")	specialinvoke $r28.<java.io.File: void <init>(java.lang.String,java.lang.String)>($r29, r3)	1
+specialinvoke $r28.<java.io.File: void <init>(java.lang.String,java.lang.String)>($r29, r3)	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed> = $r28	0
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File deployed> = $r28	$r30 = new java.io.File	0
+$r30 = new java.io.File	$r31 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("catalina.base")	1
+$r31 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("catalina.base")	specialinvoke $r30.<java.io.File: void <init>(java.lang.String,java.lang.String)>($r31, "conf")	1
+specialinvoke $r30.<java.io.File: void <init>(java.lang.String,java.lang.String)>($r31, "conf")	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r30	0
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r30	r4 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	1
+r4 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Context context>	r5 = null	1
+r5 = null	r6 = null	1
+r6 = null	goto [?= (branch)]	1
+goto [?= (branch)]	if r4 != null goto $z1 = r4 instanceof org.apache.catalina.Host	0
+$z1 = r4 instanceof org.apache.catalina.Host	if $z1 == 0 goto $z2 = r4 instanceof org.apache.catalina.Engine	1
+if $z1 == 0 goto $z2 = r4 instanceof org.apache.catalina.Engine	r5 = r4	0
+if $z1 == 0 goto $z2 = r4 instanceof org.apache.catalina.Engine	$z2 = r4 instanceof org.apache.catalina.Engine	0
+r5 = r4	$z2 = r4 instanceof org.apache.catalina.Engine	1
+$z2 = r4 instanceof org.apache.catalina.Engine	if $z2 == 0 goto r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	1
+if $z2 == 0 goto r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	r6 = r4	0
+if $z2 == 0 goto r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	0
+r6 = r4	r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	1
+r4 = interfaceinvoke r4.<org.apache.catalina.Container: org.apache.catalina.Container getParent()>()	if r4 != null goto $z1 = r4 instanceof org.apache.catalina.Host	1
+if r4 != null goto $z1 = r4 instanceof org.apache.catalina.Host	if r6 == null goto (branch)	0
+if r4 != null goto $z1 = r4 instanceof org.apache.catalina.Host	$z1 = r4 instanceof org.apache.catalina.Host	0
+if r6 == null goto (branch)	$r32 = new java.io.File	0
+if r6 == null goto (branch)	if r5 == null goto $i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	0
+$r32 = new java.io.File	$r33 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase>	1
+$r33 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase>	$r34 = interfaceinvoke r6.<org.apache.catalina.Container: java.lang.String getName()>()	1
+$r34 = interfaceinvoke r6.<org.apache.catalina.Container: java.lang.String getName()>()	specialinvoke $r32.<java.io.File: void <init>(java.io.File,java.lang.String)>($r33, $r34)	1
+specialinvoke $r32.<java.io.File: void <init>(java.io.File,java.lang.String)>($r33, $r34)	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r32	0
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r32	if r5 == null goto $i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	1
+if r5 == null goto $i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	$r35 = new java.io.File	0
+if r5 == null goto $i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	$i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	0
+$r35 = new java.io.File	$r36 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase>	1
+$r36 = r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase>	$r37 = interfaceinvoke r5.<org.apache.catalina.Container: java.lang.String getName()>()	1
+$r37 = interfaceinvoke r5.<org.apache.catalina.Container: java.lang.String getName()>()	specialinvoke $r35.<java.io.File: void <init>(java.io.File,java.lang.String)>($r36, $r37)	1
+specialinvoke $r35.<java.io.File: void <init>(java.io.File,java.lang.String)>($r36, $r37)	r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r35	0
+r0.<org.apache.catalina.manager.ManagerServlet: java.io.File configBase> = $r35	$i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	1
+$i1 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>	if $i1 < 1 goto return	1
+if $i1 < 1 goto return	$r38 = new java.lang.StringBuilder	0
+if $i1 < 1 goto return	return	0
+$r38 = new java.lang.StringBuilder	specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>("init: Associated with Deployer \'")	1
+specialinvoke $r38.<java.lang.StringBuilder: void <init>(java.lang.String)>("init: Associated with Deployer \'")	$r39 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>	0
+$r39 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>	$r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r39)	1
+$r40 = virtualinvoke $r38.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r39)	$r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r41 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r42 = virtualinvoke $r41.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void log(java.lang.String)>($r42)	1
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void log(java.lang.String)>($r42)	$r43 = r0.<org.apache.catalina.manager.ManagerServlet: javax.naming.Context global>	0
+$r43 = r0.<org.apache.catalina.manager.ManagerServlet: javax.naming.Context global>	if $r43 == null goto return	1
+if $r43 == null goto return	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void log(java.lang.String)>("init: Global resources are available")	0
+if $r43 == null goto return	return	0
+virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void log(java.lang.String)>("init: Global resources are available")	return	0

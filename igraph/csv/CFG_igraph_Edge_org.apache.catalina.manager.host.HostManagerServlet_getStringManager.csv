@@ -1,0 +1,16 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	r1 := @parameter0: javax.servlet.http.HttpServletRequest	0
+r1 := @parameter0: javax.servlet.http.HttpServletRequest	r2 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	0
+r2 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.util.Enumeration getLocales()>()	goto [?= $z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()]	1
+goto [?= $z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()]	$z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	0
+$r5 = interfaceinvoke r2.<java.util.Enumeration: java.lang.Object nextElement()>()	r3 = (java.util.Locale) $r5	1
+r3 = (java.util.Locale) $r5	r4 = staticinvoke <org.apache.tomcat.util.res.StringManager: org.apache.tomcat.util.res.StringManager getManager(java.lang.String,java.util.Locale)>("org.apache.catalina.manager.host", r3)	1
+r4 = staticinvoke <org.apache.tomcat.util.res.StringManager: org.apache.tomcat.util.res.StringManager getManager(java.lang.String,java.util.Locale)>("org.apache.catalina.manager.host", r3)	$r6 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.util.Locale getLocale()>()	1
+$r6 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.util.Locale getLocale()>()	$z0 = virtualinvoke $r6.<java.util.Locale: boolean equals(java.lang.Object)>(r3)	1
+$z0 = virtualinvoke $r6.<java.util.Locale: boolean equals(java.lang.Object)>(r3)	if $z0 == 0 goto $z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	1
+if $z0 == 0 goto $z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	return r4	0
+if $z0 == 0 goto $z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	$z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	0
+$z1 = interfaceinvoke r2.<java.util.Enumeration: boolean hasMoreElements()>()	if $z1 != 0 goto $r5 = interfaceinvoke r2.<java.util.Enumeration: java.lang.Object nextElement()>()	1
+if $z1 != 0 goto $r5 = interfaceinvoke r2.<java.util.Enumeration: java.lang.Object nextElement()>()	$r7 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	0
+if $z1 != 0 goto $r5 = interfaceinvoke r2.<java.util.Enumeration: java.lang.Object nextElement()>()	$r5 = interfaceinvoke r2.<java.util.Enumeration: java.lang.Object nextElement()>()	0
+$r7 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	return $r7	1

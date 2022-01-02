@@ -1,0 +1,13 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.ManagerServlet	R	[]
+$r7 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.ObjectName oname>	U	[r0, r1, $r4, r2, $r5, r3, $r6]
+r2 = $r4	U	[r0, r1, $r4]
+r1 := @parameter0: java.lang.String	R	[r0]
+$r6 = r0.<org.apache.catalina.manager.ManagerServlet: javax.management.MBeanServer mBeanServer>	U	[r0, r1, $r4, r2, $r5, r3]
+$r4 = newarray (java.lang.String)[1]	C	[r0, r1]
+r3 = $r5	U	[r0, r1, $r4, r2, $r5]
+$r5 = newarray (java.lang.String)[1]	C	[r0, r1, $r4, r2]
+$r4[0] = r1	U	[r0, r1, $r4]
+return	R	[r0, r1, $r4, r2, $r5, r3, $r6, $r7]
+interfaceinvoke $r6.<javax.management.MBeanServer: java.lang.Object invoke(javax.management.ObjectName,java.lang.String,java.lang.Object[],java.lang.String[])>($r7, "check", r2, r3)	R	[r0, r1, $r4, r2, $r5, r3, $r6, $r7]
+$r5[0] = "java.lang.String"	U	[r0, r1, $r4, r2, $r5]

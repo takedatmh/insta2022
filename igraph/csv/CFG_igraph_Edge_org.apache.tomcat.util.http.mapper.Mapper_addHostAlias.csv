@@ -1,0 +1,16 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.tomcat.util.http.mapper.Mapper	r1 := @parameter0: java.lang.String	0
+r1 := @parameter0: java.lang.String	r2 := @parameter1: java.lang.String	0
+r2 := @parameter1: java.lang.String	$r5 = r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$Host[] hosts>	0
+$r5 = r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$Host[] hosts>	$r6 = staticinvoke <org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$MapElement exactFind(org.apache.tomcat.util.http.mapper.Mapper$MapElement[],java.lang.String)>($r5, r1)	1
+$r6 = staticinvoke <org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$MapElement exactFind(org.apache.tomcat.util.http.mapper.Mapper$MapElement[],java.lang.String)>($r5, r1)	r3 = (org.apache.tomcat.util.http.mapper.Mapper$Host) $r6	1
+r3 = (org.apache.tomcat.util.http.mapper.Mapper$Host) $r6	if r3 != null goto $r7 = new org.apache.tomcat.util.http.mapper.Mapper$Host	1
+if r3 != null goto $r7 = new org.apache.tomcat.util.http.mapper.Mapper$Host	return	0
+if r3 != null goto $r7 = new org.apache.tomcat.util.http.mapper.Mapper$Host	$r7 = new org.apache.tomcat.util.http.mapper.Mapper$Host	0
+$r7 = new org.apache.tomcat.util.http.mapper.Mapper$Host	specialinvoke $r7.<org.apache.tomcat.util.http.mapper.Mapper$Host: void <init>(java.lang.String,org.apache.tomcat.util.http.mapper.Mapper$Host)>(r2, r3)	1
+specialinvoke $r7.<org.apache.tomcat.util.http.mapper.Mapper$Host: void <init>(java.lang.String,org.apache.tomcat.util.http.mapper.Mapper$Host)>(r2, r3)	r4 = $r7	0
+r4 = $r7	$z0 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: boolean addHostAliasImpl(org.apache.tomcat.util.http.mapper.Mapper$Host)>(r4)	1
+$z0 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: boolean addHostAliasImpl(org.apache.tomcat.util.http.mapper.Mapper$Host)>(r4)	if $z0 == 0 goto return	1
+if $z0 == 0 goto return	virtualinvoke r3.<org.apache.tomcat.util.http.mapper.Mapper$Host: void addAlias(org.apache.tomcat.util.http.mapper.Mapper$Host)>(r4)	0
+if $z0 == 0 goto return	return	0
+virtualinvoke r3.<org.apache.tomcat.util.http.mapper.Mapper$Host: void addAlias(org.apache.tomcat.util.http.mapper.Mapper$Host)>(r4)	return	0

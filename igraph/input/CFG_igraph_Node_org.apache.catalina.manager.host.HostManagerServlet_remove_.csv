@@ -1,0 +1,64 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.catalina.manager.host.HostManagerServlet	R	null
+$r8[0] = r2	U	null
+if r2 == null goto $r8 = newarray (java.lang.Object)[1]	R	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r31)	R	null
+$r32[0] = r2	U	null
+$r7 = virtualinvoke $r5.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.remove", $r6)	U	null
+r1 := @parameter0: java.io.PrintWriter	R	null
+r23 = $r22	U	null
+if $r11 != null goto $r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	R	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r9)	R	null
+$r6 = newarray (java.lang.Object)[1]	C	null
+r29 = (org.apache.catalina.core.StandardHost) $r28	U	null
+goto [?= $r27 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>]	R	null
+$r16 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Host installedHost>	U	null
+$r10 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+$r6[0] = r2	U	null
+if $i0 < 1 goto (branch)	R	null
+$i1 = virtualinvoke r2.<java.lang.String: int length()>()	U	null
+$r31 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.remove", $r30)	U	null
+$r25 = virtualinvoke r23.<java.lang.Exception: java.lang.String toString()>()	U	null
+$r24 = newarray (java.lang.Object)[1]	C	null
+$r14 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+virtualinvoke r0.<org.apache.catalina.manager.host.HostManagerServlet: void log(java.lang.String)>($r7)	R	null
+$r11 = interfaceinvoke $r10.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	U	null
+$r5 = <org.apache.catalina.manager.host.HostManagerServlet: org.apache.tomcat.util.res.StringManager sm>	U	null
+$r9 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.invalidHostName", $r8)	U	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r26)	R	null
+r3 := @parameter2: org.apache.tomcat.util.res.StringManager	R	null
+$r17[0] = r2	U	null
+$r22 := @caughtexception	R	null
+$r28 = interfaceinvoke $r27.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	U	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r33)	R	null
+$r12[0] = r2	U	null
+$r21 = (org.apache.catalina.core.ContainerBase) r4	U	null
+$z0 = r4 instanceof org.apache.catalina.core.ContainerBase	U	null
+$r27 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+$r12 = newarray (java.lang.Object)[1]	C	null
+interfaceinvoke $r20.<org.apache.catalina.Engine: void removeChild(org.apache.catalina.Container)>(r4)	R	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	R	null
+$r15 = interfaceinvoke $r14.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	U	null
+$r20 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+goto [?= return]	R	null
+$r32 = newarray (java.lang.Object)[1]	C	null
+$i0 = r0.<org.apache.catalina.manager.host.HostManagerServlet: int debug>	U	null
+$r19 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	U	null
+$r33 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.removeFailed", $r32)	U	null
+r4 = interfaceinvoke $r19.<org.apache.catalina.Engine: org.apache.catalina.Container findChild(java.lang.String)>(r2)	U	null
+return	R	null
+$r8 = newarray (java.lang.Object)[1]	C	null
+$r17 = newarray (java.lang.Object)[1]	C	null
+$r24[0] = $r25	U	null
+$r30[0] = r2	U	null
+if r29 != null goto $r32 = newarray (java.lang.Object)[1]	R	null
+if $i1 != 0 goto $r10 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	R	null
+$r13 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.noHost", $r12)	U	null
+$r18 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.cannotRemoveOwnHost", $r17)	U	null
+r2 := @parameter1: java.lang.String	R	null
+if $z0 == 0 goto $r27 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	R	null
+$r30 = newarray (java.lang.Object)[1]	C	null
+if $r15 != $r16 goto $r19 = r0.<org.apache.catalina.manager.host.HostManagerServlet: org.apache.catalina.Engine engine>	R	null
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r18)	R	null
+virtualinvoke $r21.<org.apache.catalina.core.ContainerBase: void destroy()>()	R	null
+$r26 = virtualinvoke r3.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("hostManagerServlet.exception", $r24)	U	null

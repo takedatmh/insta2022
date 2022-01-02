@@ -1,0 +1,29 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	r1 := @parameter1: java.util.Set	0
+r1 := @parameter1: java.util.Set	r2 := @parameter2: javax.management.MBeanServer	0
+r2 := @parameter2: javax.management.MBeanServer	i0 := @parameter3: int	0
+i0 := @parameter3: int	i1 = 0	0
+i1 = 0	i2 = 0	1
+i2 = 0	r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()	1
+r3 = interfaceinvoke r1.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()]	$z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()	0
+$r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	r4 = (javax.management.ObjectName) $r6	1
+r4 = (javax.management.ObjectName) $r6	r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspCount")	1
+r5 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspCount")	$r7 = (java.lang.Integer) r5	1
+$r7 = (java.lang.Integer) r5	$i3 = virtualinvoke $r7.<java.lang.Integer: int intValue()>()	1
+$i3 = virtualinvoke $r7.<java.lang.Integer: int intValue()>()	i1 = i1 + $i3	1
+i1 = i1 + $i3	r8 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspReloadCount")	1
+r8 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r4, "jspReloadCount")	$r9 = (java.lang.Integer) r8	1
+$r9 = (java.lang.Integer) r8	$i4 = virtualinvoke $r9.<java.lang.Integer: int intValue()>()	1
+$i4 = virtualinvoke $r9.<java.lang.Integer: int intValue()>()	i2 = i2 + $i4	1
+i2 = i2 + $i4	$z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()	1
+$z0 = interfaceinvoke r3.<java.util.Iterator: boolean hasNext()>()	if $z0 != 0 goto $r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	1
+if $z0 != 0 goto $r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	if i0 != 0 goto return	0
+if $z0 != 0 goto $r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	$r6 = interfaceinvoke r3.<java.util.Iterator: java.lang.Object next()>()	0
+if i0 != 0 goto return	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	0
+if i0 != 0 goto return	return	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<br>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs loaded: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs loaded: ")	virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i1)	0
+virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i1)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs reloaded: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" JSPs reloaded: ")	virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i2)	0
+virtualinvoke r0.<java.io.PrintWriter: void print(int)>(i2)	return	0

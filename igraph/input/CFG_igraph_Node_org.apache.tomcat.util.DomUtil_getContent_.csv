@@ -1,0 +1,9 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: org.w3c.dom.Node	R	null
+r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	U	null
+return null	R	null
+if r1 != null goto r2 = interfaceinvoke r1.<org.w3c.dom.Node: java.lang.String getNodeValue()>()	R	null
+return $r3	R	null
+if r0 != null goto r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	R	null
+$r3 = virtualinvoke r2.<java.lang.String: java.lang.String trim()>()	U	null
+r1 = staticinvoke <org.apache.tomcat.util.DomUtil: org.w3c.dom.Node getChild(org.w3c.dom.Node,int)>(r0, 3)	U	null

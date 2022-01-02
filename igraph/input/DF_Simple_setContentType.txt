@@ -1,0 +1,8 @@
+[]	r0 := @parameter0: javax.servlet.http.HttpServletResponse
+[r0]	i0 := @parameter1: int
+[r0, i0]	if i0 != 0 goto (branch)
+[r0, i0]	interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/html;charset=utf-8")
+[r0, i0]	goto [?= return]
+[r0, i0]	if i0 != 1 goto return
+[r0, i0]	interfaceinvoke r0.<javax.servlet.http.HttpServletResponse: void setContentType(java.lang.String)>("text/xml;charset=utf-8")
+[r0, i0]	return

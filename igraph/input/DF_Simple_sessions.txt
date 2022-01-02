@@ -1,0 +1,13 @@
+[]	r0 := @this: org.apache.catalina.manager.HTMLManagerServlet
+[r0]	r1 := @parameter0: org.apache.catalina.util.ContextName
+[r0, r1]	i0 := @parameter1: int
+[r0, r1, i0]	r2 := @parameter2: org.apache.tomcat.util.res.StringManager
+[r0, r1, i0, r2]	$r3 = new java.io.StringWriter
+[r0, r1, i0, r2, $r3]	specialinvoke $r3.<java.io.StringWriter: void <init>()>()
+[r0, r1, i0, r2, $r3]	r4 = $r3
+[r0, r1, i0, r2, $r3, r4]	$r6 = new java.io.PrintWriter
+[r0, r1, i0, r2, $r3, r4, $r6]	specialinvoke $r6.<java.io.PrintWriter: void <init>(java.io.Writer)>(r4)
+[r0, r1, i0, r2, $r3, r4, $r6]	r5 = $r6
+[r0, r1, i0, r2, $r3, r4, $r6, r5]	specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void sessions(java.io.PrintWriter,org.apache.catalina.util.ContextName,int,org.apache.tomcat.util.res.StringManager)>(r5, r1, i0, r2)
+[r0, r1, i0, r2, $r3, r4, $r6, r5]	$r7 = virtualinvoke r4.<java.io.StringWriter: java.lang.String toString()>()
+[r0, r1, i0, r2, $r3, r4, $r6, r5, $r7]	return $r7

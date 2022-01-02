@@ -1,0 +1,138 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.File	r1 := @parameter1: java.io.File	0
+r1 := @parameter1: java.io.File	r2 := @parameter2: byte[]	0
+r2 := @parameter2: byte[]	z0 = 1	0
+z0 = 1	n0 = null	1
+n0 = null	$z2 = virtualinvoke r0.<java.io.File: boolean isDirectory()>()	1
+$z2 = virtualinvoke r0.<java.io.File: boolean isDirectory()>()	if $z2 == 0 goto r9 = newarray (java.lang.String)[1]	1
+if $z2 == 0 goto r9 = newarray (java.lang.String)[1]	r9 = virtualinvoke r0.<java.io.File: java.lang.String[] list()>()	0
+if $z2 == 0 goto r9 = newarray (java.lang.String)[1]	r9 = newarray (java.lang.String)[1]	0
+r9 = virtualinvoke r0.<java.io.File: java.lang.String[] list()>()	z0 = virtualinvoke r1.<java.io.File: boolean mkdir()>()	1
+z0 = virtualinvoke r1.<java.io.File: boolean mkdir()>()	goto [?= (branch)]	1
+goto [?= (branch)]	if r9 != null goto i0 = 0	0
+r9 = newarray (java.lang.String)[1]	r9[0] = ""	1
+r9[0] = ""	if r9 != null goto i0 = 0	1
+if r9 != null goto i0 = 0	r9 = newarray (java.lang.String)[0]	0
+if r9 != null goto i0 = 0	i0 = 0	0
+r9 = newarray (java.lang.String)[0]	i0 = 0	1
+i0 = 0	goto [?= $i2 = lengthof r9]	1
+goto [?= $i2 = lengthof r9]	$i2 = lengthof r9	0
+$r10 = new java.io.File	$r11 = r9[i0]	1
+$r11 = r9[i0]	specialinvoke $r10.<java.io.File: void <init>(java.io.File,java.lang.String)>(r0, $r11)	1
+specialinvoke $r10.<java.io.File: void <init>(java.io.File,java.lang.String)>(r0, $r11)	r3 = $r10	0
+r3 = $r10	$r12 = new java.io.File	0
+$r12 = new java.io.File	$r13 = r9[i0]	1
+$r13 = r9[i0]	specialinvoke $r12.<java.io.File: void <init>(java.io.File,java.lang.String)>(r1, $r13)	1
+specialinvoke $r12.<java.io.File: void <init>(java.io.File,java.lang.String)>(r1, $r13)	r4 = $r12	0
+r4 = $r12	$z3 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()	1
+$z3 = virtualinvoke r3.<java.io.File: boolean isDirectory()>()	if $z3 == 0 goto r5 = null	1
+if $z3 == 0 goto r5 = null	z0 = staticinvoke <org.apache.catalina.manager.ManagerServlet: boolean copyInternal(java.io.File,java.io.File,byte[])>(r3, r4, r2)	0
+if $z3 == 0 goto r5 = null	r5 = null	0
+z0 = staticinvoke <org.apache.catalina.manager.ManagerServlet: boolean copyInternal(java.io.File,java.io.File,byte[])>(r3, r4, r2)	goto [?= i0 = i0 + 1]	1
+goto [?= i0 = i0 + 1]	i0 = i0 + 1	0
+r5 = null	r6 = null	1
+r6 = null	$r16 := @caughtexception	1
+r6 = null	$r21 := @caughtexception	1
+r6 = null	$r14 = new java.io.FileInputStream	0
+$r14 = new java.io.FileInputStream	$r16 := @caughtexception	1
+$r14 = new java.io.FileInputStream	$r21 := @caughtexception	1
+$r14 = new java.io.FileInputStream	specialinvoke $r14.<java.io.FileInputStream: void <init>(java.io.File)>(r3)	1
+specialinvoke $r14.<java.io.FileInputStream: void <init>(java.io.File)>(r3)	$r16 := @caughtexception	0
+specialinvoke $r14.<java.io.FileInputStream: void <init>(java.io.File)>(r3)	$r21 := @caughtexception	0
+specialinvoke $r14.<java.io.FileInputStream: void <init>(java.io.File)>(r3)	r5 = $r14	0
+r5 = $r14	$r16 := @caughtexception	1
+r5 = $r14	$r21 := @caughtexception	1
+r5 = $r14	$r15 = new java.io.FileOutputStream	0
+$r15 = new java.io.FileOutputStream	$r16 := @caughtexception	1
+$r15 = new java.io.FileOutputStream	$r21 := @caughtexception	1
+$r15 = new java.io.FileOutputStream	specialinvoke $r15.<java.io.FileOutputStream: void <init>(java.io.File)>(r4)	1
+specialinvoke $r15.<java.io.FileOutputStream: void <init>(java.io.File)>(r4)	$r16 := @caughtexception	0
+specialinvoke $r15.<java.io.FileOutputStream: void <init>(java.io.File)>(r4)	$r21 := @caughtexception	0
+specialinvoke $r15.<java.io.FileOutputStream: void <init>(java.io.File)>(r4)	r6 = $r15	0
+r6 = $r15	$r16 := @caughtexception	1
+r6 = $r15	$r21 := @caughtexception	1
+r6 = $r15	z1 = 0	1
+z1 = 0	$r16 := @caughtexception	1
+z1 = 0	$r21 := @caughtexception	1
+z1 = 0	i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)	1
+i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)	$r16 := @caughtexception	1
+i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)	$r21 := @caughtexception	1
+i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)	if i1 != -1 goto virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	1
+if i1 != -1 goto virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	goto [?= (branch)]	0
+if i1 != -1 goto virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	0
+if i1 != -1 goto virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	$r16 := @caughtexception	0
+if i1 != -1 goto virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	$r21 := @caughtexception	0
+goto [?= (branch)]	$r16 := @caughtexception	0
+goto [?= (branch)]	$r21 := @caughtexception	0
+goto [?= (branch)]	if r5 == null goto (branch)	0
+virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	$r16 := @caughtexception	0
+virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	$r21 := @caughtexception	0
+virtualinvoke r6.<java.io.FileOutputStream: void write(byte[],int,int)>(r2, 0, i1)	goto [?= i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)]	0
+goto [?= i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)]	$r16 := @caughtexception	0
+goto [?= i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)]	$r21 := @caughtexception	0
+goto [?= i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)]	i1 = virtualinvoke r5.<java.io.FileInputStream: int read(byte[])>(r2)	0
+$r16 := @caughtexception	r17 = $r16	0
+$r16 := @caughtexception	$r21 := @caughtexception	0
+r17 = $r16	virtualinvoke r17.<java.io.IOException: void printStackTrace()>()	1
+r17 = $r16	$r21 := @caughtexception	1
+virtualinvoke r17.<java.io.IOException: void printStackTrace()>()	z0 = 0	0
+virtualinvoke r17.<java.io.IOException: void printStackTrace()>()	$r21 := @caughtexception	0
+z0 = 0	if r5 == null goto (branch)	1
+z0 = 0	$r21 := @caughtexception	1
+if r5 == null goto (branch)	virtualinvoke r5.<java.io.FileInputStream: void close()>()	0
+if r5 == null goto (branch)	if r6 == null goto i0 = i0 + 1	0
+if r5 == null goto (branch)	$r18 := @caughtexception	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	goto [?= (branch)]	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	$r18 := @caughtexception	0
+goto [?= (branch)]	if r6 == null goto i0 = i0 + 1	0
+$r18 := @caughtexception	r7 = $r18	0
+r7 = $r18	if r6 == null goto i0 = i0 + 1	1
+if r6 == null goto i0 = i0 + 1	virtualinvoke r6.<java.io.FileOutputStream: void close()>()	0
+if r6 == null goto i0 = i0 + 1	i0 = i0 + 1	0
+if r6 == null goto i0 = i0 + 1	$r19 := @caughtexception	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	goto [?= i0 = i0 + 1]	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	$r19 := @caughtexception	0
+goto [?= i0 = i0 + 1]	i0 = i0 + 1	0
+$r19 := @caughtexception	r20 = $r19	0
+r20 = $r19	goto [?= i0 = i0 + 1]	1
+goto [?= i0 = i0 + 1]	i0 = i0 + 1	0
+$r21 := @caughtexception	r8 = $r21	0
+r8 = $r21	if r5 == null goto (branch)	1
+if r5 == null goto (branch)	virtualinvoke r5.<java.io.FileInputStream: void close()>()	0
+if r5 == null goto (branch)	if r6 == null goto throw r8	0
+if r5 == null goto (branch)	$r22 := @caughtexception	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	goto [?= (branch)]	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	$r22 := @caughtexception	0
+goto [?= (branch)]	if r6 == null goto throw r8	0
+$r22 := @caughtexception	r23 = $r22	0
+r23 = $r22	if r6 == null goto throw r8	1
+if r6 == null goto throw r8	virtualinvoke r6.<java.io.FileOutputStream: void close()>()	0
+if r6 == null goto throw r8	throw r8	0
+if r6 == null goto throw r8	$r24 := @caughtexception	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	goto [?= throw r8]	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	$r24 := @caughtexception	0
+goto [?= throw r8]	throw r8	0
+$r24 := @caughtexception	r25 = $r24	0
+r25 = $r24	throw r8	1
+if r5 == null goto (branch)	virtualinvoke r5.<java.io.FileInputStream: void close()>()	0
+if r5 == null goto (branch)	if r6 == null goto i0 = i0 + 1	0
+if r5 == null goto (branch)	$r26 := @caughtexception	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	goto [?= (branch)]	0
+virtualinvoke r5.<java.io.FileInputStream: void close()>()	$r26 := @caughtexception	0
+goto [?= (branch)]	if r6 == null goto i0 = i0 + 1	0
+$r26 := @caughtexception	r27 = $r26	0
+r27 = $r26	if r6 == null goto i0 = i0 + 1	1
+if r6 == null goto i0 = i0 + 1	virtualinvoke r6.<java.io.FileOutputStream: void close()>()	0
+if r6 == null goto i0 = i0 + 1	i0 = i0 + 1	0
+if r6 == null goto i0 = i0 + 1	$r28 := @caughtexception	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	goto [?= i0 = i0 + 1]	0
+virtualinvoke r6.<java.io.FileOutputStream: void close()>()	$r28 := @caughtexception	0
+goto [?= i0 = i0 + 1]	i0 = i0 + 1	0
+$r28 := @caughtexception	r29 = $r28	0
+r29 = $r28	i0 = i0 + 1	1
+i0 = i0 + 1	$i2 = lengthof r9	1
+$i2 = lengthof r9	if i0 >= $i2 goto return z0	1
+if i0 >= $i2 goto return z0	if z0 != 0 goto $r10 = new java.io.File	0
+if i0 >= $i2 goto return z0	return z0	0
+if z0 != 0 goto $r10 = new java.io.File	return z0	0
+if z0 != 0 goto $r10 = new java.io.File	$r10 = new java.io.File	0

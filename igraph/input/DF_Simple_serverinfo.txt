@@ -1,0 +1,42 @@
+[]	r0 := @this: org.apache.catalina.manager.ManagerServlet
+[r0]	r1 := @parameter0: java.io.PrintWriter
+[r0, r1]	r2 := @parameter1: org.apache.tomcat.util.res.StringManager
+[r0, r1, r2]	$i0 = r0.<org.apache.catalina.manager.ManagerServlet: int debug>
+[r0, r1, r2, $i0]	if $i0 < 1 goto $r4 = new java.lang.StringBuilder
+[r0, r1, r2, $i0]	virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: void log(java.lang.String)>("serverinfo")
+[r0, r1, r2, $i0]	$r4 = new java.lang.StringBuilder
+[r0, r1, r2, $i0, $r4]	specialinvoke $r4.<java.lang.StringBuilder: void <init>()>()
+[r0, r1, r2, $i0, $r4]	r3 = $r4
+[r0, r1, r2, $i0, $r4, r3]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("OK - Server info")
+[r0, r1, r2, $i0, $r4, r3]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nTomcat Version: ")
+[r0, r1, r2, $i0, $r4, r3]	$r7 = staticinvoke <org.apache.catalina.util.ServerInfo: java.lang.String getServerInfo()>()
+[r0, r1, r2, $i0, $r4, r3, $r7]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r7)
+[r0, r1, r2, $i0, $r4, r3, $r7]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nOS Name: ")
+[r0, r1, r2, $i0, $r4, r3, $r7]	$r10 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r10)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nOS Version: ")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10]	$r13 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.version")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r13)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nOS Architecture: ")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13]	$r16 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.arch")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r16)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nJVM Version: ")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16]	$r19 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.runtime.version")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r19)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\nJVM Vendor: ")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19]	$r22 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19, $r22]	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r22)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19, $r22]	$r24 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19, $r22, $r24]	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r24)
+[r0, r1, r2, $i0, $r4, r3, $r7, $r10, $r13, $r16, $r19, $r22, $r24]	goto [?= return]
+[r0, r1, r2, $i0]	$r25 := @caughtexception
+[r0, r1, r2, $i0, $r25]	r26 = $r25
+[r0, r1, r2, $i0, $r25, r26]	staticinvoke <org.apache.tomcat.util.ExceptionUtils: void handleThrowable(java.lang.Throwable)>(r26)
+[r0, r1, r2, $i0, $r25, r26]	$r27 = virtualinvoke r0.<org.apache.catalina.manager.ManagerServlet: javax.servlet.ServletContext getServletContext()>()
+[r0, r1, r2, $i0, $r25, r26, $r27]	interfaceinvoke $r27.<javax.servlet.ServletContext: void log(java.lang.String,java.lang.Throwable)>("ManagerServlet.serverinfo", r26)
+[r0, r1, r2, $i0, $r25, r26, $r27]	$r28 = newarray (java.lang.Object)[1]
+[r0, r1, r2, $i0, $r25, r26, $r27, $r28]	$r29 = virtualinvoke r26.<java.lang.Throwable: java.lang.String toString()>()
+[r0, r1, r2, $i0, $r25, r26, $r27, $r28, $r29]	$r28[0] = $r29
+[r0, r1, r2, $i0, $r25, r26, $r27, $r28, $r29]	$r30 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.exception", $r28)
+[r0, r1, r2, $i0, $r25, r26, $r27, $r28, $r29, $r30]	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r30)
+[r0, r1, r2, $i0]	return

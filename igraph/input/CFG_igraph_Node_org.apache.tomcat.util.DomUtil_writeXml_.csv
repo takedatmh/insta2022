@@ -1,0 +1,12 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: org.w3c.dom.Node	R	null
+virtualinvoke r3.<javax.xml.transform.Transformer: void setOutputProperty(java.lang.String,java.lang.String)>("indent", "yes")	R	null
+r3 = virtualinvoke r2.<javax.xml.transform.TransformerFactory: javax.xml.transform.Transformer newTransformer()>()	U	null
+specialinvoke $r4.<javax.xml.transform.dom.DOMSource: void <init>(org.w3c.dom.Node)>(r0)	R	null
+r2 = staticinvoke <javax.xml.transform.TransformerFactory: javax.xml.transform.TransformerFactory newInstance()>()	U	null
+r1 := @parameter1: java.io.OutputStream	R	null
+return	R	null
+$r5 = new javax.xml.transform.stream.StreamResult	C	null
+$r4 = new javax.xml.transform.dom.DOMSource	C	null
+specialinvoke $r5.<javax.xml.transform.stream.StreamResult: void <init>(java.io.OutputStream)>(r1)	R	null
+virtualinvoke r3.<javax.xml.transform.Transformer: void transform(javax.xml.transform.Source,javax.xml.transform.Result)>($r4, $r5)	R	null

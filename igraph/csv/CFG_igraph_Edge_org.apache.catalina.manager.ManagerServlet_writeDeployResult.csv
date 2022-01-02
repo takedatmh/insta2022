@@ -1,0 +1,38 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.ManagerServlet	r1 := @parameter0: java.io.PrintWriter	0
+r1 := @parameter0: java.io.PrintWriter	r2 := @parameter1: org.apache.tomcat.util.res.StringManager	0
+r2 := @parameter1: org.apache.tomcat.util.res.StringManager	r3 := @parameter2: java.lang.String	0
+r3 := @parameter2: java.lang.String	r4 := @parameter3: java.lang.String	0
+r4 := @parameter3: java.lang.String	$r6 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	0
+$r6 = r0.<org.apache.catalina.manager.ManagerServlet: org.apache.catalina.Host host>	$r7 = interfaceinvoke $r6.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r3)	1
+$r7 = interfaceinvoke $r6.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r3)	r5 = (org.apache.catalina.Context) $r7	1
+r5 = (org.apache.catalina.Context) $r7	if r5 == null goto (branch)	1
+if r5 == null goto (branch)	$z0 = interfaceinvoke r5.<org.apache.catalina.Context: boolean getConfigured()>()	0
+if r5 == null goto (branch)	if r5 == null goto $r14 = newarray (java.lang.Object)[1]	0
+$z0 = interfaceinvoke r5.<org.apache.catalina.Context: boolean getConfigured()>()	if $z0 == 0 goto (branch)	1
+if $z0 == 0 goto (branch)	$r8 = interfaceinvoke r5.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if $z0 == 0 goto (branch)	if r5 == null goto $r14 = newarray (java.lang.Object)[1]	0
+$r8 = interfaceinvoke r5.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z1 = virtualinvoke $r8.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z1 = virtualinvoke $r8.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z1 == 0 goto (branch)	1
+if $z1 == 0 goto (branch)	$r9 = newarray (java.lang.Object)[1]	0
+if $z1 == 0 goto (branch)	if r5 == null goto $r14 = newarray (java.lang.Object)[1]	0
+$r9 = newarray (java.lang.Object)[1]	$r9[0] = r4	1
+$r9[0] = r4	$r10 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployed", $r9)	1
+$r10 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployed", $r9)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r10)	goto [?= return]	0
+goto [?= return]	return	0
+if r5 == null goto $r14 = newarray (java.lang.Object)[1]	$r11 = interfaceinvoke r5.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if r5 == null goto $r14 = newarray (java.lang.Object)[1]	$r14 = newarray (java.lang.Object)[1]	0
+$r11 = interfaceinvoke r5.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z2 = virtualinvoke $r11.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z2 = virtualinvoke $r11.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z2 != 0 goto $r14 = newarray (java.lang.Object)[1]	1
+if $z2 != 0 goto $r14 = newarray (java.lang.Object)[1]	$r12 = newarray (java.lang.Object)[1]	0
+if $z2 != 0 goto $r14 = newarray (java.lang.Object)[1]	$r14 = newarray (java.lang.Object)[1]	0
+$r12 = newarray (java.lang.Object)[1]	$r12[0] = r4	1
+$r12[0] = r4	$r13 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployedButNotStarted", $r12)	1
+$r13 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployedButNotStarted", $r12)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r13)	goto [?= return]	0
+goto [?= return]	return	0
+$r14 = newarray (java.lang.Object)[1]	$r14[0] = r4	1
+$r14[0] = r4	$r15 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployFailed", $r14)	1
+$r15 = virtualinvoke r2.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String,java.lang.Object[])>("managerServlet.deployFailed", $r14)	virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r15)	1
+virtualinvoke r1.<java.io.PrintWriter: void println(java.lang.String)>($r15)	return	0

@@ -1,0 +1,488 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	r1 := @parameter0: javax.servlet.http.HttpServletRequest	0
+r1 := @parameter0: javax.servlet.http.HttpServletRequest	r2 := @parameter1: javax.servlet.http.HttpServletResponse	0
+r2 := @parameter1: javax.servlet.http.HttpServletResponse	r3 := @parameter2: java.lang.String	0
+r3 := @parameter2: java.lang.String	r4 := @parameter3: org.apache.tomcat.util.res.StringManager	0
+r4 := @parameter3: org.apache.tomcat.util.res.StringManager	$i3 = r0.<org.apache.catalina.manager.HTMLManagerServlet: int debug>	0
+$i3 = r0.<org.apache.catalina.manager.HTMLManagerServlet: int debug>	if $i3 < 1 goto r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	1
+if $i3 < 1 goto r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	$r22 = new java.lang.StringBuilder	0
+if $i3 < 1 goto r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	0
+$r22 = new java.lang.StringBuilder	specialinvoke $r22.<java.lang.StringBuilder: void <init>(java.lang.String)>("list: Listing contexts for virtual host \'")	1
+specialinvoke $r22.<java.lang.StringBuilder: void <init>(java.lang.String)>("list: Listing contexts for virtual host \'")	$r23 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	0
+$r23 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r24 = interfaceinvoke $r23.<org.apache.catalina.Host: java.lang.String getName()>()	1
+$r24 = interfaceinvoke $r23.<org.apache.catalina.Host: java.lang.String getName()>()	$r25 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r24)	1
+$r25 = virtualinvoke $r22.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r24)	$r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	1
+$r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\'")	$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String)>($r27)	1
+virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: void log(java.lang.String)>($r27)	r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	0
+r5 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.io.PrintWriter getWriter()>()	$r28 = <org.apache.catalina.manager.Constants: java.lang.String HTML_HEADER_SECTION>	1
+$r28 = <org.apache.catalina.manager.Constants: java.lang.String HTML_HEADER_SECTION>	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r28)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r28)	r6 = newarray (java.lang.Object)[2]	0
+r6 = newarray (java.lang.Object)[2]	$r29 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r29 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	r6[0] = $r29	1
+r6[0] = $r29	$r30 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.title")	1
+$r30 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.title")	r6[1] = $r30	1
+r6[1] = $r30	$r31 = <org.apache.catalina.manager.Constants: java.lang.String BODY_HEADER_SECTION>	1
+$r31 = <org.apache.catalina.manager.Constants: java.lang.String BODY_HEADER_SECTION>	$r32 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r31, r6)	1
+$r32 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r31, r6)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r32)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r32)	r33 = newarray (java.lang.Object)[3]	0
+r33 = newarray (java.lang.Object)[3]	$r34 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.messageLabel")	1
+$r34 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.messageLabel")	r33[0] = $r34	1
+r33[0] = $r34	if r3 == null goto r33[1] = "OK"	1
+if r3 == null goto r33[1] = "OK"	$i4 = virtualinvoke r3.<java.lang.String: int length()>()	0
+if r3 == null goto r33[1] = "OK"	r33[1] = "OK"	0
+$i4 = virtualinvoke r3.<java.lang.String: int length()>()	if $i4 != 0 goto $r35 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	1
+if $i4 != 0 goto $r35 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	r33[1] = "OK"	0
+if $i4 != 0 goto $r35 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	$r35 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	0
+r33[1] = "OK"	goto [?= $r36 = <org.apache.catalina.manager.Constants: java.lang.String MESSAGE_SECTION>]	1
+goto [?= $r36 = <org.apache.catalina.manager.Constants: java.lang.String MESSAGE_SECTION>]	$r36 = <org.apache.catalina.manager.Constants: java.lang.String MESSAGE_SECTION>	0
+$r35 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r3)	r33[1] = $r35	1
+r33[1] = $r35	$r36 = <org.apache.catalina.manager.Constants: java.lang.String MESSAGE_SECTION>	1
+$r36 = <org.apache.catalina.manager.Constants: java.lang.String MESSAGE_SECTION>	$r37 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r36, r33)	1
+$r37 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r36, r33)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r37)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r37)	r38 = newarray (java.lang.Object)[9]	0
+r38 = newarray (java.lang.Object)[9]	$r39 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.manager")	1
+$r39 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.manager")	r38[0] = $r39	1
+r38[0] = $r39	$r40 = new java.lang.StringBuilder	0
+$r40 = new java.lang.StringBuilder	$r41 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r41 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r42 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r41)	1
+$r42 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r41)	specialinvoke $r40.<java.lang.StringBuilder: void <init>(java.lang.String)>($r42)	1
+specialinvoke $r40.<java.lang.StringBuilder: void <init>(java.lang.String)>($r42)	$r43 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/list")	0
+$r43 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/list")	$r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>()	$r45 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r44)	1
+$r45 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r44)	r38[1] = $r45	1
+r38[1] = $r45	$r46 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.list")	1
+$r46 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.list")	r38[2] = $r46	1
+r38[2] = $r46	$r47 = new java.lang.StringBuilder	0
+$r47 = new java.lang.StringBuilder	$r48 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r48 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r49 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r48)	1
+$r49 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r48)	specialinvoke $r47.<java.lang.StringBuilder: void <init>(java.lang.String)>($r49)	1
+specialinvoke $r47.<java.lang.StringBuilder: void <init>(java.lang.String)>($r49)	$r50 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	0
+$r50 = virtualinvoke $r47.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	$r51 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpHtmlManagerFile")	1
+$r51 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpHtmlManagerFile")	$r52 = virtualinvoke $r50.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r51)	1
+$r52 = virtualinvoke $r50.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r51)	$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.String toString()>()	$r54 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r53)	1
+$r54 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r53)	r38[3] = $r54	1
+r38[3] = $r54	$r55 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpHtmlManager")	1
+$r55 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpHtmlManager")	r38[4] = $r55	1
+r38[4] = $r55	$r56 = new java.lang.StringBuilder	0
+$r56 = new java.lang.StringBuilder	$r57 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r57 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r58 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r57)	1
+$r58 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r57)	specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>($r58)	1
+specialinvoke $r56.<java.lang.StringBuilder: void <init>(java.lang.String)>($r58)	$r59 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	0
+$r59 = virtualinvoke $r56.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	$r60 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpManagerFile")	1
+$r60 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpManagerFile")	$r61 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r60)	1
+$r61 = virtualinvoke $r59.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r60)	$r62 = virtualinvoke $r61.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r62 = virtualinvoke $r61.<java.lang.StringBuilder: java.lang.String toString()>()	$r63 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r62)	1
+$r63 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r62)	r38[5] = $r63	1
+r38[5] = $r63	$r64 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpManager")	1
+$r64 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.helpManager")	r38[6] = $r64	1
+r38[6] = $r64	$r65 = new java.lang.StringBuilder	0
+$r65 = new java.lang.StringBuilder	$r66 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r66 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r67 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r66)	1
+$r67 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r66)	specialinvoke $r65.<java.lang.StringBuilder: void <init>(java.lang.String)>($r67)	1
+specialinvoke $r65.<java.lang.StringBuilder: void <init>(java.lang.String)>($r67)	$r68 = virtualinvoke $r65.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/status")	0
+$r68 = virtualinvoke $r65.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/status")	$r69 = virtualinvoke $r68.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r69 = virtualinvoke $r68.<java.lang.StringBuilder: java.lang.String toString()>()	$r70 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r69)	1
+$r70 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r69)	r38[7] = $r70	1
+r38[7] = $r70	$r71 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("statusServlet.title")	1
+$r71 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("statusServlet.title")	r38[8] = $r71	1
+r38[8] = $r71	$r72 = <org.apache.catalina.manager.Constants: java.lang.String MANAGER_SECTION>	1
+$r72 = <org.apache.catalina.manager.Constants: java.lang.String MANAGER_SECTION>	$r73 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r72, r38)	1
+$r73 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r72, r38)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r73)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r73)	r74 = newarray (java.lang.Object)[7]	0
+r74 = newarray (java.lang.Object)[7]	$r75 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsTitle")	1
+$r75 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsTitle")	r74[0] = $r75	1
+r74[0] = $r75	$r76 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsPath")	1
+$r76 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsPath")	r74[1] = $r76	1
+r74[1] = $r76	$r77 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsVersion")	1
+$r77 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsVersion")	r74[2] = $r77	1
+r74[2] = $r77	$r78 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsName")	1
+$r78 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsName")	r74[3] = $r78	1
+r74[3] = $r78	$r79 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsAvailable")	1
+$r79 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsAvailable")	r74[4] = $r79	1
+r74[4] = $r79	$r80 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsSessions")	1
+$r80 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsSessions")	r74[5] = $r80	1
+r74[5] = $r80	$r81 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsTasks")	1
+$r81 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsTasks")	r74[6] = $r81	1
+r74[6] = $r81	$r82 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"6\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td class=\"header-left\"><small>{1}</small></td>\n <td class=\"header-left\"><small>{2}</small></td>\n <td class=\"header-center\"><small>{3}</small></td>\n <td class=\"header-center\"><small>{4}</small></td>\n <td class=\"header-left\"><small>{5}</small></td>\n <td class=\"header-left\"><small>{6}</small></td>\n</tr>\n", r74)	1
+$r82 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"6\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td class=\"header-left\"><small>{1}</small></td>\n <td class=\"header-left\"><small>{2}</small></td>\n <td class=\"header-center\"><small>{3}</small></td>\n <td class=\"header-center\"><small>{4}</small></td>\n <td class=\"header-left\"><small>{5}</small></td>\n <td class=\"header-left\"><small>{6}</small></td>\n</tr>\n", r74)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r82)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r82)	$r83 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	0
+$r83 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	r7 = interfaceinvoke $r83.<org.apache.catalina.Host: org.apache.catalina.Container[] findChildren()>()	1
+r7 = interfaceinvoke $r83.<org.apache.catalina.Host: org.apache.catalina.Container[] findChildren()>()	$i5 = lengthof r7	1
+$i5 = lengthof r7	r8 = newarray (java.lang.String)[$i5]	0
+r8 = newarray (java.lang.String)[$i5]	i0 = 0	1
+i0 = 0	goto [?= $i6 = lengthof r7]	1
+goto [?= $i6 = lengthof r7]	$i6 = lengthof r7	0
+$r84 = r7[i0]	$r85 = interfaceinvoke $r84.<org.apache.catalina.Container: java.lang.String getName()>()	1
+$r85 = interfaceinvoke $r84.<org.apache.catalina.Container: java.lang.String getName()>()	r8[i0] = $r85	1
+r8[i0] = $r85	i0 = i0 + 1	1
+i0 = i0 + 1	$i6 = lengthof r7	1
+$i6 = lengthof r7	if i0 < $i6 goto $r84 = r7[i0]	1
+if i0 < $i6 goto $r84 = r7[i0]	staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>(r8)	0
+if i0 < $i6 goto $r84 = r7[i0]	$r84 = r7[i0]	0
+staticinvoke <java.util.Arrays: void sort(java.lang.Object[])>(r8)	r86 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsStart")	0
+r86 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsStart")	r9 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsStop")	1
+r9 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsStop")	r10 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsReload")	1
+r10 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsReload")	r11 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsUndeploy")	1
+r11 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsUndeploy")	r12 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsExpire")	1
+r12 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.appsExpire")	$r87 = new java.lang.StringBuilder	0
+$r87 = new java.lang.StringBuilder	specialinvoke $r87.<java.lang.StringBuilder: void <init>(java.lang.String)>("<i>")	1
+specialinvoke $r87.<java.lang.StringBuilder: void <init>(java.lang.String)>("<i>")	$r88 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.noVersion")	0
+$r88 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.noVersion")	$r89 = virtualinvoke $r87.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r88)	1
+$r89 = virtualinvoke $r87.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r88)	$r90 = virtualinvoke $r89.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</i>")	1
+$r90 = virtualinvoke $r89.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</i>")	r13 = virtualinvoke $r90.<java.lang.StringBuilder: java.lang.String toString()>()	1
+r13 = virtualinvoke $r90.<java.lang.StringBuilder: java.lang.String toString()>()	z0 = 1	1
+z0 = 1	z1 = 1	1
+z1 = 1	n0 = null	1
+n0 = null	r14 = r8	1
+r14 = r8	i1 = lengthof r8	1
+i1 = lengthof r8	i2 = 0	1
+i2 = 0	goto [?= (branch)]	1
+goto [?= (branch)]	if i2 < i1 goto r15 = r14[i2]	0
+r15 = r14[i2]	$r92 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	1
+$r92 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Host host>	$r93 = interfaceinvoke $r92.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r15)	1
+$r93 = interfaceinvoke $r92.<org.apache.catalina.Host: org.apache.catalina.Container findChild(java.lang.String)>(r15)	r16 = (org.apache.catalina.Context) $r93	1
+r16 = (org.apache.catalina.Context) $r93	if r16 == null goto i2 = i2 + 1	1
+if r16 == null goto i2 = i2 + 1	if z0 == 0 goto $z2 = 1	0
+if r16 == null goto i2 = i2 + 1	i2 = i2 + 1	0
+if z0 == 0 goto $z2 = 1	$z2 = 0	0
+if z0 == 0 goto $z2 = 1	$z2 = 1	0
+$z2 = 0	goto [?= z0 = $z2]	1
+goto [?= z0 = $z2]	z0 = $z2	0
+$z2 = 1	z0 = $z2	1
+z0 = $z2	if z0 == 0 goto r94 = "#FFFFFF"	1
+if z0 == 0 goto r94 = "#FFFFFF"	r94 = "#C3F3C3"	0
+if z0 == 0 goto r94 = "#FFFFFF"	r94 = "#FFFFFF"	0
+r94 = "#C3F3C3"	goto [?= r17 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getPath()>()]	1
+goto [?= r17 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getPath()>()]	r17 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getPath()>()	0
+r94 = "#FFFFFF"	r17 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getPath()>()	1
+r17 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getPath()>()	r18 = r17	1
+r18 = r17	$z3 = virtualinvoke r18.<java.lang.String: boolean equals(java.lang.Object)>("")	1
+$z3 = virtualinvoke r18.<java.lang.String: boolean equals(java.lang.Object)>("")	if $z3 == 0 goto $r95 = new java.lang.StringBuilder	1
+if $z3 == 0 goto $r95 = new java.lang.StringBuilder	r18 = "/"	0
+if $z3 == 0 goto $r95 = new java.lang.StringBuilder	$r95 = new java.lang.StringBuilder	0
+r18 = "/"	$r95 = new java.lang.StringBuilder	0
+$r95 = new java.lang.StringBuilder	specialinvoke $r95.<java.lang.StringBuilder: void <init>()>()	1
+specialinvoke $r95.<java.lang.StringBuilder: void <init>()>()	r19 = $r95	0
+r19 = $r95	virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("path=")	1
+virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("path=")	$r97 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	0
+$r97 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	$r98 = virtualinvoke $r97.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>(r18, "UTF-8")	1
+$r98 = virtualinvoke $r97.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>(r18, "UTF-8")	virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r98)	1
+virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r98)	$r100 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	0
+$r100 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	$i7 = virtualinvoke $r100.<java.lang.String: int length()>()	1
+$i7 = virtualinvoke $r100.<java.lang.String: int length()>()	if $i7 <= 0 goto r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	1
+if $i7 <= 0 goto r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&version=")	0
+if $i7 <= 0 goto r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	0
+virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("&version=")	$r102 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	0
+$r102 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	$r103 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	1
+$r103 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	$r104 = virtualinvoke $r102.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r103, "UTF-8")	1
+$r104 = virtualinvoke $r102.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r103, "UTF-8")	virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r104)	1
+virtualinvoke r19.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r104)	r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	0
+r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	z4 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r15)	1
+r20 = virtualinvoke r19.<java.lang.StringBuilder: java.lang.String toString()>()	$r106 := @caughtexception	1
+z4 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r15)	goto [?= r107 = newarray (java.lang.Object)[7]]	1
+z4 = virtualinvoke r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean isDeployed(java.lang.String)>(r15)	$r106 := @caughtexception	1
+goto [?= r107 = newarray (java.lang.Object)[7]]	r107 = newarray (java.lang.Object)[7]	0
+$r106 := @caughtexception	r21 = $r106	0
+r21 = $r106	z4 = 0	1
+z4 = 0	r107 = newarray (java.lang.Object)[7]	0
+r107 = newarray (java.lang.Object)[7]	$r108 = new java.lang.StringBuilder	0
+$r108 = new java.lang.StringBuilder	specialinvoke $r108.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a href=\"")	1
+specialinvoke $r108.<java.lang.StringBuilder: void <init>(java.lang.String)>("<a href=\"")	$r109 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	0
+$r109 = <org.apache.catalina.util.URLEncoder: org.apache.catalina.util.URLEncoder DEFAULT>	$r110 = new java.lang.StringBuilder	0
+$r110 = new java.lang.StringBuilder	$r111 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r17)	1
+$r111 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(r17)	specialinvoke $r110.<java.lang.StringBuilder: void <init>(java.lang.String)>($r111)	1
+specialinvoke $r110.<java.lang.StringBuilder: void <init>(java.lang.String)>($r111)	$r112 = virtualinvoke $r110.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	0
+$r112 = virtualinvoke $r110.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/")	$r113 = virtualinvoke $r112.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r113 = virtualinvoke $r112.<java.lang.StringBuilder: java.lang.String toString()>()	$r114 = virtualinvoke $r109.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r113, "UTF-8")	1
+$r114 = virtualinvoke $r109.<org.apache.catalina.util.URLEncoder: java.lang.String encode(java.lang.String,java.lang.String)>($r113, "UTF-8")	$r115 = virtualinvoke $r108.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r114)	1
+$r115 = virtualinvoke $r108.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r114)	$r116 = virtualinvoke $r115.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\">")	1
+$r116 = virtualinvoke $r115.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("\">")	$r117 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r18)	1
+$r117 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>(r18)	$r118 = virtualinvoke $r116.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r117)	1
+$r118 = virtualinvoke $r116.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r117)	$r119 = virtualinvoke $r118.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</a>")	1
+$r119 = virtualinvoke $r118.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("</a>")	$r120 = virtualinvoke $r119.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r120 = virtualinvoke $r119.<java.lang.StringBuilder: java.lang.String toString()>()	r107[0] = $r120	1
+r107[0] = $r120	$r121 = ""	1
+$r121 = ""	$r122 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	1
+$r122 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	$z5 = virtualinvoke $r121.<java.lang.String: boolean equals(java.lang.Object)>($r122)	1
+$z5 = virtualinvoke $r121.<java.lang.String: boolean equals(java.lang.Object)>($r122)	if $z5 == 0 goto $r123 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	1
+if $z5 == 0 goto $r123 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	r107[1] = r13	0
+if $z5 == 0 goto $r123 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	$r123 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	0
+r107[1] = r13	goto [?= $r125 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()]	1
+goto [?= $r125 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()]	$r125 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	0
+$r123 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getWebappVersion()>()	$r124 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r123)	1
+$r124 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r123)	r107[1] = $r124	1
+r107[1] = $r124	$r125 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	1
+$r125 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	if $r125 != null goto $r126 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	1
+if $r125 != null goto $r126 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	r107[2] = "&nbsp;"	0
+if $r125 != null goto $r126 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	$r126 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	0
+r107[2] = "&nbsp;"	goto [?= $r128 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()]	1
+goto [?= $r128 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()]	$r128 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+$r126 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getDisplayName()>()	$r127 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r126)	1
+$r127 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r126)	r107[2] = $r127	1
+r107[2] = $r127	$r128 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	1
+$r128 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z6 = virtualinvoke $r128.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z6 = virtualinvoke $r128.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	$r129 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z6)	1
+$r129 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>($z6)	r107[3] = $r129	1
+r107[3] = $r129	$r130 = new java.lang.StringBuilder	0
+$r130 = new java.lang.StringBuilder	$r131 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r131 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r132 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r131)	1
+$r132 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r131)	specialinvoke $r130.<java.lang.StringBuilder: void <init>(java.lang.String)>($r132)	1
+specialinvoke $r130.<java.lang.StringBuilder: void <init>(java.lang.String)>($r132)	$r133 = virtualinvoke $r130.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/sessions?")	0
+$r133 = virtualinvoke $r130.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/sessions?")	$r134 = virtualinvoke $r133.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r134 = virtualinvoke $r133.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r135 = virtualinvoke $r134.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r135 = virtualinvoke $r134.<java.lang.StringBuilder: java.lang.String toString()>()	$r136 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r135)	1
+$r136 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r135)	$r137 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r136)	1
+$r137 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r136)	r107[4] = $r137	1
+r107[4] = $r137	r138 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	1
+r138 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.Manager getManager()>()	$z7 = r138 instanceof org.apache.catalina.DistributedManager	1
+$z7 = r138 instanceof org.apache.catalina.DistributedManager	if $z7 == 0 goto (branch)	1
+if $z7 == 0 goto (branch)	$z8 = r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions>	0
+if $z7 == 0 goto (branch)	if r138 == null goto $r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	0
+$z8 = r0.<org.apache.catalina.manager.HTMLManagerServlet: boolean showProxySessions>	if $z8 == 0 goto (branch)	1
+if $z8 == 0 goto (branch)	$r139 = (org.apache.catalina.DistributedManager) r138	0
+if $z8 == 0 goto (branch)	if r138 == null goto $r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	0
+$r139 = (org.apache.catalina.DistributedManager) r138	$i8 = interfaceinvoke $r139.<org.apache.catalina.DistributedManager: int getActiveSessionsFull()>()	1
+$i8 = interfaceinvoke $r139.<org.apache.catalina.DistributedManager: int getActiveSessionsFull()>()	$r140 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i8)	1
+$r140 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i8)	r107[5] = $r140	1
+r107[5] = $r140	goto [?= r107[6] = r94]	1
+goto [?= r107[6] = r94]	r107[6] = r94	0
+if r138 == null goto $r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	$i9 = interfaceinvoke r138.<org.apache.catalina.Manager: int getActiveSessions()>()	0
+if r138 == null goto $r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	$r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	0
+$i9 = interfaceinvoke r138.<org.apache.catalina.Manager: int getActiveSessions()>()	$r141 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i9)	1
+$r141 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i9)	r107[5] = $r141	1
+r107[5] = $r141	goto [?= r107[6] = r94]	1
+goto [?= r107[6] = r94]	r107[6] = r94	0
+$r142 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(0)	r107[5] = $r142	1
+r107[5] = $r142	r107[6] = r94	1
+r107[6] = r94	$r143 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<tr>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{0}</small></td>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{1}</small></td>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{2}</small></td>\n <td class=\"row-center\" bgcolor=\"{6}\" rowspan=\"2\"><small>{3}</small></td>\n <td class=\"row-center\" bgcolor=\"{6}\" rowspan=\"2\"><small><a href=\"{4}\">{5}</a></small></td>\n", r107)	1
+$r143 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<tr>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{0}</small></td>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{1}</small></td>\n <td class=\"row-left\" bgcolor=\"{6}\" rowspan=\"2\"><small>{2}</small></td>\n <td class=\"row-center\" bgcolor=\"{6}\" rowspan=\"2\"><small>{3}</small></td>\n <td class=\"row-center\" bgcolor=\"{6}\" rowspan=\"2\"><small><a href=\"{4}\">{5}</a></small></td>\n", r107)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r143)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r143)	r144 = newarray (java.lang.Object)[14]	0
+r144 = newarray (java.lang.Object)[14]	$r145 = new java.lang.StringBuilder	0
+$r145 = new java.lang.StringBuilder	$r146 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r146 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r147 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r146)	1
+$r147 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r146)	specialinvoke $r145.<java.lang.StringBuilder: void <init>(java.lang.String)>($r147)	1
+specialinvoke $r145.<java.lang.StringBuilder: void <init>(java.lang.String)>($r147)	$r148 = virtualinvoke $r145.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/start?")	0
+$r148 = virtualinvoke $r145.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/start?")	$r149 = virtualinvoke $r148.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r149 = virtualinvoke $r148.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r150 = virtualinvoke $r149.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r150 = virtualinvoke $r149.<java.lang.StringBuilder: java.lang.String toString()>()	$r151 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r150)	1
+$r151 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r150)	$r152 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r151)	1
+$r152 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r151)	r144[0] = $r152	1
+r144[0] = $r152	r144[1] = r86	1
+r144[1] = r86	$r153 = new java.lang.StringBuilder	0
+$r153 = new java.lang.StringBuilder	$r154 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r154 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r155 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r154)	1
+$r155 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r154)	specialinvoke $r153.<java.lang.StringBuilder: void <init>(java.lang.String)>($r155)	1
+specialinvoke $r153.<java.lang.StringBuilder: void <init>(java.lang.String)>($r155)	$r156 = virtualinvoke $r153.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/stop?")	0
+$r156 = virtualinvoke $r153.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/stop?")	$r157 = virtualinvoke $r156.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r157 = virtualinvoke $r156.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r158 = virtualinvoke $r157.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r158 = virtualinvoke $r157.<java.lang.StringBuilder: java.lang.String toString()>()	$r159 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r158)	1
+$r159 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r158)	$r160 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r159)	1
+$r160 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r159)	r144[2] = $r160	1
+r144[2] = $r160	r144[3] = r9	1
+r144[3] = r9	$r161 = new java.lang.StringBuilder	0
+$r161 = new java.lang.StringBuilder	$r162 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r162 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r163 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r162)	1
+$r163 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r162)	specialinvoke $r161.<java.lang.StringBuilder: void <init>(java.lang.String)>($r163)	1
+specialinvoke $r161.<java.lang.StringBuilder: void <init>(java.lang.String)>($r163)	$r164 = virtualinvoke $r161.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/reload?")	0
+$r164 = virtualinvoke $r161.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/reload?")	$r165 = virtualinvoke $r164.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r165 = virtualinvoke $r164.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r166 = virtualinvoke $r165.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r166 = virtualinvoke $r165.<java.lang.StringBuilder: java.lang.String toString()>()	$r167 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r166)	1
+$r167 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r166)	$r168 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r167)	1
+$r168 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r167)	r144[4] = $r168	1
+r144[4] = $r168	r144[5] = r10	1
+r144[5] = r10	$r169 = new java.lang.StringBuilder	0
+$r169 = new java.lang.StringBuilder	$r170 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r170 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r171 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r170)	1
+$r171 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r170)	specialinvoke $r169.<java.lang.StringBuilder: void <init>(java.lang.String)>($r171)	1
+specialinvoke $r169.<java.lang.StringBuilder: void <init>(java.lang.String)>($r171)	$r172 = virtualinvoke $r169.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/undeploy?")	0
+$r172 = virtualinvoke $r169.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/undeploy?")	$r173 = virtualinvoke $r172.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r173 = virtualinvoke $r172.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r174 = virtualinvoke $r173.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r174 = virtualinvoke $r173.<java.lang.StringBuilder: java.lang.String toString()>()	$r175 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r174)	1
+$r175 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r174)	$r176 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r175)	1
+$r176 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r175)	r144[6] = $r176	1
+r144[6] = $r176	r144[7] = r11	1
+r144[7] = r11	$r177 = new java.lang.StringBuilder	0
+$r177 = new java.lang.StringBuilder	$r178 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r178 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r179 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r178)	1
+$r179 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r178)	specialinvoke $r177.<java.lang.StringBuilder: void <init>(java.lang.String)>($r179)	1
+specialinvoke $r177.<java.lang.StringBuilder: void <init>(java.lang.String)>($r179)	$r180 = virtualinvoke $r177.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/expire?")	0
+$r180 = virtualinvoke $r177.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/expire?")	$r181 = virtualinvoke $r180.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	1
+$r181 = virtualinvoke $r180.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r20)	$r182 = virtualinvoke $r181.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r182 = virtualinvoke $r181.<java.lang.StringBuilder: java.lang.String toString()>()	$r183 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r182)	1
+$r183 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r182)	$r184 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r183)	1
+$r184 = staticinvoke <org.apache.catalina.util.RequestUtil: java.lang.String filter(java.lang.String)>($r183)	r144[8] = $r184	1
+r144[8] = $r184	r144[9] = r12	1
+r144[9] = r12	$r185 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.explain")	1
+$r185 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.explain")	r144[10] = $r185	1
+r144[10] = $r185	if r138 != null goto $i10 = interfaceinvoke r16.<org.apache.catalina.Context: int getSessionTimeout()>()	1
+if r138 != null goto $i10 = interfaceinvoke r16.<org.apache.catalina.Context: int getSessionTimeout()>()	$r186 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.noManager")	0
+if r138 != null goto $i10 = interfaceinvoke r16.<org.apache.catalina.Context: int getSessionTimeout()>()	$i10 = interfaceinvoke r16.<org.apache.catalina.Context: int getSessionTimeout()>()	0
+$r186 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.noManager")	r144[11] = $r186	1
+r144[11] = $r186	goto [?= $r188 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.unit")]	1
+goto [?= $r188 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.unit")]	$r188 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.unit")	0
+$i10 = interfaceinvoke r16.<org.apache.catalina.Context: int getSessionTimeout()>()	$r187 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i10)	1
+$r187 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>($i10)	r144[11] = $r187	1
+r144[11] = $r187	$r188 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.unit")	1
+$r188 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.expire.unit")	r144[12] = $r188	1
+r144[12] = $r188	r144[13] = r94	1
+r144[13] = r94	$r189 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getName()>()	1
+$r189 = interfaceinvoke r16.<org.apache.catalina.Context: java.lang.String getName()>()	$r190 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Context context>	1
+$r190 = r0.<org.apache.catalina.manager.HTMLManagerServlet: org.apache.catalina.Context context>	$r191 = interfaceinvoke $r190.<org.apache.catalina.Context: java.lang.String getName()>()	1
+$r191 = interfaceinvoke $r190.<org.apache.catalina.Context: java.lang.String getName()>()	$z9 = virtualinvoke $r189.<java.lang.String: boolean equals(java.lang.Object)>($r191)	1
+$z9 = virtualinvoke $r189.<java.lang.String: boolean equals(java.lang.Object)>($r191)	if $z9 == 0 goto $r193 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	1
+if $z9 == 0 goto $r193 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r192 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  <small>\n  &nbsp;{1}&nbsp;\n  &nbsp;{3}&nbsp;\n  &nbsp;{5}&nbsp;\n  &nbsp;{7}&nbsp;\n  </small>\n </td>\n</tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	0
+if $z9 == 0 goto $r193 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r193 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+$r192 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  <small>\n  &nbsp;{1}&nbsp;\n  &nbsp;{3}&nbsp;\n  &nbsp;{5}&nbsp;\n  &nbsp;{7}&nbsp;\n  </small>\n </td>\n</tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r192)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r192)	goto [?= i2 = i2 + 1]	0
+goto [?= i2 = i2 + 1]	i2 = i2 + 1	0
+$r193 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z10 = virtualinvoke $r193.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z10 = virtualinvoke $r193.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z10 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	1
+if $z10 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	if z4 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if $z10 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if z4 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r194 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  &nbsp;<small>{1}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{2}\">  <small><input type=\"submit\" value=\"{3}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{4}\">  <small><input type=\"submit\" value=\"{5}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{6}\">  <small><input type=\"submit\" value=\"{7}\"></small>  </form>\n </td>\n </tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	0
+if z4 == 0 goto $r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+$r194 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  &nbsp;<small>{1}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{2}\">  <small><input type=\"submit\" value=\"{3}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{4}\">  <small><input type=\"submit\" value=\"{5}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{6}\">  <small><input type=\"submit\" value=\"{7}\"></small>  </form>\n </td>\n </tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r194)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r194)	goto [?= i2 = i2 + 1]	0
+goto [?= i2 = i2 + 1]	i2 = i2 + 1	0
+$r195 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z11 = virtualinvoke $r195.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z11 = virtualinvoke $r195.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z11 == 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	1
+if $z11 == 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	if z4 != 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if $z11 == 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+if z4 != 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r196 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  &nbsp;<small>{1}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{2}\">  <small><input type=\"submit\" value=\"{3}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{4}\">  <small><input type=\"submit\" value=\"{5}\"></small>  </form>\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n </tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	0
+if z4 != 0 goto $r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	0
+$r196 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\">\n  &nbsp;<small>{1}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{2}\">  <small><input type=\"submit\" value=\"{3}\"></small>  </form>\n  <form class=\"inline\" method=\"POST\" action=\"{4}\">  <small><input type=\"submit\" value=\"{5}\"></small>  </form>\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n </tr><tr>\n <td class=\"row-left\" bgcolor=\"{13}\">\n  <form method=\"POST\" action=\"{8}\">\n  <small>\n  &nbsp;<input type=\"submit\" value=\"{9}\">&nbsp;{10}&nbsp;<input type=\"text\" name=\"idle\" size=\"5\" value=\"{11}\">&nbsp;{12}&nbsp;\n  </small>\n  </form>\n </td>\n</tr>\n", r144)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r196)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r196)	goto [?= i2 = i2 + 1]	0
+goto [?= i2 = i2 + 1]	i2 = i2 + 1	0
+$r197 = interfaceinvoke r16.<org.apache.catalina.Context: org.apache.catalina.LifecycleState getState()>()	$z12 = virtualinvoke $r197.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	1
+$z12 = virtualinvoke $r197.<org.apache.catalina.LifecycleState: boolean isAvailable()>()	if $z12 != 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	1
+if $z12 != 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	if z4 == 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	0
+if $z12 != 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	$r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	0
+if z4 == 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	$r198 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{6}\">  <small><input type=\"submit\" value=\"{7}\"></small>  </form>\n </td>\n</tr>\n<tr></tr>\n", r144)	0
+if z4 == 0 goto $r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	$r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	0
+$r198 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  <form class=\"inline\" method=\"POST\" action=\"{6}\">  <small><input type=\"submit\" value=\"{7}\"></small>  </form>\n </td>\n</tr>\n<tr></tr>\n", r144)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r198)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r198)	goto [?= i2 = i2 + 1]	0
+goto [?= i2 = i2 + 1]	i2 = i2 + 1	0
+$r199 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>(" <td class=\"row-left\" bgcolor=\"{13}\" rowspan=\"2\">\n  <form class=\"inline\" method=\"POST\" action=\"{0}\">  <small><input type=\"submit\" value=\"{1}\"></small>  </form>\n  &nbsp;<small>{3}</small>&nbsp;\n  &nbsp;<small>{5}</small>&nbsp;\n  &nbsp;<small>{7}</small>&nbsp;\n </td>\n</tr>\n<tr></tr>\n", r144)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r199)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r199)	i2 = i2 + 1	0
+i2 = i2 + 1	if i2 < i1 goto r15 = r14[i2]	1
+if i2 < i1 goto r15 = r14[i2]	r200 = newarray (java.lang.Object)[7]	0
+if i2 < i1 goto r15 = r14[i2]	r15 = r14[i2]	0
+r200 = newarray (java.lang.Object)[7]	$r201 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployTitle")	1
+$r201 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployTitle")	r200[0] = $r201	1
+r200[0] = $r201	$r202 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployServer")	1
+$r202 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployServer")	r200[1] = $r202	1
+r200[1] = $r202	$r203 = new java.lang.StringBuilder	0
+$r203 = new java.lang.StringBuilder	$r204 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r204 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r205 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r204)	1
+$r205 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r204)	specialinvoke $r203.<java.lang.StringBuilder: void <init>(java.lang.String)>($r205)	1
+specialinvoke $r203.<java.lang.StringBuilder: void <init>(java.lang.String)>($r205)	$r206 = virtualinvoke $r203.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/deploy")	0
+$r206 = virtualinvoke $r203.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/deploy")	$r207 = virtualinvoke $r206.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r207 = virtualinvoke $r206.<java.lang.StringBuilder: java.lang.String toString()>()	$r208 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r207)	1
+$r208 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r207)	r200[2] = $r208	1
+r200[2] = $r208	$r209 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployPath")	1
+$r209 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployPath")	r200[3] = $r209	1
+r200[3] = $r209	$r210 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployConfig")	1
+$r210 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployConfig")	r200[4] = $r210	1
+r200[4] = $r210	$r211 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployWar")	1
+$r211 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployWar")	r200[5] = $r211	1
+r200[5] = $r211	$r212 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployButton")	1
+$r212 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployButton")	r200[6] = $r212	1
+r200[6] = $r212	$r213 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("</table>\n<br>\n<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"2\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{1}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{2}\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-right\">\n  <small>{3}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployPath\" size=\"20\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  <small>{4}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployConfig\" size=\"20\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  <small>{5}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployWar\" size=\"40\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  &nbsp;\n </td>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{6}\">\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n", r200)	1
+$r213 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("</table>\n<br>\n<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"2\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{1}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{2}\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-right\">\n  <small>{3}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployPath\" size=\"20\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  <small>{4}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployConfig\" size=\"20\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  <small>{5}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"text\" name=\"deployWar\" size=\"40\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  &nbsp;\n </td>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{6}\">\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n", r200)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r213)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r213)	r214 = newarray (java.lang.Object)[4]	0
+r214 = newarray (java.lang.Object)[4]	$r215 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUpload")	1
+$r215 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUpload")	r214[0] = $r215	1
+r214[0] = $r215	$r216 = new java.lang.StringBuilder	0
+$r216 = new java.lang.StringBuilder	$r217 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r217 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r218 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r217)	1
+$r218 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r217)	specialinvoke $r216.<java.lang.StringBuilder: void <init>(java.lang.String)>($r218)	1
+specialinvoke $r216.<java.lang.StringBuilder: void <init>(java.lang.String)>($r218)	$r219 = virtualinvoke $r216.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/upload")	0
+$r219 = virtualinvoke $r216.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/upload")	$r220 = virtualinvoke $r219.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r220 = virtualinvoke $r219.<java.lang.StringBuilder: java.lang.String toString()>()	$r221 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r220)	1
+$r221 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r220)	r214[1] = $r221	1
+r214[1] = $r221	$r222 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadFile")	1
+$r222 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployUploadFile")	r214[2] = $r222	1
+r214[2] = $r222	$r223 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployButton")	1
+$r223 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.deployButton")	r214[3] = $r223	1
+r214[3] = $r223	$r224 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{0}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{1}\" enctype=\"multipart/form-data\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-right\">\n  <small>{2}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"file\" name=\"deployWar\" size=\"40\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  &nbsp;\n </td>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{3}\">\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n</table>\n<br>\n\n", r214)	1
+$r224 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{0}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{1}\" enctype=\"multipart/form-data\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-right\">\n  <small>{2}</small>\n </td>\n <td class=\"row-left\">\n  <input type=\"file\" name=\"deployWar\" size=\"40\">\n </td>\n</tr>\n<tr>\n <td class=\"row-right\">\n  &nbsp;\n </td>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{3}\">\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n</table>\n<br>\n\n", r214)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r224)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r224)	r225 = newarray (java.lang.Object)[5]	0
+r225 = newarray (java.lang.Object)[5]	$r226 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsTitle")	1
+$r226 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsTitle")	r225[0] = $r226	1
+r225[0] = $r226	$r227 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeak")	1
+$r227 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeak")	r225[1] = $r227	1
+r225[1] = $r227	$r228 = new java.lang.StringBuilder	0
+$r228 = new java.lang.StringBuilder	$r229 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	1
+$r229 = interfaceinvoke r1.<javax.servlet.http.HttpServletRequest: java.lang.String getContextPath()>()	$r230 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r229)	1
+$r230 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r229)	specialinvoke $r228.<java.lang.StringBuilder: void <init>(java.lang.String)>($r230)	1
+specialinvoke $r228.<java.lang.StringBuilder: void <init>(java.lang.String)>($r230)	$r231 = virtualinvoke $r228.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/findleaks")	0
+$r231 = virtualinvoke $r228.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("/html/findleaks")	$r232 = virtualinvoke $r231.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r232 = virtualinvoke $r231.<java.lang.StringBuilder: java.lang.String toString()>()	$r233 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r232)	1
+$r233 = interfaceinvoke r2.<javax.servlet.http.HttpServletResponse: java.lang.String encodeURL(java.lang.String)>($r232)	r225[2] = $r233	1
+r225[2] = $r233	$r234 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeakWarning")	1
+$r234 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeakWarning")	r225[3] = $r234	1
+r225[3] = $r234	$r235 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeakButton")	1
+$r235 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.diagnosticsLeakButton")	r225[4] = $r235	1
+r225[4] = $r235	$r236 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"2\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{1}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{2}\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{4}\">\n </td>\n <td class=\"row-left\">\n  <small>{3}</small>\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n</table>\n<br>", r225)	1
+$r236 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>("<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td colspan=\"2\" class=\"title\">{0}</td>\n</tr>\n<tr>\n <td colspan=\"2\" class=\"header-left\"><small>{1}</small></td>\n</tr>\n<tr>\n <td colspan=\"2\">\n<form method=\"post\" action=\"{2}\">\n<table cellspacing=\"0\" cellpadding=\"3\">\n<tr>\n <td class=\"row-left\">\n  <input type=\"submit\" value=\"{4}\">\n </td>\n <td class=\"row-left\">\n  <small>{3}</small>\n </td>\n</tr>\n</table>\n</form>\n</td>\n</tr>\n</table>\n<br>", r225)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r236)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r236)	r237 = newarray (java.lang.Object)[9]	0
+r237 = newarray (java.lang.Object)[9]	$r238 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverTitle")	1
+$r238 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverTitle")	r237[0] = $r238	1
+r237[0] = $r238	$r239 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverVersion")	1
+$r239 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverVersion")	r237[1] = $r239	1
+r237[1] = $r239	$r240 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverJVMVersion")	1
+$r240 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverJVMVersion")	r237[2] = $r240	1
+r237[2] = $r240	$r241 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverJVMVendor")	1
+$r241 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverJVMVendor")	r237[3] = $r241	1
+r237[3] = $r241	$r242 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSName")	1
+$r242 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSName")	r237[4] = $r242	1
+r237[4] = $r242	$r243 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSVersion")	1
+$r243 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSVersion")	r237[5] = $r243	1
+r237[5] = $r243	$r244 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSArch")	1
+$r244 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverOSArch")	r237[6] = $r244	1
+r237[6] = $r244	$r245 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverHostname")	1
+$r245 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverHostname")	r237[7] = $r245	1
+r237[7] = $r245	$r246 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverIPAddress")	1
+$r246 = virtualinvoke r4.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.serverIPAddress")	r237[8] = $r246	1
+r237[8] = $r246	$r247 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_HEADER_SECTION>	1
+$r247 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_HEADER_SECTION>	$r248 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r247, r237)	1
+$r248 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r247, r237)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r248)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r248)	r249 = newarray (java.lang.Object)[8]	0
+r249 = newarray (java.lang.Object)[8]	$r250 = staticinvoke <org.apache.catalina.util.ServerInfo: java.lang.String getServerInfo()>()	1
+$r250 = staticinvoke <org.apache.catalina.util.ServerInfo: java.lang.String getServerInfo()>()	r249[0] = $r250	1
+r249[0] = $r250	$r251 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.runtime.version")	1
+$r251 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.runtime.version")	r249[1] = $r251	1
+r249[1] = $r251	$r252 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")	1
+$r252 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("java.vm.vendor")	r249[2] = $r252	1
+r249[2] = $r252	$r253 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")	1
+$r253 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.name")	r249[3] = $r253	1
+r249[3] = $r253	$r254 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.version")	1
+$r254 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.version")	r249[4] = $r254	1
+r249[4] = $r254	$r255 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.arch")	1
+$r255 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>("os.arch")	r249[5] = $r255	1
+r249[5] = $r255	r256 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()	1
+r249[5] = $r255	$r259 := @caughtexception	1
+r256 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()	$r257 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostName()>()	1
+r256 = staticinvoke <java.net.InetAddress: java.net.InetAddress getLocalHost()>()	$r259 := @caughtexception	1
+$r257 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostName()>()	r249[6] = $r257	1
+$r257 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostName()>()	$r259 := @caughtexception	1
+r249[6] = $r257	$r258 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostAddress()>()	1
+r249[6] = $r257	$r259 := @caughtexception	1
+$r258 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostAddress()>()	r249[7] = $r258	1
+$r258 = virtualinvoke r256.<java.net.InetAddress: java.lang.String getHostAddress()>()	$r259 := @caughtexception	1
+r249[7] = $r258	goto [?= $r261 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_ROW_SECTION>]	1
+r249[7] = $r258	$r259 := @caughtexception	1
+goto [?= $r261 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_ROW_SECTION>]	$r261 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_ROW_SECTION>	0
+$r259 := @caughtexception	r260 = $r259	0
+r260 = $r259	r249[6] = "-"	1
+r249[6] = "-"	r249[7] = "-"	1
+r249[7] = "-"	$r261 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_ROW_SECTION>	1
+$r261 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_ROW_SECTION>	$r262 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r261, r249)	1
+$r262 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r261, r249)	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r262)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r262)	$r263 = <org.apache.catalina.manager.Constants: java.lang.String HTML_TAIL_SECTION>	0
+$r263 = <org.apache.catalina.manager.Constants: java.lang.String HTML_TAIL_SECTION>	virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r263)	1
+virtualinvoke r5.<java.io.PrintWriter: void print(java.lang.String)>($r263)	virtualinvoke r5.<java.io.PrintWriter: void flush()>()	0
+virtualinvoke r5.<java.io.PrintWriter: void flush()>()	virtualinvoke r5.<java.io.PrintWriter: void close()>()	0
+virtualinvoke r5.<java.io.PrintWriter: void close()>()	return	0

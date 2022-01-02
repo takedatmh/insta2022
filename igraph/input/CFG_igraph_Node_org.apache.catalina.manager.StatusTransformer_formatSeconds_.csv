@@ -1,0 +1,19 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.lang.Object	R	null
+$r3 = new java.lang.StringBuilder	C	null
+l0 = (long) $i1	U	null
+specialinvoke $r3.<java.lang.StringBuilder: void <init>(java.lang.String)>($r4)	R	null
+l0 = virtualinvoke $r1.<java.lang.Long: long longValue()>()	U	null
+goto [?= $r3 = new java.lang.StringBuilder]	R	null
+$r1 = (java.lang.Long) r0	U	null
+l0 = -1L	U	null
+if $z1 == 0 goto $r3 = new java.lang.StringBuilder	R	null
+return $r6	R	null
+$z0 = r0 instanceof java.lang.Long	U	null
+$r4 = staticinvoke <java.lang.String: java.lang.String valueOf(long)>(l0)	U	null
+$r2 = (java.lang.Integer) r0	U	null
+$r6 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>()	U	null
+$r5 = virtualinvoke $r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" s")	U	null
+if $z0 == 0 goto $z1 = r0 instanceof java.lang.Integer	R	null
+$z1 = r0 instanceof java.lang.Integer	U	null
+$i1 = virtualinvoke $r2.<java.lang.Integer: int intValue()>()	U	null

@@ -1,0 +1,6 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: org.w3c.dom.Node	R	null
+r1 := @parameter1: java.lang.String	R	null
+interfaceinvoke r2.<org.w3c.dom.NamedNodeMap: org.w3c.dom.Node removeNamedItem(java.lang.String)>(r1)	R	null
+return	R	null
+r2 = interfaceinvoke r0.<org.w3c.dom.Node: org.w3c.dom.NamedNodeMap getAttributes()>()	U	null

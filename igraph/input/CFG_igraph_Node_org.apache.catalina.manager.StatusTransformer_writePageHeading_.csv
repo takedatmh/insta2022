@@ -1,0 +1,9 @@
+Node	CRUD	DataFlowValue
+r0 := @parameter0: java.io.PrintWriter	R	null
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r3)	R	null
+r1 := @parameter1: java.lang.Object[]	R	null
+if i0 != 0 goto return	R	null
+i0 := @parameter2: int	R	null
+$r2 = <org.apache.catalina.manager.Constants: java.lang.String SERVER_HEADER_SECTION>	U	null
+return	R	null
+$r3 = staticinvoke <java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>($r2, r1)	U	null

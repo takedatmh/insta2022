@@ -1,0 +1,8 @@
+Node	CRUD	DataFlowValue
+i0 := @parameter0: int	R	null
+$z0 = $r0[i0]	U	null
+$r0 = <org.apache.tomcat.util.http.parser.HttpParser: boolean[] IS_HEX>	U	null
+return $z0	R	null
+r1 = $r2	U	null
+return 0	R	null
+$r2 := @caughtexception	R	null

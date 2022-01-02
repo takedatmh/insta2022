@@ -1,0 +1,19 @@
+Node	CRUD	DataFlowValue
+r0 := @this: org.apache.tomcat.util.http.mapper.Mapper	R	null
+r5 = specialinvoke r0.<org.apache.tomcat.util.http.mapper.Mapper: org.apache.tomcat.util.http.mapper.Mapper$ContextVersion findContextVersion(java.lang.String,java.lang.String,java.lang.String,boolean)>(r1, r2, r3, 0)	U	null
+$r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+i0 = $i1 + 1	U	null
+staticinvoke <java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>($r8, 0, r6, 0, $i2)	R	null
+return	R	null
+r6 = newarray (java.lang.String)[i0]	C	null
+$i1 = lengthof $r7	U	null
+r1 := @parameter0: java.lang.String	R	null
+if r5 != null goto $r7 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	R	null
+$i3 = i0 - 1	U	null
+$r8 = r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources>	U	null
+r6[$i3] = r4	U	null
+r2 := @parameter1: java.lang.String	R	null
+r3 := @parameter2: java.lang.String	R	null
+r4 := @parameter3: java.lang.String	R	null
+$i2 = i0 - 1	U	null
+r5.<org.apache.tomcat.util.http.mapper.Mapper$ContextVersion: java.lang.String[] welcomeResources> = r6	U	null

@@ -1,0 +1,4 @@
+start	end	CRUD_Test
+i0 := @parameter0: int	$r0 = <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser DEFAULT>	0
+$r0 = <org.apache.tomcat.util.http.parser.HttpParser: org.apache.tomcat.util.http.parser.HttpParser DEFAULT>	$z0 = virtualinvoke $r0.<org.apache.tomcat.util.http.parser.HttpParser: boolean isNotRequestTargetRelaxed(int)>(i0)	1
+$z0 = virtualinvoke $r0.<org.apache.tomcat.util.http.parser.HttpParser: boolean isNotRequestTargetRelaxed(int)>(i0)	return $z0	1

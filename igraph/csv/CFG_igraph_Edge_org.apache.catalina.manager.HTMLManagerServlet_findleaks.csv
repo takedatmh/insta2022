@@ -1,0 +1,27 @@
+start	end	CRUD_Test
+r0 := @this: org.apache.catalina.manager.HTMLManagerServlet	r1 := @parameter0: org.apache.tomcat.util.res.StringManager	0
+r1 := @parameter0: org.apache.tomcat.util.res.StringManager	$r2 = new java.lang.StringBuilder	0
+$r2 = new java.lang.StringBuilder	specialinvoke $r2.<java.lang.StringBuilder: void <init>()>()	1
+specialinvoke $r2.<java.lang.StringBuilder: void <init>()>()	r3 = $r2	0
+r3 = $r2	$r7 = new java.io.StringWriter	0
+$r7 = new java.io.StringWriter	specialinvoke $r7.<java.io.StringWriter: void <init>()>()	1
+specialinvoke $r7.<java.io.StringWriter: void <init>()>()	r4 = $r7	0
+r4 = $r7	$r8 = new java.io.PrintWriter	0
+$r8 = new java.io.PrintWriter	specialinvoke $r8.<java.io.PrintWriter: void <init>(java.io.Writer)>(r4)	1
+specialinvoke $r8.<java.io.PrintWriter: void <init>(java.io.Writer)>(r4)	r5 = $r8	0
+r5 = $r8	specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void findleaks(boolean,java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(0, r5, r1)	1
+specialinvoke r0.<org.apache.catalina.manager.ManagerServlet: void findleaks(boolean,java.io.PrintWriter,org.apache.tomcat.util.res.StringManager)>(0, r5, r1)	r6 = virtualinvoke r4.<java.io.StringWriter: java.lang.String toString()>()	0
+r6 = virtualinvoke r4.<java.io.StringWriter: java.lang.String toString()>()	$i0 = virtualinvoke r6.<java.lang.String: int length()>()	1
+$i0 = virtualinvoke r6.<java.lang.String: int length()>()	if $i0 <= 0 goto $r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")	1
+if $i0 <= 0 goto $r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")	$z0 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("FAIL -")	0
+if $i0 <= 0 goto $r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")	$r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")	0
+$z0 = virtualinvoke r6.<java.lang.String: boolean startsWith(java.lang.String)>("FAIL -")	if $z0 != 0 goto virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	1
+if $z0 != 0 goto virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	$r9 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksList")	0
+if $z0 != 0 goto virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	0
+$r9 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksList")	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9)	1
+virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r9)	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	0
+virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r6)	goto [?= $r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()]	0
+goto [?= $r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()]	$r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()	0
+$r12 = virtualinvoke r1.<org.apache.tomcat.util.res.StringManager: java.lang.String getString(java.lang.String)>("htmlManagerServlet.findleaksNone")	virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12)	1
+virtualinvoke r3.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r12)	$r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()	0
+$r14 = virtualinvoke r3.<java.lang.StringBuilder: java.lang.String toString()>()	return $r14	1

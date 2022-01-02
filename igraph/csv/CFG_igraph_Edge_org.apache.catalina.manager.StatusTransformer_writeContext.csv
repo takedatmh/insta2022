@@ -1,0 +1,113 @@
+start	end	CRUD_Test
+r0 := @parameter0: java.io.PrintWriter	r1 := @parameter1: javax.management.ObjectName	0
+r1 := @parameter1: javax.management.ObjectName	r2 := @parameter2: javax.management.MBeanServer	0
+r2 := @parameter2: javax.management.MBeanServer	i0 := @parameter3: int	0
+i0 := @parameter3: int	if i0 != 0 goto return	0
+if i0 != 0 goto return	r3 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	0
+if i0 != 0 goto return	return	0
+r3 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getKeyProperty(java.lang.String)>("name")	r4 = r3	1
+r4 = r3	if r4 != null goto n0 = null	1
+if r4 != null goto n0 = null	return	0
+if r4 != null goto n0 = null	n0 = null	0
+n0 = null	n1 = null	1
+n1 = null	$z0 = virtualinvoke r4.<java.lang.String: boolean startsWith(java.lang.String)>("//")	1
+$z0 = virtualinvoke r4.<java.lang.String: boolean startsWith(java.lang.String)>("//")	if $z0 == 0 goto i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	1
+if $z0 == 0 goto i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	r4 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(2)	0
+if $z0 == 0 goto i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	0
+r4 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(2)	i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	1
+i1 = virtualinvoke r4.<java.lang.String: int indexOf(int)>(47)	if i1 == -1 goto return	1
+if i1 == -1 goto return	r17 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int,int)>(0, i1)	0
+if i1 == -1 goto return	return	0
+r17 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int,int)>(0, i1)	r18 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(i1)	1
+r18 = virtualinvoke r4.<java.lang.String: java.lang.String substring(int)>(i1)	goto [?= $r19 = new javax.management.ObjectName]	1
+goto [?= $r19 = new javax.management.ObjectName]	$r19 = new javax.management.ObjectName	0
+$r19 = new javax.management.ObjectName	$r20 = new java.lang.StringBuilder	0
+$r20 = new java.lang.StringBuilder	$r21 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	1
+$r21 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	$r22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r21)	1
+$r22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r21)	specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>($r22)	1
+specialinvoke $r20.<java.lang.StringBuilder: void <init>(java.lang.String)>($r22)	$r23 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":type=Manager,context=")	0
+$r23 = virtualinvoke $r20.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":type=Manager,context=")	$r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r18)	1
+$r24 = virtualinvoke $r23.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r18)	$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",host=")	1
+$r25 = virtualinvoke $r24.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",host=")	$r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r17)	1
+$r26 = virtualinvoke $r25.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r17)	$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	1
+$r27 = virtualinvoke $r26.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r28 = virtualinvoke $r27.<java.lang.StringBuilder: java.lang.String toString()>()	specialinvoke $r19.<javax.management.ObjectName: void <init>(java.lang.String)>($r28)	1
+specialinvoke $r19.<javax.management.ObjectName: void <init>(java.lang.String)>($r28)	r5 = $r19	0
+r5 = $r19	r6 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r5, null)	1
+r6 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r5, null)	r7 = null	1
+r7 = null	r8 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()	1
+r8 = interfaceinvoke r6.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()]	$z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()	0
+$r29 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()	r7 = (javax.management.ObjectName) $r29	1
+r7 = (javax.management.ObjectName) $r29	$z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()	1
+$z1 = interfaceinvoke r8.<java.util.Iterator: boolean hasNext()>()	if $z1 != 0 goto $r29 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()	1
+if $z1 != 0 goto $r29 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()	$r30 = new javax.management.ObjectName	0
+if $z1 != 0 goto $r29 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()	$r29 = interfaceinvoke r8.<java.util.Iterator: java.lang.Object next()>()	0
+$r30 = new javax.management.ObjectName	$r31 = new java.lang.StringBuilder	0
+$r31 = new java.lang.StringBuilder	$r32 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	1
+$r32 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	$r33 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r32)	1
+$r33 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r32)	specialinvoke $r31.<java.lang.StringBuilder: void <init>(java.lang.String)>($r33)	1
+specialinvoke $r31.<java.lang.StringBuilder: void <init>(java.lang.String)>($r33)	$r34 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":type=JspMonitor,WebModule=")	0
+$r34 = virtualinvoke $r31.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":type=JspMonitor,WebModule=")	$r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)	1
+$r35 = virtualinvoke $r34.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)	$r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	1
+$r36 = virtualinvoke $r35.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r37 = virtualinvoke $r36.<java.lang.StringBuilder: java.lang.String toString()>()	specialinvoke $r30.<javax.management.ObjectName: void <init>(java.lang.String)>($r37)	1
+specialinvoke $r30.<javax.management.ObjectName: void <init>(java.lang.String)>($r37)	r9 = $r30	0
+r9 = $r30	r10 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r9, null)	1
+r10 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryNames(javax.management.ObjectName,javax.management.QueryExp)>(r9, null)	$z2 = virtualinvoke r18.<java.lang.String: boolean equals(java.lang.Object)>("/")	1
+$z2 = virtualinvoke r18.<java.lang.String: boolean equals(java.lang.Object)>("/")	if $z2 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	1
+if $z2 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	r38 = ""	0
+if $z2 == 0 goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	0
+r38 = ""	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<h1>")	$r39 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r4)	0
+$r39 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String filter(java.lang.Object)>(r4)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r39)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r39)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h1>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</h1>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</a>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</a>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("<p>")	r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "startTime")	0
+r11 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "startTime")	$r40 = new java.lang.StringBuilder	0
+$r40 = new java.lang.StringBuilder	specialinvoke $r40.<java.lang.StringBuilder: void <init>(java.lang.String)>(" Start time: ")	1
+specialinvoke $r40.<java.lang.StringBuilder: void <init>(java.lang.String)>(" Start time: ")	$r41 = new java.util.Date	0
+$r41 = new java.util.Date	$r42 = (java.lang.Long) r11	1
+$r42 = (java.lang.Long) r11	$l2 = virtualinvoke $r42.<java.lang.Long: long longValue()>()	1
+$l2 = virtualinvoke $r42.<java.lang.Long: long longValue()>()	specialinvoke $r41.<java.util.Date: void <init>(long)>($l2)	1
+specialinvoke $r41.<java.util.Date: void <init>(long)>($l2)	$r43 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r41)	0
+$r43 = virtualinvoke $r40.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r41)	$r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>()	1
+$r44 = virtualinvoke $r43.<java.lang.StringBuilder: java.lang.String toString()>()	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r44)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r44)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Startup time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" Startup time: ")	$r45 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "startupTime")	0
+$r45 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "startupTime")	$r46 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r45, 0)	1
+$r46 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r45, 0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r46)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r46)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" TLD scan time: ")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>(" TLD scan time: ")	$r47 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "tldScanTime")	0
+$r47 = interfaceinvoke r2.<javax.management.MBeanServer: java.lang.Object getAttribute(javax.management.ObjectName,java.lang.String)>(r1, "tldScanTime")	$r48 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r47, 0)	1
+$r48 = staticinvoke <org.apache.catalina.manager.StatusTransformer: java.lang.String formatTime(java.lang.Object,boolean)>($r47, 0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r48)	1
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>($r48)	if r7 == null goto (branch)	0
+if r7 == null goto (branch)	staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeManager(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, r7, r2, i0)	0
+if r7 == null goto (branch)	if r10 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeManager(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, r7, r2, i0)	if r10 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+if r10 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeJspMonitor(java.io.PrintWriter,java.util.Set,javax.management.MBeanServer,int)>(r0, r10, r2, i0)	0
+if r10 == null goto virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeJspMonitor(java.io.PrintWriter,java.util.Set,javax.management.MBeanServer,int)>(r0, r10, r2, i0)	virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	0
+virtualinvoke r0.<java.io.PrintWriter: void print(java.lang.String)>("</p>")	$r49 = new java.lang.StringBuilder	0
+$r49 = new java.lang.StringBuilder	$r50 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	1
+$r50 = virtualinvoke r1.<javax.management.ObjectName: java.lang.String getDomain()>()	$r51 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r50)	1
+$r51 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>($r50)	specialinvoke $r49.<java.lang.StringBuilder: void <init>(java.lang.String)>($r51)	1
+specialinvoke $r49.<java.lang.StringBuilder: void <init>(java.lang.String)>($r51)	$r52 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":j2eeType=Servlet,WebModule=")	0
+$r52 = virtualinvoke $r49.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(":j2eeType=Servlet,WebModule=")	$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)	1
+$r53 = virtualinvoke $r52.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(r3)	$r54 = virtualinvoke $r53.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	1
+$r54 = virtualinvoke $r53.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(",*")	r12 = virtualinvoke $r54.<java.lang.StringBuilder: java.lang.String toString()>()	1
+r12 = virtualinvoke $r54.<java.lang.StringBuilder: java.lang.String toString()>()	$r55 = new javax.management.ObjectName	0
+$r55 = new javax.management.ObjectName	specialinvoke $r55.<javax.management.ObjectName: void <init>(java.lang.String)>(r12)	1
+specialinvoke $r55.<javax.management.ObjectName: void <init>(java.lang.String)>(r12)	r13 = $r55	0
+r13 = $r55	r14 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r13, null)	1
+r14 = interfaceinvoke r2.<javax.management.MBeanServer: java.util.Set queryMBeans(javax.management.ObjectName,javax.management.QueryExp)>(r13, null)	r15 = interfaceinvoke r14.<java.util.Set: java.util.Iterator iterator()>()	1
+r15 = interfaceinvoke r14.<java.util.Set: java.util.Iterator iterator()>()	goto [?= $z3 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()]	1
+goto [?= $z3 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()]	$z3 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()	0
+$r56 = interfaceinvoke r15.<java.util.Iterator: java.lang.Object next()>()	r16 = (javax.management.ObjectInstance) $r56	1
+r16 = (javax.management.ObjectInstance) $r56	$r57 = virtualinvoke r16.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	1
+$r57 = virtualinvoke r16.<javax.management.ObjectInstance: javax.management.ObjectName getObjectName()>()	staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeWrapper(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, $r57, r2, i0)	1
+staticinvoke <org.apache.catalina.manager.StatusTransformer: void writeWrapper(java.io.PrintWriter,javax.management.ObjectName,javax.management.MBeanServer,int)>(r0, $r57, r2, i0)	$z3 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()	0
+$z3 = interfaceinvoke r15.<java.util.Iterator: boolean hasNext()>()	if $z3 != 0 goto $r56 = interfaceinvoke r15.<java.util.Iterator: java.lang.Object next()>()	1
+if $z3 != 0 goto $r56 = interfaceinvoke r15.<java.util.Iterator: java.lang.Object next()>()	return	0
+if $z3 != 0 goto $r56 = interfaceinvoke r15.<java.util.Iterator: java.lang.Object next()>()	$r56 = interfaceinvoke r15.<java.util.Iterator: java.lang.Object next()>()	0
